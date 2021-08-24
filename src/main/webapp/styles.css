@@ -1,0 +1,49 @@
+body {
+
+    text-align: center;
+    margin: 0;
+    background-color: black;
+
+}
+
+.navbar {
+
+    background-color: dimgrey;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    text-align: center;
+}
+
+table {
+
+}
+
+.homeButton {
+    width: 5rem;
+    height: auto;
+}
+
+.searchBar {
+    width: 40rem;
+}
+
+.verticalLine {
+
+    margin: 10px;
+    width: 5px;
+    color: aqua;
+    height: 10px;
+}
+
+.signIn {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+.signIn:hover {
+    color: white;
+}
+
+
