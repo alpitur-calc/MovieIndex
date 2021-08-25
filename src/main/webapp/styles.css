@@ -24,6 +24,11 @@ table {
     height: auto;
 }
 
+.homeButton:hover {
+    transform: scale(2.07);
+    box-shadow: 0 5px 10px 5px white;
+}
+
 .searchBar {
     width: 40rem;
 }
@@ -42,9 +47,7 @@ table {
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
 }
 
-.signIn:hover {
-    color: white;
-}
+
 .trailersRoll{
     position:absolute ;
     top: 5rem;
@@ -69,8 +72,28 @@ table.fixed td {
 
 
 .trailerImage{
+
     width: 80rem;
     height: 40rem;
 }
 
+.trailerImage:hover{
+    animation: inAnimation 1s linear forwards; /*forward serve a farla stare in place alla fine */
+}
 
+
+
+
+
+
+@keyframes inAnimation {
+    0% { transform: scale(1);}
+    100% { transform: scale(1.03);
+        box-shadow: 0 5px 10px 5px white;}
+}
+
+@keyframes outAnimation {
+    0% { transform: scale(1.03);
+        box-shadow: 0 5px 10px 5px white;}
+    100% { transform: scale(1);}
+}
