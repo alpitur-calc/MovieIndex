@@ -1,10 +1,11 @@
 trailerImage = document.querySelector(".trailerImage");
-prevButton = document.querySelector(".prevButton");
-nextButton = document.querySelector(".nextButton");
+prevButton = document.querySelector(".prev");
+nextButton = document.querySelector(".next");
 
 
 let nextImageNumber = 0;
 let numOfImages = 7;
+
 
 nextButton.addEventListener("click", function(){
     setTimeout(function(){

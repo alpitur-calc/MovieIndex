@@ -5,6 +5,7 @@ body {
 }
 
 .navbar {
+    display: block;
     background-color: dimgrey;
     width: 100%;
     height: auto;
@@ -17,6 +18,13 @@ body {
     height: auto;
 }
 
+.homeButton:hover {
+    transform: scale(1.15);
+}
+
+.belowPart{
+
+}
 
 .searchBar {
     width: 40rem;
@@ -62,7 +70,13 @@ table.fixed td {
     height: auto;
 }
 
+.trailerArrow.next:hover{
+    animation: nextArrowAnimation 0.5s linear forwards;
+}
 
+.trailerArrow.prev:hover{
+    animation: prevArrowAnimation 0.5s linear forwards;
+}
 
 .trailerImage{
     width: 80rem;
@@ -70,9 +84,26 @@ table.fixed td {
 }
 
 .trailerImage:hover{
-    animation: inAnimation 0.1s linear forwards; /*forward serve a farla stare in place alla fine */
+    animation: inAnimation 0.3s linear forwards; /*forward serve a farla stare in place alla fine */
 }
 
+@keyframes nextArrowAnimation {
+    0% {transform: scale(1);
+        transform: translateX(0)}
+    50% {transform: translateX(10%)}
+    100% {transform: scale(1.2);
+        transform: translateX(0)}
+
+}
+
+@keyframes prevArrowAnimation {
+    0% {transform: scale(1);
+        transform: translateX(0)}
+    50% {transform: translateX(-10%)}
+    100% {transform: scale(1.2);
+        transform: translateX(0)}
+
+}
 
 @keyframes inAnimation {
     0% { transform: scale(1);}
