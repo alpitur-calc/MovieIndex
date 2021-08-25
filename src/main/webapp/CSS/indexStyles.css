@@ -1,13 +1,10 @@
 body {
-
     text-align: center;
     margin: 0;
     background-color: black;
-
 }
 
 .navbar {
-
     background-color: dimgrey;
     width: 100%;
     height: auto;
@@ -15,19 +12,11 @@ body {
     text-align: center;
 }
 
-table {
-
-}
-
 .homeButton {
     width: 5rem;
     height: auto;
 }
 
-.homeButton:hover {
-    transform: scale(2.07);
-    box-shadow: 0 5px 10px 5px white;
-}
 
 .searchBar {
     width: 40rem;
@@ -45,6 +34,10 @@ table {
     background-color: transparent ;
     color: #f3ce13;
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+.signIn:hover {
+    color:white;
 }
 
 
@@ -72,28 +65,23 @@ table.fixed td {
 
 
 .trailerImage{
-
     width: 80rem;
     height: 40rem;
 }
 
 .trailerImage:hover{
-    animation: inAnimation 1s linear forwards; /*forward serve a farla stare in place alla fine */
+    animation: inAnimation 0.1s linear forwards; /*forward serve a farla stare in place alla fine */
 }
-
-
-
-
 
 
 @keyframes inAnimation {
     0% { transform: scale(1);}
     100% { transform: scale(1.03);
-        box-shadow: 0 5px 10px 5px white;}
+        box-shadow: 0 5px 10px 5px #f3ce13;}
 }
 
 @keyframes outAnimation {
     0% { transform: scale(1.03);
-        box-shadow: 0 5px 10px 5px white;}
+        box-shadow: 0 5px 10px 5px #f3ce13;}
     100% { transform: scale(1);}
 }
