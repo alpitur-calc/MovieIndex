@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    text-align: center;
+    background-color: lightslategrey ;
+}
+
+#userNameText{
+    display: block;
+    font-size: 2rem;
+    margin: 0 auto 0;
+    color: #f3ce13;
+}
+
+
+
+.profilePicture {
+    border-radius: 50%;
+}
+
+.watchlist{
+    margin-top: 10rem;
+    display: inline-block;
+}
+
+.title{
+    text-align: left;
+}
+
+#yourWatchlist{
+    margin-left: 0;
+}
+
+.editPicture{
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    border-color: black;
+    border-width: 10px;
+    margin: 0;
+}
+
+.copyright{
+    color: white;
+}
+
+footer{
+    background-color: black;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+}
