@@ -1,3 +1,5 @@
+
+html { height: 100%; }
 body{
     margin: 0;
     text-align: center;
@@ -29,6 +31,10 @@ body{
     margin-left: 0;
 }
 
+.topProfile {
+    position: relative;
+}
+
 .editPicture{
     position: absolute;
     top: 0;
@@ -45,6 +51,13 @@ body{
 footer{
     background-color: black;
     width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.tableNavbar {
+    margin: 0 auto;
+    display: inline-block;
 }
 
 .navbar {
@@ -52,18 +65,13 @@ footer{
     background-color: dimgrey;
     width: 100%;
     height: auto;
-    position: fixed;
+    position: relative;
+    margin-bottom: 2rem;
     text-align: center;
-    margin: auto;
 }
 
 .homeButton {
     width: 5rem;
-    height: auto;
-}
-
-.homeButton {
-    wodth: 5rem;
     height: auto;
 }
 
@@ -75,12 +83,17 @@ footer{
 .searchBar {
     width: 40rem;
 }
-/*cazzazzo*/
+
 
 .signIn {
     background-color: transparent ;
     color: #f3ce13;
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+
+.signIn:hover {
+    color:white;
 }
 
 .profileButton {
@@ -89,6 +102,16 @@ footer{
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
 }
 
-.signIn:hover {
-    color:white;
+
+table.fixed {
+    width: 20%;
+    height: auto;
+    table-layout: fixed;
+    display: block;
+    margin: 0;
+}
+
+table.fixed td {
+    width: 10px;
+    height: auto;
 }

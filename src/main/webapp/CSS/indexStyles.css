@@ -4,56 +4,6 @@ body {
     background-color: black;
 }
 
-.tableNavbar {
-    margin: 0 auto;
-    display: inline-block;
-
-}
-
-.navbar {
-    display: block;
-    background-color: dimgrey;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    text-align: center;
-    margin: auto;
-}
-
-
-
-.homeButton {
-    width: 5rem;
-    height: auto;
-}
-
-.homeButton:hover {
-    transform: scale(1.15);
-}
-
-
-.searchBar {
-    width: 40rem;
-}
-
-
-.signIn {
-    background-color: transparent ;
-    color: #f3ce13;
-    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
-}
-
-.profileButton {
-    background-color: transparent ;
-    color: #f3ce13;
-    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
-}
-
-.signIn:hover {
-    color:white;
-}
-
-
 .trailersRoll{
 
     display: inline-block;
@@ -61,18 +11,7 @@ body {
     margin-top: 5rem;
 }
 
-table.fixed {
-    width: 20%;
-    height: auto;
-    table-layout: fixed;
-    display: block;
-    margin: 0;
-}
 
-table.fixed td {
-    width: 10px;
-    height: auto;
-}
 
 .trailerArrow.next:hover{
     animation: nextArrowAnimation 0.5s linear forwards;
@@ -119,4 +58,67 @@ table.fixed td {
     0% { transform: scale(1.03);
         box-shadow: 0 5px 10px 5px #f3ce13;}
     100% { transform: scale(1);}
+}
+
+.tableNavbar {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.navbar {
+    display: block;
+    background-color: dimgrey;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+
+.homeButton {
+    width: 5rem;
+    height: auto;
+}
+
+.homeButton:hover {
+    transform: scale(1.15);
+}
+
+
+.searchBar {
+    width: 40rem;
+}
+
+
+.signIn {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+
+.signIn:hover {
+    color:white;
+}
+
+.profileButton {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+
+table.fixed {
+    width: 20%;
+    height: auto;
+    table-layout: fixed;
+    display: block;
+    margin: 0;
+}
+
+table.fixed td {
+    width: 10px;
+    height: auto;
 }
