@@ -74,3 +74,40 @@ table.fixed td {
     width: 10px;
     height: auto;
 }
+
+.signInBox{
+    background: whitesmoke;
+    margin-left: 22%;
+    margin-right: 22%;
+    padding: 1% 10%;
+    top: 60px;
+    position: relative;
+    height: auto;
+}
+
+.register {
+    background-color: #D1C025;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register:hover {
+    opacity: 0.6;
+}
+
+.campi{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.container{
+    text-align: left;
+}
