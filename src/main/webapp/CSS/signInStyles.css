@@ -1,0 +1,76 @@
+body {
+    text-align: center;
+    margin: 0;
+    background-color: black;
+}
+
+.tableNavbar {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.navbar {
+    display: block;
+    background-color: dimgrey;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    text-align: center;
+    margin: auto;
+}
+
+.homeButton {
+    width: 5rem;
+    height: auto;
+}
+
+.homeButton:hover {
+    transform: scale(1.15);
+}
+
+
+.searchBar {
+    width: 40rem;
+}
+
+.verticalLine {
+    margin: 10px;
+    width: 5px;
+    color: aqua;
+    height: 10px;
+}
+
+.signIn {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+.profileButton {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+.signIn:hover {
+    color:white;
+}
+
+.trailersRoll{
+    display: inline-block;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+table.fixed {
+    width: 20%;
+    height: auto;
+    table-layout: fixed;
+    display: block;
+    margin: 0;
+}
+
+table.fixed td {
+    width: 10px;
+    height: auto;
+}
