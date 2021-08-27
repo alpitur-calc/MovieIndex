@@ -4,7 +4,7 @@ body {
     background-color: black;
 }
 
-.register {
+.log {
     background-color: #f3ce13;
     color: black;
     font-weight: bold;
@@ -15,7 +15,7 @@ body {
     width: 100%;
 }
 
-.register:hover {
+.log:hover {
     opacity: 0.6;
 }
 
@@ -29,11 +29,10 @@ body {
 }
 
 .container{
-    font-family: Arial, Helvetica, sans-serif;
     text-align: left;
 }
 
-.signInBox{
+.logInBox{
     background: gainsboro;
     margin-left: 22%;
     margin-right: 22%;
