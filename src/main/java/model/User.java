@@ -8,7 +8,7 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String descrizione;
+    private String biography;
     private Image profileImage;
     private java.util.List<Movie> watchList;
 
@@ -36,12 +36,12 @@ public class User {
         this.email = email;
     }
 
-    public String getDescrizione() {
-        return descrizione;
+    public String getBiography() {
+        return biography;
     }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+    public void setBiography(String Biography) {
+        this.biography = Biography;
     }
 
     public Image getProfileImage() {
