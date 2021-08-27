@@ -3,14 +3,14 @@ html { height: 100%; }
 body{
     margin: 0;
     text-align: center;
-    background-color: lightslategrey ;
+    background-color: gainsboro ;
 }
 
 #userNameText{
     display: block;
     font-size: 2rem;
     margin: 0 auto 0;
-    color: #f3ce13;
+    color: #D1C025;
 }
 
 
@@ -44,6 +44,10 @@ body{
     margin: 0;
 }
 
+.editPicture:hover{
+    font-size: 2.3rem;
+}
+
 .copyright{
     color: white;
 }
@@ -53,65 +57,4 @@ footer{
     width: 100%;
     position: fixed;
     bottom: 0;
-}
-
-.tableNavbar {
-    margin: 0 auto;
-    display: inline-block;
-}
-
-.navbar {
-    display: block;
-    background-color: dimgrey;
-    width: 100%;
-    height: auto;
-    position: relative;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.homeButton {
-    width: 5rem;
-    height: auto;
-}
-
-.homeButton:hover {
-    transform: scale(1.15);
-}
-
-
-.searchBar {
-    width: 40rem;
-}
-
-
-.signIn {
-    background-color: transparent ;
-    color: #f3ce13;
-    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
-}
-
-
-.signIn:hover {
-    color:white;
-}
-
-.profileButton {
-    background-color: transparent ;
-    color: #f3ce13;
-    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
-}
-
-
-table.fixed {
-    width: 20%;
-    height: auto;
-    table-layout: fixed;
-    display: block;
-    margin: 0;
-}
-
-table.fixed td {
-    width: 10px;
-    height: auto;
 }
