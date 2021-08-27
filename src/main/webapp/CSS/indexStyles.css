@@ -20,6 +20,8 @@ body {
     margin: auto;
 }
 
+
+
 .homeButton {
     width: 5rem;
     height: auto;
@@ -34,13 +36,6 @@ body {
     width: 40rem;
 }
 
-.verticalLine {
-
-    margin: 10px;
-    width: 5px;
-    color: aqua;
-    height: 10px;
-}
 
 .signIn {
     background-color: transparent ;

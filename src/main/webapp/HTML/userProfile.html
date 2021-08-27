@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Profilo utente</title>
-    <link rel="stylesheet" href = "/../CSS/userProfileStyles.css">
+    <link rel="stylesheet" href = "/CSS/userProfileStyles.css">
 </head>
 <body>
 
-    <header>
+
+    <div class = "navbar">
+
+        <div class = "tableNavbar">
+            <table cellspacing="5" >
+                <tr>
+                    <td> <a href = "index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
+                    <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
+                    <td><label class="signIn">Sign In</label></td>
+                    <td>   <a href="HTML/userProfile.html"><label class = "profileButton">Nome Profilo</label></a> </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div>
         <img class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
         <label class = "editPicture">  ✏️</label>
         <h2 id = "userNameText">Nome Utente</h2>
-    </header>
+    </div>
 
     <div class = "watchlist">
         <div class = "title">

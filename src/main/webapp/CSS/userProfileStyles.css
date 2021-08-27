@@ -12,7 +12,6 @@ body{
 }
 
 
-
 .profilePicture {
     border-radius: 50%;
 }
@@ -45,9 +44,51 @@ body{
 
 footer{
     background-color: black;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    display: block;
     width: 100%;
+}
+
+.navbar {
+    display: block;
+    background-color: dimgrey;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    text-align: center;
+    margin: auto;
+}
+
+.homeButton {
+    width: 5rem;
+    height: auto;
+}
+
+.homeButton {
+    wodth: 5rem;
+    height: auto;
+}
+
+.homeButton:hover {
+    transform: scale(1.15);
+}
+
+
+.searchBar {
+    width: 40rem;
+}
+/**/
+
+.signIn {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+.profileButton {
+    background-color: transparent ;
+    color: #f3ce13;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
+.signIn:hover {
+    color:white;
 }
