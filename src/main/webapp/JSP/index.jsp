@@ -16,7 +16,7 @@
                     <tr>
                         <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                         <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                        <td>   <a href="/register"><label class="signIn">Log In</label></a></td>
+                        <td>   <a href="/logIn"><label class="signIn">Log In</label></a></td>
                         <td> <div class="dropdown">
                             <button class="dropbtn">Nome Utente</button>
                             <div class="dropdown-content">
