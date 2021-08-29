@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Log in</title>
     <link rel="stylesheet" href = "/CSS/navbar.css">
-    <link rel="stylesheet" href="/CSS/signInStyles.css">
+    <link rel="stylesheet" href="/CSS/logInStyles.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <tr>
                 <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                 <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                <td>   <a href="/HTML/signIn.html"><label class="signIn">Sign In</label></a></td>
+                <td>   <a href="/HTML/signIn.html"><label class="signIn">Log In</label></a></td>
                 <td> <div class="dropdown">
                     <button class="dropbtn">Nome Utente</button>
                     <div class="dropdown-content">
@@ -32,21 +32,45 @@
 </div>
 
 <form class="logInBox" action="index.html" method="post">
-
     <div class="container">
-        <label><b>Username</b></label>
-        <input class="field" type="text" placeholder="Username" name="uname" required>
+        <div class="row">
+            <div class="vl"></div>
 
-        <label><b>Password</b></label>
-        <input class="field" type="password" placeholder="Password" name="psw" required>
+            <div class="col">
+                <a href="#" class="field fb btn">
+                    <i class="fa fa-facebook fa-fw"></i> Login con Facebook
+                </a>
 
-        <button class="log" type="submit">Accedi</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Resta connesso
-        </label>
+                <a href="#" class="field google btn">
+                    <i class="fa fa-google fa-fw"></i> Login con Google+
+                </a>
+            </div>
+
+            <div class="col">
+
+                <input class="field" type="text" name="username" placeholder="Username" required>
+                <input class="field" type="password" name="password" placeholder="Password" required>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Resta connesso
+                </label>
+                <input class="field log" type="submit" value="Accedi">
+
+            </div>
+
+        </div>
     </div>
-
 </form>
+
+<div class="bottom-container">
+    <div class="row">
+        <div class="col">
+            <a href="/HTML/signIn.html" style="color:white" class="field">Registrati</a>
+        </div>
+        <div class="col">
+            <a href="#" style="color:white" class="field">Password Dimenticata?</a>
+        </div>
+    </div>
+</div>
 
 </body>
 
