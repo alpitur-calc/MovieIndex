@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+body{
+    background: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainDiv{
+    width: 1036px;
+    margin: 0 auto 40px;
+    background: #B2B1B9;
+    position: relative;
+    box-shadow: 0 0 3px rgb(0 0 0 / 39%);
+    border-radius: 10px;
+}
+
+
+.movieContainer{
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+
+
+}
+
+.topContainer{
+    display: flex;
+
+}
+
+.leftPanel img{
+    max-height: 377px;
+    max-width: 271px;
+    border-radius: 10px;
+}
+
+.rightPanel{
+    text-align: center;
+    flex-grow: 1;
+}
+
+.rightPanel h1{
+    color: black;
+}
+
+.moviePlot{
+
+    font-size: 24px;
+    text-align: justify;
+    overflow-y: auto;
+    max-height: 234px;
+    padding: 40px;
+    display: flex;
+}
+
+.overallRating{
+    float: left;
+    margin-left: 40px;
+    margin-top: 5px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    padding: 2px 5px;
+    box-shadow: 2px 4px 10px black;
+}
+
+.overallRating:hover{
+    transform: scale(1.07);
+    box-shadow: 3px 5px 10px black;
+}
+hr {
+    border-style: dotted none none;
+    border-width: 5px;
+    border-color: gainsboro;
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+    top: 20px;
+}
+
+
+ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+}
+
+.review{
+    width:95%;
+    border-radius: 8px 8px 8px 8px;
+    background: gainsboro;
+    padding: 15px;
+    text-align: justify;
+    margin: 40px 0;
+    box-shadow: 5px 10px 11px black;
+}
+
+.review:hover{
+    transform: scale(1.03);
+    box-shadow: 10px 15px 11px black;
+}
+
+.ratingAndAuthor{
+    display: flex;
+    background-color: white;
+    width: min-content;
+    border-radius: 15px;
+    padding: 4px;
+    position: relative;
+    left: 14px;
+    box-shadow: 5px 10px 8px grey;
+}
+
+
+
+.rating, .author{
+    margin-right: 20px;
+}
+
+.rating{
+    font-size: 25px;
+
+}
+
+.author{
+    position: relative;
+    left:6px;
+    top:7px;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
+.author p{
+    padding: 0;
+}
+
+.reviewContent{
+    margin-top: 10px;
+    padding: 0 15px;
+}
+
+.date{
+    display: inline-block;
+    margin: 7px 12px ;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    padding: 2px;
+    box-shadow: 3px 7px 8px grey;
+}
+
