@@ -16,11 +16,11 @@
             <tr>
                 <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                 <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                <td>   <a href="/HTML/signIn.html"><label class="signIn">Log In</label></a></td>
+                <td>   <a href="/JSP/signIn.html"><label class="signIn">Log In</label></a></td>
                 <td> <div class="dropdown">
                     <button class="dropbtn">Nome Utente</button>
                     <div class="dropdown-content">
-                        <a href="/HTML/userProfile.html">Profilo</a>
+                        <a href="/JSP/userProfile.html">Profilo</a>
                         <a href="#">Log out</a>
                         <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
                     </div>
@@ -31,7 +31,7 @@
 
 </div>
 
-<form class="signInBox" action="signIn.html" method="post">
+<form class="signInBox" action="/doRegister" method="POST">
 
     <div class="container">
         <label><b>Username</b></label>
@@ -41,16 +41,17 @@
         <input class="field" type="email" placeholder="Email" name="email" required>
 
         <label><b>Password</b></label>
-        <input class="field" type="password" placeholder="Password" name="password" required>
+        <input class="field" type="password" placeholder="Password" name="password" id="password" required>
 
         <label><b>Conferma Password</b></label>
-        <input class="field" type="password" placeholder="Conferma Password" name="repassword" required>
+        <input class="field" type="password" placeholder="Conferma Password" name="repassword" id="repassword"  required>
 
         <button class="register" type="submit">Registrati</button>
     </div>
 
 </form>
 
+<script src="/JS/signIn.js" charset="utf-8"></script>
 </body>
 
 </html>
