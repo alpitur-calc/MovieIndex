@@ -17,7 +17,6 @@ import java.util.ArrayList;
 @Controller
 public class signInController {
 
-    // username = username, email = email, pass = password, repass = repassword
     @GetMapping("/register")
     @ResponseBody
     public String register(){
@@ -30,7 +29,7 @@ public class signInController {
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey(username);
         if(user != null){
-            return "Utente già esistente.";
+            return "signIn";
         }
         user = new User();
 
@@ -38,7 +37,6 @@ public class signInController {
         user.setEmail(email);
         user.setPassword(password);
         user.setBiography("");
-       // BufferedImage img = ImageIO.rea;
         user.setProfileImage(null);
         user.setWatchList(new ArrayList<Movie>());
 
