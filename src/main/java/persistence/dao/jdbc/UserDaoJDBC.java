@@ -51,7 +51,8 @@ public class UserDaoJDBC implements UserDao {
     public void save(User user) {
         try {
             Connection conn = dataSource.getConnection();
-            String query = "INSERT INTO user VALUES(?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO public.user(username, password, email, biography, profileimage, watchlist)" +
+                    "       VALUES(?, ?, ?, ?, ?, ?);";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, user.getUsername());
             st.setString(2, encrypt(user.getPassword()));
@@ -59,7 +60,12 @@ public class UserDaoJDBC implements UserDao {
             st.setString(3, user.getEmail());
             st.setString(4, user.getBiography());
 
-            st.setBytes(5, extractBytes(user.getProfileImage()));
+            if(user.getProfileImage() != null){
+                st.setBytes(5, extractBytes(user.getProfileImage()));
+            }
+            else{
+                st.setBytes(5 , null);
+            }
 
             //Converting Arraylist to SQL Array type
             List<Movie> list = user.getWatchList();
@@ -67,7 +73,7 @@ public class UserDaoJDBC implements UserDao {
             Array array = conn.createArrayOf("Integer",data);
 
             st.setArray(6, array);
-            ((PreparedStatement) st).executeUpdate();
+            st.executeUpdate();
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -111,7 +117,7 @@ public class UserDaoJDBC implements UserDao {
         User user = null;
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM user WHERE username = ?";
+            String query = "SELECT * FROM public.user WHERE username = ?;";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
@@ -130,7 +136,7 @@ public class UserDaoJDBC implements UserDao {
         User user = null;
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM user WHERE email = ?";
+            String query = "SELECT * FROM public.user WHERE email = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, email);
             ResultSet rs = st.executeQuery();
@@ -149,7 +155,7 @@ public class UserDaoJDBC implements UserDao {
         List<User> users = new ArrayList<User>();
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM user";
+            String query = "SELECT * FROM public.user";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
@@ -166,7 +172,7 @@ public class UserDaoJDBC implements UserDao {
     public void update(User updatedUser, User currentUser) {
         try {
             Connection conn = dataSource.getConnection();
-            String update = "UPDATE user SET username = ?, password = ?, email = ?," +
+            String update = "UPDATE public.user SET username = ?, password = ?, email = ?," +
                     "                        biography = ?, profileimage = ?, watchlist = ? WHERE username = ?";
             PreparedStatement st = conn.prepareStatement(update);
             if(!updatedUser.getUsername().equals(""))
@@ -206,7 +212,7 @@ public class UserDaoJDBC implements UserDao {
     public void delete(User user) {
         try {
             Connection conn = dataSource.getConnection();
-            String delete = "DELETE FROM user WHERE username = ? ";
+            String delete = "DELETE FROM public.user WHERE username = ? ";
             PreparedStatement st = conn.prepareStatement(delete);
             st.setString(1, user.getUsername());
             st.executeUpdate();

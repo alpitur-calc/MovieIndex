@@ -11,5 +11,5 @@ public interface MovieDao {
     Movie findByPrimaryKey(int movieId); //Retrieve
     List<Movie> findAll();
     void update(Movie updatedMovie, Movie currentMovie); //Update
-    void delete(Movie Movie); //Delete
+    void delete(Movie movie); //Delete
 }

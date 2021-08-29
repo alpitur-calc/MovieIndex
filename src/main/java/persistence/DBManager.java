@@ -1,5 +1,12 @@
 package persistence;
 
+import persistence.dao.MovieDao;
+import persistence.dao.ReviewDao;
+import persistence.dao.UserDao;
+import persistence.dao.jdbc.MovieDaoJDBC;
+import persistence.dao.jdbc.ReviewDaoJDBC;
+import persistence.dao.jdbc.UserDaoJDBC;
+
 public class DBManager {
 
     private static DBManager instance = null;
@@ -29,6 +36,16 @@ public class DBManager {
         return dataSource;
     }
 
+    public UserDao userDao(){
+        return new UserDaoJDBC(dataSource);
+    }
 
+    public MovieDao movieDao(){
+        return new MovieDaoJDBC(dataSource);
+    }
+
+    public ReviewDao reviewDao(){
+        return new ReviewDaoJDBC(dataSource);
+    }
 
 }
