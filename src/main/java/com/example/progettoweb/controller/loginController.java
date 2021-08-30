@@ -1,5 +1,6 @@
 package com.example.progettoweb.controller;
 
+import model.Encrypter;
 import model.User;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
@@ -13,9 +14,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class loginController {
 
-    private boolean check(String pass, String DBPass){
-        return BCrypt.checkpw(pass, DBPass);
-    }
+
 
     @GetMapping("/logIn")
     public String logIn(){
@@ -25,12 +24,10 @@ public class loginController {
     @PostMapping("/doLogIn")
     public String doLogIn(HttpSession session, @RequestParam String username, @RequestParam String password){
         User user = DBManager.getInstance().userDao().findByPrimaryKey(username);
-
-        if(user != null && check(password, user.getPassword())){
-            session.setAttribute("userlogged", username);
+        if(user != null && Encrypter.check(password, user.getPassword())){
+            session.setAttribute("userlogged", user.getUsername());
             // userlogged sarà nella session e vi si accede con ${userlogged}
             // <c:if test=${userlogged == null}></c if>
-
         }
         return "index";
 

@@ -1,5 +1,6 @@
 package persistence.dao.jdbc;
 
+import model.Encrypter;
 import model.Movie;
 import model.User;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -39,14 +40,6 @@ public class UserDaoJDBC implements UserDao {
         }
     }
 
-    private String encrypt(String password){
-        return BCrypt.hashpw(password, BCrypt.gensalt(12));
-    }
-
-    public static Boolean check(String currentPassword, String dbPassword) {
-        return BCrypt.checkpw(currentPassword, dbPassword);
-    }
-
     @Override
     public void save(User user) {
         try {
@@ -55,8 +48,7 @@ public class UserDaoJDBC implements UserDao {
                     "       VALUES(?, ?, ?, ?, ?, ?);";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, user.getUsername());
-            st.setString(2, encrypt(user.getPassword()));
-            st.setString(2, user.getPassword());
+            st.setString(2, Encrypter.encrypt(user.getPassword()));
             st.setString(3, user.getEmail());
             st.setString(4, user.getBiography());
 
@@ -181,7 +173,7 @@ public class UserDaoJDBC implements UserDao {
                 st.setString(1, currentUser.getUsername());
 
             if(!updatedUser.getPassword().equals(""))
-                st.setString(2, encrypt(updatedUser.getPassword()));
+                st.setString(2, Encrypter.encrypt(updatedUser.getPassword()));
             else {
                 st.setString(2, currentUser.getPassword());
             }
