@@ -23,14 +23,22 @@ public class loginController {
     }
 
     @PostMapping("/doLogIn")
-    //public boolean doLogIn(HttpSession session, @RequestParam String username, @RequestParam String password){
-    public boolean doLogIn(@RequestParam String username, @RequestParam String password){
+    public String doLogIn(HttpSession session, @RequestParam String username, @RequestParam String password){
         User user = DBManager.getInstance().userDao().findByPrimaryKey(username);
-        if(user != null && check(password, user.getPassword())){
-            //session.setAttribute("userlogged", username);
-            return true;
-        }
-        return false;
 
+        if(user != null && check(password, user.getPassword())){
+            session.setAttribute("userlogged", username);
+            // userlogged sarà nella session e vi si accede con ${userlogged}
+            // <c:if test=${userlogged == null}></c if>
+
+        }
+        return "index";
+
+    }
+
+    @GetMapping("doLogOut")
+    public String doLogOut(HttpSession session){
+        session.invalidate();
+        return "index";
     }
 }
