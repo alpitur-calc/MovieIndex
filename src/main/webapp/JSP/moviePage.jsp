@@ -12,6 +12,8 @@
 </head>
 <body>
 
+
+
 <div class = "navbar">
     <div class = "tableNavbar">
         <table cellspacing="5" >
@@ -54,7 +56,7 @@
 
                         In hac habitasse platea dictumst. Sed nisl tortor, euismod sit amet maximus quis, laoreet ac eros. Sed ut erat quis neque rutrum aliquam vitae a turpis. Fusce facilisis bibendum dictum. Morbi consectetur eu nisl vel volutpat. Pellentesque eu velit egestas, pellentesque diam vitae, commodo tortor. Pellentesque non dolor nec elit fermentum consectetur quis non nibh. Integer quis efficitur lorem. Curabitur tristique purus feugiat consequat malesuada. Aenean dignissim quis diam quis sagittis. Donec tortor sem, ultrices pharetra mauris id, suscipit auctor ipsum. Ut mattis orci nec vestibulum interdum. Praesent suscipit mi sed lacus luctus dictum. Cras eu turpis mauris. Duis ullamcorper nibh non enim faucibus suscipit. Vestibulum lacinia dui risus, sed aliquet justo suscipit ac.</p>
                 </div>
-                <h3 class="overallRating">Overall Rating: ⭐⭐⭐⭐⭐</h3>
+                <h3 class="overallRating">Overall Rating: *****</h3>
             </div>
         </div>
 
@@ -65,8 +67,8 @@
                 <li>
                     <div class = "review">
                         <div class = "ratingAndAuthor">
-                            <div class="author">Nome Recensore</div>
-                            <div class = "rating">⭐⭐⭐⭐⭐</div>
+                            <div class="author">Nome RecensoreLunghissimissimo</div>
+                            <div class = "rating">*****</div>
                         </div>
                         <div class = "reviewContent"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed.
 
@@ -85,7 +87,7 @@
                     <div class = "review">
                         <div class = "ratingAndAuthor">
                             <div class="author">Nome Recensore</div>
-                            <div class = "rating">⭐⭐⭐⭐⭐</div>
+                            <div class = "rating">*****</div>
                         </div>
                         <div class = "reviewContent"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed.
 
@@ -104,7 +106,7 @@
                     <div class = "review">
                         <div class = "ratingAndAuthor">
                             <div class="author">Nome Recensore</div>
-                            <div class = "rating">⭐⭐⭐⭐⭐</div>
+                            <div class = "rating">*****</div>
                         </div>
                         <div class = "reviewContent"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed.
 
@@ -123,7 +125,7 @@
                     <div class = "review">
                         <div class = "ratingAndAuthor">
                             <div class="author">Nome Recensore</div>
-                            <div class = "rating">⭐⭐⭐⭐⭐</div>
+                            <div class = "rating">*****</div>
                         </div>
                         <div class = "reviewContent"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed.
 
@@ -142,7 +144,26 @@
                     <div class = "review">
                         <div class = "ratingAndAuthor">
                             <div class="author">Nome Recensore</div>
-                            <div class = "rating">⭐⭐⭐⭐⭐</div>
+                            <div class = "rating">*****</div>
+                        </div>
+                        <div class = "reviewContent"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed.
+
+                            Phasellus leo nisi, condimentum sed sollicitudin vel, laoreet finibus nisl. Pellentesque gravida ante eu purus sollicitudin, nec eleifend velit vehicula. Quisque vitae ex hendrerit, ultricies libero nec, porta velit. Suspendisse consectetur et odio nec iaculis. Integer ut posuere ipsum. Sed orci purus, egestas eget condimentum in, sollicitudin eu nulla. Vestibulum vel sem pellentesque, feugiat nulla non, laoreet dui. Ut ut tellus fringilla, porta ipsum non, dignissim sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sed urna ornare, posuere risus eu, ultricies metus. Suspendisse tristique lacus nec vulputate consectetur. Fusce a vulputate turpis, quis varius mi. Aliquam ut consequat nunc. Nullam eget molestie diam.
+
+                            Aliquam et mattis magna. Phasellus in placerat felis. Suspendisse potenti. Vivamus sodales libero eget vestibulum consectetur. Mauris sit amet finibus erat. Etiam efficitur orci a elit ultrices porta nec non odio. Cras quis consequat urna. Etiam augue tortor, hendrerit consequat tristique fermentum, sollicitudin vel sem. Sed sapien massa, pellentesque et faucibus vitae, fringilla et odio. Suspendisse ullamcorper, dolor nec accumsan molestie, libero mauris pretium nisi, ac molestie purus risus in elit.
+
+                            Aliquam ante quam, ornare ut tincidunt non, pulvinar non lorem. Cras non vestibulum arcu. Mauris tempor dignissim augue, laoreet rutrum ligula finibus in. Mauris ut lacus gravida, suscipit augue sed, feugiat urna. Pellentesque condimentum porta metus et faucibus. Fusce consequat dui in nibh cursus mollis in nec nunc. Sed fringilla libero magna, et tincidunt risus accumsan ac. Aenean hendrerit laoreet auctor. Duis at tempus neque. Fusce blandit, velit eget mattis semper, nisi metus maximus urna, quis sagittis mi massa sed lectus. Cras mollis augue a bibendum scelerisque. Sed vel elementum lectus.
+
+                            Vestibulum ut dolor eu neque egestas vehicula vel id mi. Phasellus non turpis rhoncus, consectetur lorem sit amet, faucibus metus. Mauris feugiat scelerisque elementum. Nulla rhoncus lacus non urna mollis iaculis. Suspendisse tincidunt dui et dapibus vulputate. Fusce pretium, nulla lobortis facilisis sodales, felis neque porttitor nunc, a accumsan massa dolor eget nisl. Vestibulum dignissim et dolor hendrerit auctor. Pellentesque at molestie tellus. Cras eu nunc in neque convallis molestie eu eu mauris. Nam non accumsan quam.</p></div>
+                        <div class = "date">12/03/21</div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class = "review">
+                        <div class = "ratingAndAuthor">
+                            <div class="author">Nome Recensore</div>
+                            <div class = "rating">*****</div>
                         </div>
                         <div class = "reviewContent"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed.
 
@@ -162,7 +183,7 @@
         </div>
     </div>
 
-
+    <script src="/JS/moviePage.js" charset="utf-8"></script>
 </div>
 
 

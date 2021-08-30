@@ -31,7 +31,7 @@
 
 </div>
 
-<form class="logInBox" action="index.jsp" method="post">
+<form class="logInBox" action="/doLogIn" method="post">
     <div class="container">
         <div class="row">
             <div class="vl"></div>

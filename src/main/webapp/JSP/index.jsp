@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +20,21 @@
                     <tr>
                         <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                         <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
+                        <!-- <td>   <a href="/logIn"><label class="signIn">Log In</label></a></td> -->
+                        <c:if test= "${ userlogged == null}">
                         <td>   <a href="/logIn"><label class="signIn">Log In</label></a></td>
+                        </c:if>
+
+                        <c:if test= "${ userlogged != null}">
                         <td> <div class="dropdown">
-                            <button class="dropbtn">Nome Utente</button>
+                            <button class="dropbtn">${userLogged}</button>
                             <div class="dropdown-content">
-                                <a href="/JSP/userProfile.html">Profilo</a>
-                                <a href="#">Log out</a>
+                                <a href="/userProfile">Profilo</a>
+                                <a href="/doLogOut">Log out</a>
                                 <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
                             </div>
                         </div></td>
+                        </c:if>
                     </tr>
                 </table>
             </div>
@@ -34,7 +44,7 @@
             <table cellspacing="5" class="fixed">
                 <tr>
                     <td><img src="../images/prev.png" class="trailerArrow prev"></td>
-                    <td><a href = "/JSP/moviePage.html"><img class = "trailerImage" src="../images/trailerImages/0.jpg" ></a></td>
+                    <td><a href = "/movie"><img class = "trailerImage" src="../images/trailerImages/0.jpg" ></a></td>
                     <td><img src = "../images/next.png" class="trailerArrow next"></td>
                 </tr>
             </table>
