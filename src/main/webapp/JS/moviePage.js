@@ -9,6 +9,7 @@ function Review(author, rating, date, content){
 
 let reviewsList = document.querySelector(".bottomContainer ul");
 const apiURL = "https://api.themoviedb.org/3/movie/550?api_key=dc2d670278d03763e2694d2c963a117f";
+const urlImmagini = "https://image.tmdb.org";
 
 
 function addReview(review){
@@ -118,7 +119,7 @@ async function cazzo(){
         type:'GET',
         url: apiURL + "&id=297761" ,
         success:function (result){
-            document.querySelector(".leftPanel img").setAttribute("src", (apiURL + result.poster_path));
+            document.querySelector(".leftPanel img").setAttribute("src", (urlImmagini + result.poster_path));
         }
     });
 }
