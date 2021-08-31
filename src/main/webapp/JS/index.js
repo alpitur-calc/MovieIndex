@@ -31,3 +31,5 @@ trailerImage.addEventListener("mouseout", function(){
     this.animation("outAnimation 1s linear");
 
 });
+
+

@@ -6,29 +6,20 @@
     <title>Log in</title>
     <link rel="stylesheet" href = "/CSS/navbar.css">
     <link rel="stylesheet" href="/CSS/logInStyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> type="text/javascript"</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </head>
 
 <body>
 <div class = "navbar">
-
     <div class = "tableNavbar">
         <table cellspacing="5" >
             <tr>
-                <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
+                <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                 <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                <td>   <a href="/JSP/signIn.html"><label class="signIn">Log In</label></a></td>
-                <td> <div class="dropdown">
-                    <button class="dropbtn">Nome Utente</button>
-                    <div class="dropdown-content">
-                        <a href="/JSP/userProfile.html">Profilo</a>
-                        <a href="#">Log out</a>
-                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
-                    </div>
-                </div></td>
             </tr>
         </table>
     </div>
-
 </div>
 
 <form class="logInBox" action="/doLogIn" method="post">
@@ -64,7 +55,7 @@
 <div class="bottom-container">
     <div class="row">
         <div class="col">
-            <a href="/JSP/signIn.html" style="color:white" class="field">Registrati</a>
+            <a href="/register" style="color:white" class="field">Registrati</a>
         </div>
         <div class="col">
             <a href="#" style="color:white" class="field">Password Dimenticata?</a>

@@ -67,6 +67,7 @@ body{
     border-radius: 20px;
     padding: 2px 5px;
     box-shadow: 2px 4px 10px black;
+    transition: all 0.2s ease-in-out;
 }
 
 .overallRating:hover{
@@ -102,11 +103,13 @@ li{
     text-align: justify;
     margin: 40px 0;
     box-shadow: 5px 10px 11px black;
+    transition: all 0.2s ease-in-out; /*su .review e non sulla pseudo classe hover per avere la tranzisione anche quando ho finito di hoverare*/
 }
 
 .review:hover{
     transform: scale(1.03);
     box-shadow: 10px 15px 11px black;
+
 }
 
 .ratingAndAuthor{

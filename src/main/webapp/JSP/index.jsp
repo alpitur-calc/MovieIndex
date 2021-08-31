@@ -18,7 +18,7 @@
             <div class = "tableNavbar">
                 <table cellspacing="5" >
                     <tr>
-                        <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
+                        <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                         <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
                         <!-- <td>   <a href="/logIn"><label class="signIn">Log In</label></a></td> -->
                         <c:if test= "${ userlogged == null}">
@@ -27,7 +27,7 @@
 
                         <c:if test= "${ userlogged != null}">
                         <td> <div class="dropdown">
-                            <button class="dropbtn">${userLogged}</button>
+                            <button class="dropbtn">${userlogged}</button>
                             <div class="dropdown-content">
                                 <a href="/userProfile">Profilo</a>
                                 <a href="/doLogOut">Log out</a>

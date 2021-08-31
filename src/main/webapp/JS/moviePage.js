@@ -8,7 +8,7 @@ function Review(author, rating, date, content){
 }
 
 let reviewsList = document.querySelector(".bottomContainer ul");
-
+const apiURL = "https://api.themoviedb.org/3/movie/550?api_key=dc2d670278d03763e2694d2c963a117f";
 
 
 function addReview(review){
@@ -59,7 +59,7 @@ function addReview(review){
 
         let moreButton = document.createElement("button");
         moreButton.setAttribute("class", "moreButton");
-        moreButton.innerHTML = "Read More";
+        moreButton.innerHTML = "Read more";
         lastPart.style.display = "none";
 
 
@@ -76,8 +76,11 @@ function addReview(review){
             }
         });
 
+
         contentDiv.appendChild(para);
         contentDiv.appendChild(moreButton);
+
+
     }
 
     else{
@@ -94,6 +97,7 @@ function addReview(review){
 
 }
 
+
 let cacca = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed. Phasellus leo nisi, condimentum sed sollicitudin vel, laoreet finibus nisl. Pellentesque gravida ante eu purus sollicitudin, nec eleifend velit vehicula. Quisque vitae ex hendrerit, ultricies libero nec, porta velit. Suspendisse consectetur et odio nec iaculis. Integer ut posuere ipsum. Sed orci purus, egestas eget condimentum in, sollicitudin eu nulla. Vestibulum vel sem pellentesque, feugiat nulla non, laoreet dui. Ut ut tellus fringilla, porta ipsum non, dignissim sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sed urna ornare, posuere risus eu, ultricies metus. Suspendisse tristique lacus nec vulputate consectetur. Fusce a vulputate turpis, quis varius mi. Aliquam ut consequat nunc. Nullam eget molestie diam. Aliquam et mattis magna. Phasellus in placerat felis. Suspendisse potenti. Vivamus sodales libero eget vestibulum consectetur. Mauris sit amet finibus erat. Etiam efficitur orci a elit ultrices porta nec non odio. Cras quis consequat urna. Etiam augue tortor, hendrerit consequat tristique fermentum, sollicitudin vel sem. Sed sapien massa, pellentesque et faucibus vitae, fringilla et odio. Suspendisse ullamcorper, dolor nec accumsan molestie, libero mauris pretium nisi, ac molestie purus risus in elit. Aliquam ante quam, ornare ut tincidunt non, pulvinar non lorem. Cras non vestibulum arcu. Mauris tempor dignissim augue, laoreet rutrum ligula finibus in. Mauris ut lacus gravida, suscipit augue sed, feugiat urna. Pellentesque condimentum porta metus et faucibus. Fusce consequat dui in nibh cursus mollis in nec nunc. Sed fringilla libero magna, et tincidunt risus accumsan ac. Aenean hendrerit laoreet auctor. Duis at tempus neque. Fusce blandit, velit eget mattis semper, nisi metus maximus urna, quis sagittis mi massa sed lectus. Cras mollis augue a bibendum scelerisque. Sed vel elementum lectus. Vestibulum ut dolor eu neque egestas vehicula vel id mi. Phasellus non turpis rhoncus, consectetur lorem sit amet, faucibus metus. Mauris feugiat scelerisque elementum. Nulla rhoncus lacus non urna mollis iaculis. Suspendisse tincidunt dui et dapibus vulputate. Fusce pretium, nulla lobortis facilisis sodales, felis neque porttitor nunc, a accumsan massa dolor eget nisl. Vestibulum dignissim et dolor hendrerit auctor. Pellentesque at molestie tellus. Cras eu nunc in neque convallis molestie eu eu mauris. Nam non accumsan quam."
 let sla = "Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla "
 let miaRecensione = new Review("Bo", "100", "23/23/23", cacca);
@@ -108,6 +112,18 @@ addReview(new Review("Volpescu", "69", "10/08/23", "Deh pefforza Deh pefforza De
 addReview(new Review("Cippe", "11", "10/08/23", "Noh"));
 
 
+
+async function cazzo(){
+    $.ajax({
+        type:'GET',
+        url: apiURL + "&id=297761" ,
+        success:function (result){
+            document.querySelector(".leftPanel img").setAttribute("src", (apiURL + result.poster_path));
+        }
+    });
+}
+
+cazzo();
 
 
 
