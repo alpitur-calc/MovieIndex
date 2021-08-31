@@ -15,11 +15,11 @@ public class moviePageController {
     @GetMapping("/movie")
     public String moviePage(Model model){
 
-        List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm((Movie) model.getAttribute("selectedmovie"));
+        //List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm((Movie) model.getAttribute("selectedmovie"));
 
-        if(reviews != null){
-            model.addAttribute("reviewsList", reviews);
-        }
+       // if(reviews != null){
+          //  model.addAttribute("reviewsList", reviews);
+        //}
         //In moviePage :
         // <c:ForEach var="review" items=${reviews}> SCORRE TUTTI GLI ELEM DELLA LISTA CHE TROVA NEL MODEL
         //      QUI METTI QUELLO CHE VUOI IN BASE A COME VISUALIZZI LA REVIEW
