@@ -2,7 +2,6 @@ package com.example.progettoweb.controller;
 
 import model.Encrypter;
 import model.User;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class loginController {
-
-
 
     @GetMapping("/logIn")
     public String logIn(){
