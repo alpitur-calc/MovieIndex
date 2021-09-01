@@ -16,7 +16,8 @@ public class userProfileController {
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         if(user != null) {
-            model.addAttribute("user", user);
+            model.addAttribute("username", user.getUsername());
+            model.addAttribute("biography", user.getBiography());
             return "userProfile";
         }
         return "logIn";
