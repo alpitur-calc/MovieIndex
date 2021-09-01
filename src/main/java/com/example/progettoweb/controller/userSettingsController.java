@@ -83,6 +83,7 @@ public class userSettingsController {
             return "userProfile";
         }
 
+        model.addAttribute("setting", "password");
         model.addAttribute("wrongPassword", "false");
         return "/userSetting";
     }
