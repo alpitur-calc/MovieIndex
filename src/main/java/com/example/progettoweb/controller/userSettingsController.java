@@ -1,5 +1,6 @@
 package com.example.progettoweb.controller;
 
+import model.Encrypter;
 import model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,22 +62,28 @@ public class userSettingsController {
     }
 
     @PostMapping("/savePassword")
-    public String sevaPassword(HttpSession session, Model model, @RequestParam String password){
+    public String sevaPassword(HttpSession session, Model model, @RequestParam String oldpassword, @RequestParam String password){
         User currentUser = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         User newUser = new User();
 
-        newUser.setUsername(currentUser.getUsername());
-        newUser.setEmail(currentUser.getEmail());
-        if(password != null){ newUser.setPassword(password); }
-        else{ newUser.setPassword(currentUser.getPassword()); }
-        newUser.setBiography(currentUser.getBiography());
-        newUser.setProfileImage(currentUser.getProfileImage());
-        newUser.setWatchList(currentUser.getWatchList());
+        if(Encrypter.check(oldpassword, currentUser.getPassword())){
+            newUser.setUsername(currentUser.getUsername());
+            newUser.setEmail(currentUser.getEmail());
+            if(password != null){ newUser.setPassword(password); }
+            else{ newUser.setPassword(currentUser.getPassword()); }
+            newUser.setBiography(currentUser.getBiography());
+            newUser.setProfileImage(currentUser.getProfileImage());
+            newUser.setWatchList(currentUser.getWatchList());
 
-        DBManager.getInstance().userDao().update(newUser, currentUser);
+            DBManager.getInstance().userDao().update(newUser, currentUser);
 
-        model.addAttribute("username", newUser.getUsername());
-        model.addAttribute("biography", newUser.getBiography());
-        return "userProfile";
+            model.addAttribute("username", newUser.getUsername());
+            model.addAttribute("biography", newUser.getBiography());
+
+            return "userProfile";
+        }
+
+        model.addAttribute("wrongPassword", "false");
+        return "/userSetting";
     }
 }
