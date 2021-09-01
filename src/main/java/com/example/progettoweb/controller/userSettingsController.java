@@ -2,6 +2,7 @@ package com.example.progettoweb.controller;
 
 import model.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,11 +14,13 @@ import javax.servlet.http.HttpSession;
 public class userSettingsController {
 
     @GetMapping("/userSetting")
-    public String userSettings(HttpSession session){
+    public String userSettings(HttpSession session, Model model){
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
 
         if(user != null){
+            model.addAttribute("username", user.getUsername());
+            model.addAttribute("biography", user.getBiography());
             return "userSetting";
         }
 
