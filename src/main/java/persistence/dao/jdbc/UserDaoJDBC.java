@@ -188,11 +188,17 @@ public class UserDaoJDBC implements UserDao {
             st.setBytes(5, extractBytes(updatedUser.getProfileImage()));
 
             //Converting Arraylist to SQL Array type
+
             List<Movie> list = updatedUser.getWatchList();
-            Integer[] data = list.toArray(new Integer[list.size()]);
-            Array array = conn.createArrayOf("Integer",data);
+            Array array;
+            if(list != null){
+                Integer[] data = list.toArray(new Integer[list.size()]);
+                array = conn.createArrayOf("Integer",data);
+            }
+            else { array = null;}
             st.setArray(6, array);
 
+            st.setString(7, currentUser.getUsername());
             st.executeUpdate();
             conn.close();
         } catch (SQLException e) {
