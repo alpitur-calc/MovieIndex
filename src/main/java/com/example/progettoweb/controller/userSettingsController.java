@@ -42,7 +42,7 @@ public class userSettingsController {
     }
 
     @PostMapping("/saveData")
-    public String saveChanges(HttpSession session, @RequestParam String username, @RequestParam String biography){
+    public String saveChanges(HttpSession session,Model model, @RequestParam String username, @RequestParam String biography){
         User currentUser = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         User newUser = new User();
 
@@ -55,11 +55,13 @@ public class userSettingsController {
 
         DBManager.getInstance().userDao().update(newUser, currentUser);
 
+        model.addAttribute("username", newUser.getUsername());
+        model.addAttribute("biography", newUser.getBiography());
         return "userProfile";
     }
 
     @PostMapping("/savePassword")
-    public String sevaPassword(HttpSession session, @RequestParam String password){
+    public String sevaPassword(HttpSession session, Model model, @RequestParam String password){
         User currentUser = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         User newUser = new User();
 
@@ -73,6 +75,8 @@ public class userSettingsController {
 
         DBManager.getInstance().userDao().update(newUser, currentUser);
 
+        model.addAttribute("username", newUser.getUsername());
+        model.addAttribute("biography", newUser.getBiography());
         return "userProfile";
     }
 }
