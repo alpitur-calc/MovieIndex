@@ -15,13 +15,13 @@
         <div class = "tableNavbar">
             <table cellspacing="5" >
                 <tr>
-                    <td> <a href = "/index.html"> <img src="/images/mamma.png" class = "homeButton"></a></td>
+                    <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                     <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                    <td>  <a href="/JSP/signIn.html"><label class="signIn">Log In</label></a></td>
+                    <td>  <a href="/logIn"><label class="logIn">Log In</label></a></td>
                     <td> <div class="dropdown">
                         <button class="dropbtn">Nome Utente</button>
                         <div class="dropdown-content">
-                            <a href="/JSP/userProfile.html">Profilo</a>
+                            <a href="/userProfile">Profilo</a>
                             <a href="#">Log out</a>
                             <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
                         </div>
@@ -34,8 +34,9 @@
 
     <div class = "topProfile">
         <img class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
-        <label class = "editPicture">  ✏️</label>
+
         <h2 id = "userNameText">Nome Utente</h2>
+        <a href = "/userSetting"><label class = "userSetting"> Impostazioni Utente </label> </a>
     </div>
 
     <div class = "watchlist">

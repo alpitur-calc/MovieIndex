@@ -23,7 +23,7 @@
                 <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
                 <!-- <td>   <a href="/logIn"><label class="signIn">Log In</label></a></td> -->
                 <c:if test= "${ userlogged == null}">
-                    <td>   <a href="/logIn"><label class="signIn">Log In</label></a></td>
+                    <td>   <a href="/logIn"><label class="logIn">Log In</label></a></td>
                 </c:if>
 
                 <c:if test= "${ userlogged != null}">

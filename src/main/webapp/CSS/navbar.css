@@ -31,13 +31,13 @@ a{
     width: 40rem;
 }
 
-.signIn {
+.logIn {
     background-color: transparent ;
     color: #f3ce13;
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
 }
 
-.signIn:hover {
+.logIn:hover {
     color:white;
 }
 
