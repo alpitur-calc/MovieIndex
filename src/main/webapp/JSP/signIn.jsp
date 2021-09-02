@@ -17,14 +17,6 @@
                 <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                 <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
                 <td>   <a href="/logIn"><label class="logIn">Log In</label></a></td>
-                <td> <div class="dropdown">
-                    <button class="dropbtn">Nome Utente</button>
-                    <div class="dropdown-content">
-                        <a href="/userProfile">Profilo</a>
-                        <a href="#">Log out</a>
-                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
-                    </div>
-                </div></td>
             </tr>
         </table>
     </div>
