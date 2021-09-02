@@ -18,9 +18,8 @@ import java.util.ArrayList;
 public class signInController {
 
     @GetMapping("/register")
-    @ResponseBody
     public String register(){
-        return "signIn";
+        return "/signIn";
     }
 
     @PostMapping("/doRegister")
@@ -29,7 +28,7 @@ public class signInController {
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey(username);
         if(user != null){
-            return "signIn";
+            return "/signIn";
         }
         user = new User();
 
@@ -42,7 +41,7 @@ public class signInController {
 
         DBManager.getInstance().userDao().save(user);
 
-        return "index";
+        return "/index";
     }
 
 }

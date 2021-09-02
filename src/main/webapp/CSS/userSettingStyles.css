@@ -16,6 +16,9 @@ body{
 
 .profilePicture {
     border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
 }
 
 .watchlist{
@@ -36,6 +39,7 @@ body{
 }
 
 .editPicture{
+    content:"  ✏️";
     position: absolute;
     top: 0;
     font-size: 2rem;

@@ -42,8 +42,8 @@
 </div>
 
 <div class = "topProfile">
-    <img class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
-    <label class = "editPicture">  ✏️</label>
+    <img id="profile-pic" class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
+
     <h2 id = "userNameText">${ username }</h2>
 </div>
 
@@ -53,6 +53,14 @@
         </c:if>
 
         <c:if test= "${ userlogged != null}">
+
+            <c:if test= "${ setting == 'image' }">
+
+                <input id="profileimage" type="file" name="profileimage" />
+                <button class="confirm" type="submit" onclick="uploadFile()">Conferma</button>
+                <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+
+            </c:if>
 
             <c:if test= "${ setting == 'data' }">
                 <form class="signInBox" action="/saveData" method="POST">
@@ -101,8 +109,10 @@
 </form>
 
 <footer>
-    <h3 class = "copyright">© copiadiritto cazzi e mazzi</h3>
+    <h3 class = "copyright">� copiadiritto cazzi e mazzi</h3>
 </footer>
+
+    <script src="/JS/userSetting.js" charset="utf-8"></script>
 
 </body>
 </html>

@@ -43,8 +43,8 @@
     </div>
 
     <div class = "topProfile">
-        <img class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
-
+        <img class = "profilePicture" src="getProfilePic()" alt="Immagine profilo non caricata">
+        <a href = "/userImage"><label class = "editPicture">  :pencil2:</label></a>
         <h2 id = "userNameText">${ username }</h2>
         <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
         <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
@@ -87,4 +87,17 @@
     </footer>
 
 </body>
+<script>
+    async function getProfilePic(){
+        $.ajax({
+            type:'GET',
+            url: '/getProfileImage',
+            success:function (result){
+                $('#profilePicture').attr('src', `data:image/png;base64,` + result.body);
+            }
+        });
+    }
+
+    getProfilePic();
+</script>
 </html>
