@@ -2,7 +2,6 @@ package com.example.progettoweb.controller;
 
 import model.Encrypter;
 import model.User;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,6 @@ import persistence.DBManager;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpSession;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
 @Controller

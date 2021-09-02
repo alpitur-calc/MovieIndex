@@ -26,7 +26,7 @@ public class UserDaoJDBC implements UserDao {
     }
 
     //Convert image to array of bytes
-    private byte[] extractBytes (Image image) {
+    public byte[] extractBytes (Image image) {
         try {
             // open image
             BufferedImage bufferedImage = (BufferedImage) image;
