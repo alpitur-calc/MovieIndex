@@ -9,7 +9,7 @@
     <title>Setting</title>
 
     <link rel="stylesheet" href = "/CSS/navbar.css">
-    <link rel="stylesheet" href = "/CSS/userProfileStyles.css">
+    <link rel="stylesheet" href = "/CSS/userSettingStyles.css">
 </head>
 <body>
 
@@ -21,15 +21,20 @@
             <tr>
                 <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
                 <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                <td>  <a href="/logIn"><label class="logIn">Log In</label></a></td>
-                <td> <div class="dropdown">
-                    <button class="dropbtn">Nome Utente</button>
-                    <div class="dropdown-content">
-                        <a href="/userProfile">Profilo</a>
-                        <a href="#">Log out</a>
-                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
-                    </div>
-                </div></td>
+                <c:if test= "${ userlogged == null}">
+                    <td>   <a href="/logIn"><label class="logIn">Log In</label></a></td>
+                </c:if>
+
+                <c:if test= "${ userlogged != null}">
+                    <td> <div class="dropdown">
+                        <button class="dropbtn">${userlogged}</button>
+                        <div class="dropdown-content">
+                            <a href="/userProfile">Profilo</a>
+                            <a href="/doLogOut">Log out</a>
+                            <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
+                        </div>
+                    </div></td>
+                </c:if>
             </tr>
         </table>
     </div>
@@ -39,30 +44,57 @@
 <div class = "topProfile">
     <img class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
     <label class = "editPicture">  ✏️</label>
-    <h2 id = "userNameText">Nome Utente</h2>
+    <h2 id = "userNameText">${ username }</h2>
 </div>
 
-<form class="signInBox" action="/saveChanges" method="POST">
     <div class="container">
         <c:if test= "${ userlogged == null}">
 
         </c:if>
 
-
         <c:if test= "${ userlogged != null}">
-            <label><b>Username</b></label>
-            <input class="field" type="text" placeholder="Username" name="username" value="${ username }" required>
 
-            <label><b>Password</b></label>
-            <input class="field" type="password" placeholder="Password" name="password" id="password" required>
+            <c:if test= "${ setting == 'data' }">
+                <form class="signInBox" action="/saveData" method="POST">
 
-            <label><b>Conferma Password</b></label>
-            <input class="field" type="password" placeholder="Conferma Password" name="repassword" id="repassword"  required>
+                    <label><b>Username</b></label>
+                    <input class="field" type="text" name="username" value="${ username }" required>
 
-            <label><b>Biografia</b></label>
-            <textarea class = "biography" name="biography" rows="8" cols="80" value="${ biography }"></textarea>
+                    <label><b>Biografia</b></label>
+                    <textarea class = "biography" name="biography" rows="8" cols="80">${ biography }</textarea>
 
-            <button class="confirm" type="submit">Conferma</button>
+                    <button class="confirm" type="submit">Conferma</button>
+                    <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                </form>
+
+            </c:if>
+
+            <c:if test= "${ setting == 'password' }">
+
+                <c:if test= "${ wrongPassword == 'true' }">
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>ATTENZIONE!</strong> Vecchia Password non corretta.
+                    </div>
+                </c:if>
+
+                <form class="signInBox" action="/savePassword" method="POST">
+
+                    <label><b>Vecchia Password</b></label>
+                    <input class="field" type="password" placeholder="Password" name="oldpassword" required>
+
+                    <label><b>Nuova Password</b></label>
+                    <input class="field" type="password" placeholder="Password" name="password" id="password" required>
+
+                    <label><b>Conferma Password</b></label>
+                    <input class="field" type="password" placeholder="Password" name="repassword" id="repassword"  required>
+
+                    <button class="confirm" type="submit">Conferma</button>
+                    <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                </form>
+
+            </c:if>
+
         </c:if>
 
     </div>
