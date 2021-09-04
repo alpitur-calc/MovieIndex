@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.*;
 import java.util.List;
 
 public class User {
@@ -9,7 +8,7 @@ public class User {
     private String password;
     private String email;
     private String biography;
-    private Image profileImage;
+    private String profileImage;
     private java.util.List<Movie> watchList;
 
     public String getUsername() {
@@ -44,11 +43,11 @@ public class User {
         this.biography = Biography;
     }
 
-    public Image getProfileImage() {
+    public String getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(Image profileImage) {
+    public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
     }
 

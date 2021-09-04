@@ -36,6 +36,9 @@ public class userProfileController {
         if(user != null) {
             model.addAttribute("username", user.getUsername());
             model.addAttribute("biography", user.getBiography());
+            if(user.getProfileImage() != null){ model.addAttribute("profileimage", user.getProfileImage()); }
+            else{ model.addAttribute("profileimage", "default"); }
+
             return "userProfile";
         }
         return "logIn";
@@ -53,13 +56,13 @@ public class userProfileController {
         }catch(IOException e){}
     }*/
 
-    @GetMapping(value = "/getProfileImage", produces = MediaType.IMAGE_PNG_VALUE)
+   /* @GetMapping(value = "/getProfileImage", produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<Resource> image(HttpSession session) throws IOException {
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         Image image = user.getProfileImage();
         UserDaoJDBC userDao = (UserDaoJDBC) DBManager.getInstance().userDao();
         final ByteArrayResource inputStream = new ByteArrayResource(userDao.extractBytes(image));
         return ResponseEntity.status(HttpStatus.OK).contentLength(inputStream.contentLength()).body(inputStream);
-    }
+    }*/
 
 }

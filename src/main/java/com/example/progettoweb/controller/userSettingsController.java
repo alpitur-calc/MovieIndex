@@ -7,13 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import persistence.DBManager;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpSession;
-import java.awt.*;
-import java.io.InputStream;
 
 @Controller
 public class userSettingsController {
@@ -76,6 +72,9 @@ public class userSettingsController {
 
         model.addAttribute("username", newUser.getUsername());
         model.addAttribute("biography", newUser.getBiography());
+        if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
+        else{ model.addAttribute("profileimage", "default"); }
+
         return "userProfile";
     }
 
@@ -97,6 +96,8 @@ public class userSettingsController {
 
             model.addAttribute("username", newUser.getUsername());
             model.addAttribute("biography", newUser.getBiography());
+            if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
+            else{ model.addAttribute("profileimage", "default"); }
 
             return "userProfile";
         }
@@ -107,10 +108,7 @@ public class userSettingsController {
     }
 
     @PostMapping("/saveImage")
-    public String handleFileUpload(HttpSession session, Model model, @RequestParam("profileimage") MultipartFile profileimage ) {
-
-        //if needed
-        //String fileName = profileimage.getOriginalFilename();
+    public String saveImage(HttpSession session, Model model, @RequestParam("profileimage") String profileimage ) {
 
         User currentUser = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         User newUser = new User();
@@ -120,15 +118,14 @@ public class userSettingsController {
             newUser.setEmail(currentUser.getEmail());
             newUser.setPassword(currentUser.getPassword());
             newUser.setBiography(currentUser.getBiography());
-            InputStream is = profileimage.getInputStream();
-            Image img = ImageIO.read(is);
-            newUser.setProfileImage(img);
+            newUser.setProfileImage(profileimage);
             newUser.setWatchList(currentUser.getWatchList());
 
             DBManager.getInstance().userDao().update(newUser, currentUser);
 
             model.addAttribute("username", newUser.getUsername());
             model.addAttribute("biography", newUser.getBiography());
+            model.addAttribute("profileimage", newUser.getProfileImage());
             return "userProfile";
         }catch (Exception e){}
 
