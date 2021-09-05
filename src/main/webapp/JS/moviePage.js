@@ -1,5 +1,3 @@
-
-
 function Review(author, rating, date, content){
     this.author = author;
     this.rating = rating;
@@ -7,9 +5,9 @@ function Review(author, rating, date, content){
     this.content = content;
 }
 
-let reviewsList = document.querySelector(".bottomContainer ul");
-const apiURL = "https://api.themoviedb.org/3/movie/550?api_key=dc2d670278d03763e2694d2c963a117f";
-const urlImmagini = "https://image.tmdb.org";
+let reviewsList = document.querySelector(".reviewsList ul");
+const apiURL = "https://api.themoviedb.org/3/movie/";
+const apiKEY = "?api_key=dc2d670278d03763e2694d2c963a117f&language=it";
 
 
 function addReview(review){
@@ -28,7 +26,7 @@ function addReview(review){
     authorDiv.setAttribute("class", "author")
     authorDiv.innerHTML = review.author;
     ratingDiv.setAttribute("class", "rating");
-    ratingDiv.innerHTML = review.rating + "/100";
+    ratingDiv.innerHTML = review.rating + "/10";
     contentDiv.setAttribute("class", "reviewContent");
     dateDiv.setAttribute("class", "date");
     dateDiv.innerHTML = review.date;
@@ -99,35 +97,138 @@ function addReview(review){
 }
 
 
-let cacca = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non risus odio. Donec elementum hendrerit sapien, ut vulputate arcu ultrices nec. Duis ut mattis ipsum. Maecenas dictum libero eget massa ornare ultricies eu et sem. Duis maximus tortor sit amet sem euismod, vel consequat nisi congue. Praesent dignissim convallis sem. Vivamus facilisis aliquam diam, at feugiat mi. Morbi tempor arcu in interdum semper. Sed consequat arcu sit amet nibh aliquet semper. Pellentesque vitae facilisis diam, placerat dapibus nunc. Donec ullamcorper dui lorem. Mauris non aliquet risus. Aliquam eu tortor enim. Donec nec molestie erat. Suspendisse laoreet fringilla lacus, sit amet ultrices est condimentum non. Nullam sodales neque nisi, et eleifend felis convallis sed. Phasellus leo nisi, condimentum sed sollicitudin vel, laoreet finibus nisl. Pellentesque gravida ante eu purus sollicitudin, nec eleifend velit vehicula. Quisque vitae ex hendrerit, ultricies libero nec, porta velit. Suspendisse consectetur et odio nec iaculis. Integer ut posuere ipsum. Sed orci purus, egestas eget condimentum in, sollicitudin eu nulla. Vestibulum vel sem pellentesque, feugiat nulla non, laoreet dui. Ut ut tellus fringilla, porta ipsum non, dignissim sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sed urna ornare, posuere risus eu, ultricies metus. Suspendisse tristique lacus nec vulputate consectetur. Fusce a vulputate turpis, quis varius mi. Aliquam ut consequat nunc. Nullam eget molestie diam. Aliquam et mattis magna. Phasellus in placerat felis. Suspendisse potenti. Vivamus sodales libero eget vestibulum consectetur. Mauris sit amet finibus erat. Etiam efficitur orci a elit ultrices porta nec non odio. Cras quis consequat urna. Etiam augue tortor, hendrerit consequat tristique fermentum, sollicitudin vel sem. Sed sapien massa, pellentesque et faucibus vitae, fringilla et odio. Suspendisse ullamcorper, dolor nec accumsan molestie, libero mauris pretium nisi, ac molestie purus risus in elit. Aliquam ante quam, ornare ut tincidunt non, pulvinar non lorem. Cras non vestibulum arcu. Mauris tempor dignissim augue, laoreet rutrum ligula finibus in. Mauris ut lacus gravida, suscipit augue sed, feugiat urna. Pellentesque condimentum porta metus et faucibus. Fusce consequat dui in nibh cursus mollis in nec nunc. Sed fringilla libero magna, et tincidunt risus accumsan ac. Aenean hendrerit laoreet auctor. Duis at tempus neque. Fusce blandit, velit eget mattis semper, nisi metus maximus urna, quis sagittis mi massa sed lectus. Cras mollis augue a bibendum scelerisque. Sed vel elementum lectus. Vestibulum ut dolor eu neque egestas vehicula vel id mi. Phasellus non turpis rhoncus, consectetur lorem sit amet, faucibus metus. Mauris feugiat scelerisque elementum. Nulla rhoncus lacus non urna mollis iaculis. Suspendisse tincidunt dui et dapibus vulputate. Fusce pretium, nulla lobortis facilisis sodales, felis neque porttitor nunc, a accumsan massa dolor eget nisl. Vestibulum dignissim et dolor hendrerit auctor. Pellentesque at molestie tellus. Cras eu nunc in neque convallis molestie eu eu mauris. Nam non accumsan quam."
-let sla = "Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla Sla "
-let miaRecensione = new Review("Bo", "100", "23/23/23", cacca);
 
+let miaRecensione = new Review("Lorenzo", "10", "oggi", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non sagittis turpis, ut aliquam augue. Fusce euismod dolor sed ex mollis mollis ac a orci. Aliquam vel lacus at tortor condimentum volutpat et in ligula. Etiam elementum metus ac ligula tincidunt, sed venenatis quam eleifend. Aliquam dapibus neque vel risus rutrum mollis. Etiam scelerisque imperdiet justo, et condimentum eros tristique vel. Integer eu nisi ac sem bibendum dictum at sit amet lacus. In nisl nisi, scelerisque non consectetur non, finibus ut ligula. Nam vel nisl congue, tristique nibh sed, consequat massa.Aliquam porttitor vel augue id maximus. Mauris gravida diam eu turpis sollicitudin, sit amet ullamcorper arcu tristique. Nulla non sagittis nunc, in scelerisque eros. Maecenas magna orci, ultricies nec imperdiet id, pellentesque eget ipsum. Donec facilisis varius congue. Nulla consectetur dignissim eros eu aliquam. Proin id pulvinar neque, quis suscipit enim. Vestibulum eget volutpat orci. Duis diam quam, pharetra tempus nisl non, porta porttitor sem. Nulla posuere et justo sit amet luctus. Aliquam erat volutpat. Fusce tempor tincidunt elit vel aliquam. Nunc nec dictum velit.");
 addReview(miaRecensione);
-addReview(new Review("Mario Avolio Frocio", "10", "10/08/23", "A me personalmente non piace perchè non ci sono abbastanza tematiche lgbtq+ e negri"));
-addReview(new Review("Dario Greggio", "0", "10/08/23", sla));
-addReview(new Review("Lorenzo", "90", "10/08/23", "Bello"));
-addReview(new Review("Stefano", "90", "10/08/23", "Bello"));
-addReview(new Review("Emanuele", "90", "10/08/23", "Bello"));
-addReview(new Review("Volpescu", "69", "10/08/23", "Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza Deh pefforza "));
-addReview(new Review("Cippe", "11", "10/08/23", "Noh"));
+addReview(miaRecensione);
+addReview(miaRecensione);
+addReview(miaRecensione);
+addReview(miaRecensione);
+addReview(miaRecensione);
 
 
 
-async function cazzo(){
+
+let movieID = "157336";
+let movieDetailsURL = apiURL + movieID + apiKEY;
+let movieImagesURL = apiURL + movieID + "/images" + apiKEY;
+let movieReccomendationsURL = apiURL + movieID + "/recomendations" + apiKEY;
+let movieCreditsURL = apiURL + movieID + "/credits" + apiKEY;
+let urlImages = "https://image.tmdb.org/t/p/original";
+let castURL = apiURL + movieID + "/credits" + apiKEY;
+let videosURL = apiURL + movieID + "/videos" + apiKEY;
+let recommendationsURL = apiURL + movieID + "/recommendations" + apiKEY;
+let imagesURL = apiURL + movieID + "/images" + apiKEY;
+
+
+async function getInfos(){
     $.ajax({
-        type:'GET',
-        url: apiURL + "&id=297761" ,
-        success:function (result){
-            document.querySelector(".leftPanel img").setAttribute("src", (urlImmagini + result.poster_path));
+        type: 'GET',
+        url: movieDetailsURL,
+        success: function (result) {
+            let genres = result.genres;
+            let plot = result.overview;
+            let title = result.title;
+            let releaseDate = result.release_date.slice(0,4);
+            let runtime = result.runtime + " min";
+            let averageScore = "Voto: " + result.vote_average + "/10";
+            let img = urlImages + result.poster_path;
+            let sfondo = urlImages + result.backdrop_path;
+            document.querySelector(".moviePlot").innerHTML = plot;
+            document.querySelector(".rightPanel h1").innerHTML = title;
+            document.querySelector(".overallRating").innerHTML = averageScore;
+            document.querySelector(".leftPanel img").setAttribute("src", img);
+            document.querySelector(".releaseDate p").innerHTML = releaseDate;
+            document.querySelector(".movieRuntime p").innerHTML = runtime;
+            document.querySelector("body").style.backgroundImage = "url('" + sfondo + "')";
+
+
+
+
+
+            for (var i =0; i<numOfGenres; i++){
+                let listItem = document.createElement("li");
+                let genre = document.createElement("p");
+                genre.innerHTML = genres[i].name;
+                listItem.appendChild(genre);
+                document.querySelector(".movieGenres").appendChild(listItem);
+            }
+
         }
     });
 }
 
-cazzo();
+let director = null;
+let actors = [];
+const numOfActors = 3;
+const numOfGenres = 4;
+async function getCast(){
+    $.ajax({
+        type:'GET',
+        url: castURL,
+        success: function (result){
+            for(var i = 0; i<result.crew.length; i++){
+                let elem = result.crew[i];
+                if (elem.job === "Director") {
+                    director = elem.original_name;
+                }
+            }
+
+            for (var k = 0; k<result.cast.length; k++){
+                let elem = result.cast[k].original_name;
+                    actors.push(elem);
+            }
+
+            document.querySelector(".movieDirector p").innerHTML = director;
+            document.querySelector(".movieStars #attore1").innerHTML = actors[0];
+            document.querySelector(".movieStars #attore2").innerHTML = actors[1];
+            document.querySelector(".movieStars #attore3").innerHTML = actors[2];
 
 
 
+
+        }
+
+
+    });
+}
+
+
+async function getVideos(){
+    $.ajax({
+        type: 'GET',
+        url: videosURL,
+        success: function (result){
+            let videoLink = "https://www.youtube.com/embed/" + result.results[0].key;
+            document.querySelector("iframe").setAttribute("src", videoLink);
+        }
+    });
+}
+
+async function  getRecommended(){
+    $.ajax({
+       type:'GET',
+       url: recommendationsURL,
+       success: function (result){
+           let correlati = result.results;
+           for(var i = 0; i<correlati.length; i++){
+               let raccomandato = document.createElement("a");
+               raccomandato.setAttribute("href", result.results[i].id) //TODO: controller link moviePage
+               let locandina = document.createElement("img");
+               locandina.setAttribute("src", urlImages + result.results[i].poster_path);
+               raccomandato.appendChild(locandina);
+               let li = document.createElement("li");
+               li.appendChild(raccomandato);
+               document.querySelector(".recommendedMovies ul" ).appendChild(li);
+           }
+       }
+    });
+}
+
+getInfos();
+getCast();
+getVideos();
+getRecommended();
 
 
 

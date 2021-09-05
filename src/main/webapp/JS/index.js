@@ -26,10 +26,5 @@ prevButton.addEventListener("click", function(){
     prevButton.setAttribute("src", "images/prevPressed.png")
 });
 
-trailerImage.addEventListener("mouseout", function(){
-
-    this.animation("outAnimation 1s linear");
-
-});
 
 

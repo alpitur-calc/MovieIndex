@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,8 @@
     <link rel="stylesheet" href = "/CSS/indexStyles.css">
     <link rel="stylesheet" href = "/CSS/navbar.css">
     <link rel="stylesheet" href = "/CSS/moviePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> type="text/javascript"</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -48,31 +51,115 @@
     <div class = "movieContainer">
         <div class = "topContainer" >
             <div class="leftPanel">
-                <img src="https://lumiere-a.akamaihd.net/v1/images/au_marvel_shang-chiandthelegendofthetenrings_payoff_mov_cc4c0527.jpeg">
+                <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=790b7611031c28a0d7248ce384de39e652baf2678c658b08&rid=giphy.gif&ct=g">
             </div>
             <div class = "rightPanel">
-                <h1>Titolo Film</h1>
-                <div class="moviePlot">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis molestie sapien sed convallis. Nunc vulputate sollicitudin nibh at eleifend. Sed vitae viverra turpis. Sed rutrum, mauris ut efficitur vehicula, mauris lorem bibendum erat, eu maximus purus orci ac justo. Mauris hendrerit sodales lectus, ac vehicula arcu iaculis eget. Mauris commodo magna interdum justo vehicula, nec condimentum neque vehicula. Aliquam egestas est quis aliquam tempus. Mauris placerat ipsum non urna interdum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis massa a aliquet tincidunt. Nam bibendum eros at metus ullamcorper, a varius velit tristique. Praesent sagittis elit vitae neque tristique, sed vestibulum justo euismod. Cras non pretium nisl.
-
-                        Vivamus porta nisl erat, at vehicula risus maximus faucibus. Nullam non quam metus. Praesent convallis nec ligula eget sagittis. Suspendisse porta diam vel massa aliquet, vitae sollicitudin massa convallis. Donec viverra, mauris vel tempor pretium, ex odio mollis elit, ac commodo diam turpis eget magna. Nulla pharetra lacus dui, ac tincidunt elit gravida at. Nam congue fringilla elit id sagittis. Maecenas metus justo, luctus sed lacus sed, luctus dapibus ante. In eget ipsum ornare, feugiat urna ut, semper diam. Nunc posuere lectus eros, a ullamcorper mi ullamcorper sed. Donec vitae mollis sem. Pellentesque nulla nibh, pharetra porta leo a, efficitur ultricies nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-                        Fusce tristique ultrices quam id suscipit. Aliquam feugiat diam ac tortor efficitur, quis lobortis ipsum sollicitudin. In faucibus massa at imperdiet egestas. Morbi ornare enim eget justo efficitur, vitae feugiat ipsum faucibus. Phasellus sagittis sodales vestibulum. Nam leo lacus, facilisis a pretium et, euismod ac ipsum. Duis euismod libero nulla, et aliquet tortor iaculis in. Curabitur eu consequat tortor. Sed ultrices vulputate eros sit amet dapibus. Donec rutrum tristique urna ut dignissim. Quisque quis dui eu diam commodo sodales. Nullam venenatis erat in nibh fermentum, non euismod mi tincidunt. Nunc rutrum, est ac suscipit placerat, ligula neque scelerisque dolor, sed gravida est mauris nec felis. Nam quis vestibulum erat.
-
-                        Nam scelerisque, dui vitae egestas placerat, orci massa finibus ante, eu eleifend dolor tortor at metus. Suspendisse auctor tellus eget justo pretium sodales. Mauris pellentesque sodales turpis, rutrum pretium ante vestibulum sed. Morbi turpis justo, pharetra et laoreet pulvinar, semper lobortis magna. Donec id elit elit. Duis cursus mattis libero. In ut ipsum vehicula, pellentesque odio vel, fringilla ante.
-
-                        In hac habitasse platea dictumst. Sed nisl tortor, euismod sit amet maximus quis, laoreet ac eros. Sed ut erat quis neque rutrum aliquam vitae a turpis. Fusce facilisis bibendum dictum. Morbi consectetur eu nisl vel volutpat. Pellentesque eu velit egestas, pellentesque diam vitae, commodo tortor. Pellentesque non dolor nec elit fermentum consectetur quis non nibh. Integer quis efficitur lorem. Curabitur tristique purus feugiat consequat malesuada. Aenean dignissim quis diam quis sagittis. Donec tortor sem, ultrices pharetra mauris id, suscipit auctor ipsum. Ut mattis orci nec vestibulum interdum. Praesent suscipit mi sed lacus luctus dictum. Cras eu turpis mauris. Duis ullamcorper nibh non enim faucibus suscipit. Vestibulum lacinia dui risus, sed aliquet justo suscipit ac.</p>
+                <div class="title">
+                    <h1>Titolo Film</h1>
                 </div>
-                <h3 class="overallRating">Overall Rating: *****</h3>
+
+                    <h3>Genere: </h3>
+                    <ul class = "movieGenres descRow">
+                        <li></li>
+                    </ul>
+
+                    <div class = "movieDirector descRow">
+                        <h3>Regista: </h3>
+                        <p></p>
+                    </div>
+
+                    <h3>Attori pricipali: </h3>
+                    <div class = "movieStars descRow">
+
+                        <p id="attore1"></p>
+                        <p id="attore2"></p>
+                        <p id="attore3"></p>
+                    </div>
+
+                    <div class = "movieRuntime descRow">
+                        <h3>Durata: </h3>
+                        <p></p>
+                    </div>
+                <div class="releaseDate descRow">
+                    <h3>Data di uscita: </h3>
+                    <p></p>
+                </div>
+
+
+
+                <h3 class="overallRating">Voto: n/a</h3>
             </div>
         </div>
 
-        <hr>
+
 
         <div class = "bottomContainer">
-            <ul>
 
-            </ul>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h1 id = "trama">Trama: </h1>
+            <h6 class="moviePlot"></h6>
+            <div class = "correlatiTitolo">
+            <h2>Film Correlati:</h2>
+            </div>
+            <div class="recommendedMovies">
+                <ul>
+                    <li><img src=""></li>
+                </ul>
+            </div>
+
+
+
+            <c:if test= "${userlogged != null}">
+            <form class = "addReview">
+                <h1>Il tuo voto: </h1>
+                <div class="rating-css">
+                    <div class="star-icon">
+                        <input type="radio" name="rating1" id="rating1">
+                        <label for="rating1" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating2">
+                        <label for="rating2" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating3">
+                        <label for="rating3" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating4">
+                        <label for="rating4" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating5">
+                        <label for="rating5" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating6">
+                        <label for="rating6" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating7">
+                        <label for="rating7" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating8">
+                        <label for="rating8" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating9">
+                        <label for="rating9" class="fa fa-star"></label>
+                        <input type="radio" name="rating1" id="rating10">
+                        <label for="rating10" class="fa fa-star"></label>
+                    </div>
+                </div>
+                <h1>Il tuo commento: </h1>
+
+                <div class="reviewAndButton">
+                    <textarea class = "reviewBox"></textarea>
+                    <button>Invia</button>
+                </div>
+
+            </form>
+            </c:if>
+
+            <c:if test = "${userlogged == null}">
+
+
+            </c:if>
+
+
+
+
+
+            <div class="reviewsList">
+                <ul></ul>
+            </div>
+
         </div>
     </div>
 
