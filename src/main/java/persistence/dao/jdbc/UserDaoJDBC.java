@@ -161,6 +161,7 @@ public class UserDaoJDBC implements UserDao {
             else
                 st.setString(1, currentUser.getUsername());
 
+            System.out.println(updatedUser.getPassword()+ " " + currentUser.getPassword());
             if(!updatedUser.getPassword().equals(""))
                 st.setString(2, Encrypter.encrypt(updatedUser.getPassword()));
             else {

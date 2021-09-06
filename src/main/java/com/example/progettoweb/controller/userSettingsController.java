@@ -63,7 +63,7 @@ public class userSettingsController {
 
         newUser.setUsername(username);
         newUser.setEmail(currentUser.getEmail());
-        newUser.setPassword(currentUser.getPassword());
+        newUser.setPassword("");
         newUser.setBiography(biography);
         newUser.setProfileImage(currentUser.getProfileImage());
         newUser.setWatchList(currentUser.getWatchList());
@@ -84,10 +84,10 @@ public class userSettingsController {
         User newUser = new User();
 
         if(Encrypter.check(oldpassword, currentUser.getPassword())){
-            newUser.setUsername(currentUser.getUsername());
+            newUser.setUsername("");
             newUser.setEmail(currentUser.getEmail());
             if(password != null){ newUser.setPassword(password); }
-            else{ newUser.setPassword(currentUser.getPassword()); }
+            else{ newUser.setPassword(""); }
             newUser.setBiography(currentUser.getBiography());
             newUser.setProfileImage(currentUser.getProfileImage());
             newUser.setWatchList(currentUser.getWatchList());
@@ -114,9 +114,9 @@ public class userSettingsController {
         User newUser = new User();
 
         try{
-            newUser.setUsername(currentUser.getUsername());
+            newUser.setUsername("");
             newUser.setEmail(currentUser.getEmail());
-            newUser.setPassword(currentUser.getPassword());
+            newUser.setPassword("");
             newUser.setBiography(currentUser.getBiography());
             newUser.setProfileImage(profileimage);
             newUser.setWatchList(currentUser.getWatchList());
