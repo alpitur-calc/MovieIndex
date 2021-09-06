@@ -9,7 +9,7 @@
     <title>MovieIndex</title>
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href = "/CSS/navbar.css">
-    <link rel="stylesheet" href = "../CSS/indexStyles.css">
+    <link rel="stylesheet" href = "/CSS/indexStyles.css">
 
 
 </head>

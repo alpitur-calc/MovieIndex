@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <title>MovieIndex</title>
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href = "/CSS/indexStyles.css">
     <link rel="stylesheet" href = "/CSS/navbar.css">
     <link rel="stylesheet" href = "/CSS/moviePage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -102,7 +101,7 @@
         <div class = "bottomContainer">
 
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <h1 id = "trama">Trama: </h1>
             <h6 class="moviePlot"></h6>
             <div class = "correlatiTitolo">

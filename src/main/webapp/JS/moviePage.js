@@ -8,6 +8,8 @@ function Review(author, rating, date, content){
 let reviewsList = document.querySelector(".reviewsList ul");
 const apiURL = "https://api.themoviedb.org/3/movie/";
 const apiKEY = "?api_key=dc2d670278d03763e2694d2c963a117f&language=it";
+const apiKEYeng = "?api_key=dc2d670278d03763e2694d2c963a117f&language=en";
+
 
 
 function addReview(review){
@@ -109,14 +111,14 @@ addReview(miaRecensione);
 
 
 
-let movieID = "680";
+let movieID = "291805";
 let movieDetailsURL = apiURL + movieID + apiKEY;
 let movieImagesURL = apiURL + movieID + "/images" + apiKEY;
 let movieReccomendationsURL = apiURL + movieID + "/recomendations" + apiKEY;
 let movieCreditsURL = apiURL + movieID + "/credits" + apiKEY;
 let urlImages = "https://image.tmdb.org/t/p/original";
 let castURL = apiURL + movieID + "/credits" + apiKEY;
-let videosURL = apiURL + movieID + "/videos" + apiKEY;
+let videosURL = apiURL + movieID + "/videos" + apiKEYeng;
 let recommendationsURL = apiURL + movieID + "/recommendations" + apiKEY;
 let imagesURL = apiURL + movieID + "/images" + apiKEY;
 
