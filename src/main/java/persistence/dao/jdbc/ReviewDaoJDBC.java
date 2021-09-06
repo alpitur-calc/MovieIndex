@@ -24,7 +24,7 @@ public class ReviewDaoJDBC implements ReviewDao {
     public void save(Review review) {
         try {
             Connection conn = dataSource.getConnection();
-            String query = "INSERT INTO review VALUE(?)";
+            String query = "INSERT INTO review VALUE(?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, review.getIdUser());
             st.setInt(2, review.getIdMovie());

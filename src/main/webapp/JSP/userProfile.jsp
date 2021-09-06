@@ -41,8 +41,15 @@
 </navbar>
 
     <div class = "topProfile">
-        <img class = "profilePicture" src="getProfilePic()" alt="Immagine profilo non caricata">
-        <a href = "/userImage"><label class = "editPicture">  :pencil2:</label></a>
+        <c:if test= "${ profileimage == 'default' }">
+            <img id="profile-pic" class = "profilePicture" src="/images/defaultUserImage.jpg" alt="Immagine profilo non caricata">
+        </c:if>
+
+        <c:if test= "${ profileimage != 'default' }">
+            <img id="profile-pic" class = "profilePicture" src="${ profileimage }" alt="Immagine profilo non caricata">
+        </c:if>
+
+        <a href = "/userImage"><label class = "editPicture">??</label></a>
         <h2 id = "userNameText">${ username }</h2>
         <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
         <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
@@ -85,17 +92,5 @@
     </footer>
 
 </body>
-<script>
-    async function getProfilePic(){
-        $.ajax({
-            type:'GET',
-            url: '/getProfileImage',
-            success:function (result){
-                $('#profilePicture').attr('src', `data:image/png;base64,` + result.body);
-            }
-        });
-    }
 
-    getProfilePic();
-</script>
 </html>

@@ -42,7 +42,13 @@
 </navbar>
 
 <div class = "topProfile">
-    <img id="profile-pic" class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">
+    <c:if test= "${ profileimage == 'default' }">
+        <img id="profile-pic" class = "profilePicture" src="/images/defaultUserImage.jpg" alt="Immagine profilo non caricata">
+    </c:if>
+
+    <c:if test= "${ profileimage != 'default' }">
+        <img id="profile-pic" class = "profilePicture" src="${ profileimage }" alt="Immagine profilo non caricata">
+    </c:if>
 
     <h2 id = "userNameText">${ username }</h2>
 </div>
@@ -56,14 +62,25 @@
 
             <c:if test= "${ setting == 'image' }">
 
-                <input id="profileimage" type="file" name="profileimage" />
-                <button class="confirm" type="submit" onclick="uploadFile()">Conferma</button>
-                <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                <form class="formSetting" action="/saveImage" method="POST">
+                    <label>Seleziona immagine di Profilo</label>
+
+                    <div class="imageSelection">
+                        <img class="profileSelection" src="/images/pp1.png" onclick="changeImage(src)">
+                        <img class="profileSelection" src="/images/pp2.png" onclick="changeImage(src)">
+                        <img class="profileSelection" src="/images/pp3.png" onclick="changeImage(src)">
+                        <img class="profileSelection" src="/images/pp4.png" onclick="changeImage(src)">
+                        <img class="profileSelection" src="/images/pp5.png" onclick="changeImage(src)">
+                        <input class="profileimage" name="profileimage" type="hidden">
+                    </div>
+                    <button class="confirm" type="submit">Accetta</button>
+                    <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                </form>
 
             </c:if>
 
             <c:if test= "${ setting == 'data' }">
-                <form class="signInBox" action="/saveData" method="POST">
+                <form class="formSetting" action="/saveData" method="POST">
 
                     <label><b>Username</b></label>
                     <input class="field" type="text" name="username" value="${ username }" required>
@@ -86,7 +103,7 @@
                     </div>
                 </c:if>
 
-                <form class="signInBox" action="/savePassword" method="POST">
+                <form class="formSetting" action="/savePassword" method="POST">
 
                     <label><b>Vecchia Password</b></label>
                     <input class="field" type="password" placeholder="Password" name="oldpassword" required>
@@ -106,7 +123,6 @@
         </c:if>
 
     </div>
-</form>
 
 <footer>
     <h3 class = "copyright">© copiadiritto cazzi e mazzi</h3>

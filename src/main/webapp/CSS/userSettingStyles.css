@@ -15,7 +15,7 @@ body{
 
 
 .profilePicture {
-    border-radius: 50%;
+    border-radius: 25%;
     object-fit: cover;
     width: 200px;
     height: 200px;
@@ -82,4 +82,16 @@ footer{
 
 .closebtn:hover {
     color: black;
+}
+
+.imageSelection{
+    margin-top: 20px;
+}
+
+.profileSelection{
+    border-radius: 25%;
+    margin-right: 15px;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
 }

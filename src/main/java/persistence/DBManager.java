@@ -16,7 +16,7 @@ public class DBManager {
     static{
         try{
             Class.forName("org.postgresql.Driver");
-            dataSource = new DBSource("jdbc:postgresql://localhost:5432/WebCompDB","postgres","postgres");
+            dataSource = new DBSource("jdbc:postgresql://localhost:5432/MovieIndexDB","postgres","postgres");
         }catch(Exception e){
             System.err.println("Failed to load MySQL JDBC driver\n" + e);
             e.printStackTrace();

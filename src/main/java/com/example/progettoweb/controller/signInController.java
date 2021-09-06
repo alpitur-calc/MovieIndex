@@ -1,5 +1,6 @@
 package com.example.progettoweb.controller;
 
+import com.sun.net.httpserver.HttpsServer;
 import model.Movie;
 import model.User;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import persistence.DBManager;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class signInController {
     }
 
     @PostMapping("/doRegister")
-    public String doRegister(@RequestParam String username, @RequestParam String email,
+    public String doRegister(HttpSession session, @RequestParam String username, @RequestParam String email,
                              @RequestParam String password){
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey(username);
@@ -41,6 +43,7 @@ public class signInController {
 
         DBManager.getInstance().userDao().save(user);
 
+        session.setAttribute("userlogged", user.getUsername());
         return "/index";
     }
 

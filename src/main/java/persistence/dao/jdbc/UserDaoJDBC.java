@@ -3,15 +3,11 @@ package persistence.dao.jdbc;
 import model.Encrypter;
 import model.Movie;
 import model.User;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import persistence.DBSource;
 import persistence.dao.UserDao;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.awt.image.WritableRaster;
 import java.io.ByteArrayInputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -26,7 +22,7 @@ public class UserDaoJDBC implements UserDao {
     }
 
     //Convert image to array of bytes
-    public byte[] extractBytes (Image image) {
+   /* public byte[] extractBytes (Image image) {
         try {
             // open image
             BufferedImage bufferedImage = (BufferedImage) image;
@@ -38,7 +34,7 @@ public class UserDaoJDBC implements UserDao {
             byte array[]= null;
             return array;
         }
-    }
+    }*/
 
     @Override
     public void save(User user) {
@@ -53,10 +49,10 @@ public class UserDaoJDBC implements UserDao {
             st.setString(4, user.getBiography());
 
             if(user.getProfileImage() != null){
-                st.setBytes(5, extractBytes(user.getProfileImage()));
+                st.setString(5, user.getProfileImage());
             }
             else{
-                st.setBytes(5 , null);
+                st.setString(5 , null);
             }
 
             //Converting Arraylist to SQL Array type
@@ -80,14 +76,7 @@ public class UserDaoJDBC implements UserDao {
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setBiography(rs.getString("biography"));
-            byte[] arrayBytes = rs.getBytes("profileimage");
-            Image image = null;
-            try {
-                ByteArrayInputStream bis = new ByteArrayInputStream(arrayBytes);
-                image = ImageIO.read(bis);
-            } catch (Exception e) {
-            }
-            user.setProfileImage(image);
+            user.setProfileImage(rs.getString("profileimage"));
 
             //Converting SQL Array to Movie List
             Array a = rs.getArray("watchlist");
@@ -172,6 +161,7 @@ public class UserDaoJDBC implements UserDao {
             else
                 st.setString(1, currentUser.getUsername());
 
+            System.out.println(updatedUser.getPassword()+ " " + currentUser.getPassword());
             if(!updatedUser.getPassword().equals(""))
                 st.setString(2, Encrypter.encrypt(updatedUser.getPassword()));
             else {
@@ -185,7 +175,7 @@ public class UserDaoJDBC implements UserDao {
 
             st.setString(4, updatedUser.getBiography());
 
-            st.setBytes(5, extractBytes(updatedUser.getProfileImage()));
+            st.setString(5, updatedUser.getProfileImage());
 
             //Converting Arraylist to SQL Array type
 

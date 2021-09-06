@@ -7,13 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import persistence.DBManager;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpSession;
-import java.awt.*;
-import java.io.InputStream;
 
 @Controller
 public class userSettingsController {
@@ -67,7 +63,7 @@ public class userSettingsController {
 
         newUser.setUsername(username);
         newUser.setEmail(currentUser.getEmail());
-        newUser.setPassword(currentUser.getPassword());
+        newUser.setPassword("");
         newUser.setBiography(biography);
         newUser.setProfileImage(currentUser.getProfileImage());
         newUser.setWatchList(currentUser.getWatchList());
@@ -76,6 +72,9 @@ public class userSettingsController {
 
         model.addAttribute("username", newUser.getUsername());
         model.addAttribute("biography", newUser.getBiography());
+        if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
+        else{ model.addAttribute("profileimage", "default"); }
+
         return "userProfile";
     }
 
@@ -85,10 +84,10 @@ public class userSettingsController {
         User newUser = new User();
 
         if(Encrypter.check(oldpassword, currentUser.getPassword())){
-            newUser.setUsername(currentUser.getUsername());
+            newUser.setUsername("");
             newUser.setEmail(currentUser.getEmail());
             if(password != null){ newUser.setPassword(password); }
-            else{ newUser.setPassword(currentUser.getPassword()); }
+            else{ newUser.setPassword(""); }
             newUser.setBiography(currentUser.getBiography());
             newUser.setProfileImage(currentUser.getProfileImage());
             newUser.setWatchList(currentUser.getWatchList());
@@ -97,6 +96,8 @@ public class userSettingsController {
 
             model.addAttribute("username", newUser.getUsername());
             model.addAttribute("biography", newUser.getBiography());
+            if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
+            else{ model.addAttribute("profileimage", "default"); }
 
             return "userProfile";
         }
@@ -107,28 +108,24 @@ public class userSettingsController {
     }
 
     @PostMapping("/saveImage")
-    public String handleFileUpload(HttpSession session, Model model, @RequestParam("profileimage") MultipartFile profileimage ) {
-
-        //if needed
-        //String fileName = profileimage.getOriginalFilename();
+    public String saveImage(HttpSession session, Model model, @RequestParam("profileimage") String profileimage ) {
 
         User currentUser = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         User newUser = new User();
 
         try{
-            newUser.setUsername(currentUser.getUsername());
+            newUser.setUsername("");
             newUser.setEmail(currentUser.getEmail());
-            newUser.setPassword(currentUser.getPassword());
+            newUser.setPassword("");
             newUser.setBiography(currentUser.getBiography());
-            InputStream is = profileimage.getInputStream();
-            Image img = ImageIO.read(is);
-            newUser.setProfileImage(img);
+            newUser.setProfileImage(profileimage);
             newUser.setWatchList(currentUser.getWatchList());
 
             DBManager.getInstance().userDao().update(newUser, currentUser);
 
             model.addAttribute("username", newUser.getUsername());
             model.addAttribute("biography", newUser.getBiography());
+            model.addAttribute("profileimage", newUser.getProfileImage());
             return "userProfile";
         }catch (Exception e){}
 
