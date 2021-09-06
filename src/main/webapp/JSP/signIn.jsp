@@ -36,7 +36,7 @@
         <input class="field" type="password" placeholder="Password" name="password" id="password" required>
 
         <label><b>Conferma Password</b></label>
-        <input class="field" type="password" placeholder="Conferma Password" name="repassword" id="repassword"  required>
+        <input class="field" type="password" placeholder="Password" name="repassword" id="repassword"  required>
 
         <button class="register" type="submit">Registrati</button>
     </div>

@@ -1,9 +1,9 @@
-var password = document.getElementById("password")
-var repassword = document.getElementById("repassword");
+let password = document.getElementById("password")
+let repassword = document.getElementById("repassword");
 
 function validatePassword(){
     if(password.value != repassword.value) {
-        repassword.setCustomValidity("Passwords Don't Match");
+        repassword.setCustomValidity("Le password non combaciano");
     } else {
         repassword.setCustomValidity('');
     }
