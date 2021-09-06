@@ -15,6 +15,7 @@ body {
 
 .logInBox{
     background: gainsboro;
+    margin-top: 2rem;
     margin-left: 22%;
     margin-right: 22%;
     padding: 1% 10%;
@@ -53,7 +54,7 @@ body {
 }
 
 .log {
-    background-color: #f3ce13;
+    background-color: var(--textColor);
     color: black;
     cursor: pointer;
 }
@@ -109,5 +110,9 @@ body {
     bottom: 32px;
     position: relative;
     height: auto;
+
+}
+
+.profile-container label{
 
 }

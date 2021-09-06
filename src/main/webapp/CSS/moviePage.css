@@ -1,25 +1,18 @@
 /**con font-size 16:  1 rem = 100% = 16px  **/
-
-:root {
-    --textColor: #d8323c;
-    --backColor: gainsboro;
-    --mainDivBackground: dimgray;
-}
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-
-
-    display: flex;
-    flex-direction: column;
+body {
+    width: 100vw;
+    text-align: center;
+    margin: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 .mainDiv{
@@ -264,14 +257,14 @@ li{
 }
 
 .addReview h1{
-    color: var(--textColor);
-    border-bottom-color: var(--textColor);
+    color: black;
+    border-bottom-color: black;
     border-bottom-style: solid;
 }
 
 .rating-css {
     display: flex;
-    background: #474554;
+    background: var(--mainDivBackground);
     width: min-content;
     padding: 0.5rem;
     margin: 1rem 0 2rem 2rem;
@@ -327,12 +320,13 @@ li{
 }
 
 .reviewAndButton button{
-    height: 15rem;
+    height: 10rem;
     width: 10rem;
     align-self: center;
     margin-right: 2rem;
     background-color: var(--textColor);
     font-size: 50px;
+    border-radius: 15px;
 }
 
 textarea{
@@ -391,4 +385,34 @@ iframe{
 #trama{
     color: var(--textColor);
     text-align: left;
+}
+
+#listButton{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 200px;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: var(--textColor);
+    cursor: pointer;
+}
+
+#listButton:hover{
+    opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+
+    .mainDiv{
+        width: 80%;
+    }
+
+    iframe{
+        width:80%;
+    }
+
+
 }

@@ -14,32 +14,32 @@
 <body>
 
 
-<div class = "navbar">
+<navbar>
+    <div class="navbar-container">
+        <div class = "logo-container">
+            <a href="/"><h1 class="logo">MovieIndex</h1></a>
+        </div>
+        <div class = "searchBar-container">
+            <input type="text" class="searchBar" placeholder="Cerca il titolo di un film...">
+        </div>
+        <div class="profile-container">
+            <c:if test= "${ userlogged == null}">
+                <a href="/logIn"><label class="logIn">Log In</label></a>
+            </c:if>
 
-    <div class = "tableNavbar">
-        <table cellspacing="5" >
-            <tr>
-                <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
-                <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-                <c:if test= "${ userlogged == null}">
-                    <td>   <a href="/logIn"><label class="logIn">Log In</label></a></td>
-                </c:if>
-
-                <c:if test= "${ userlogged != null}">
-                    <td> <div class="dropdown">
-                        <button class="dropbtn">${userlogged}</button>
-                        <div class="dropdown-content">
-                            <a href="/userProfile">Profilo</a>
-                            <a href="/doLogOut">Log out</a>
-                            <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
-                        </div>
-                    </div></td>
-                </c:if>
-            </tr>
-        </table>
+            <c:if test= "${ userlogged != null}">
+                <div class="dropdown">
+                    <button class="dropbtn">${userlogged}</button>
+                    <div class="dropdown-content">
+                        <a href="/userProfile">Profilo</a>
+                        <a href="/doLogOut">Log out</a>
+                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
+                    </div>
+                </div>
+            </c:if>
+        </div>
     </div>
-
-</div>
+</navbar>
 
 <div class = "topProfile">
     <img id="profile-pic" class = "profilePicture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiGV23pC3lG71LeFA3IurV1aD7ouhU_IyOWrr3uSNanKOFL5qkZKwphXd8uWN6vmiaHk&usqp=CAU" alt="Immagine profilo non caricata">

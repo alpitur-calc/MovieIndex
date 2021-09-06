@@ -109,7 +109,7 @@ addReview(miaRecensione);
 
 
 
-let movieID = "157336";
+let movieID = "680";
 let movieDetailsURL = apiURL + movieID + apiKEY;
 let movieImagesURL = apiURL + movieID + "/images" + apiKEY;
 let movieReccomendationsURL = apiURL + movieID + "/recomendations" + apiKEY;
@@ -141,10 +141,6 @@ async function getInfos(){
             document.querySelector(".releaseDate p").innerHTML = releaseDate;
             document.querySelector(".movieRuntime p").innerHTML = runtime;
             document.querySelector("body").style.backgroundImage = "url('" + sfondo + "')";
-
-
-
-
 
             for (var i =0; i<numOfGenres; i++){
                 let listItem = document.createElement("li");
@@ -183,10 +179,6 @@ async function getCast(){
             document.querySelector(".movieStars #attore1").innerHTML = actors[0];
             document.querySelector(".movieStars #attore2").innerHTML = actors[1];
             document.querySelector(".movieStars #attore3").innerHTML = actors[2];
-
-
-
-
         }
 
 
@@ -225,10 +217,14 @@ async function  getRecommended(){
     });
 }
 
+
 getInfos();
 getCast();
 getVideos();
 getRecommended();
+
+
+
 
 
 

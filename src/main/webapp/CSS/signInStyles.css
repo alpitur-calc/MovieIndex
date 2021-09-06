@@ -5,7 +5,7 @@ body {
 }
 
 .register {
-    background-color: #f3ce13;
+    background-color: var(--textColor);
     color: black;
     font-weight: bold;
     padding: 14px 20px;
@@ -35,6 +35,7 @@ body {
 
 .signInBox{
     background: gainsboro;
+    margin-top: 2rem;
     margin-left: 22%;
     margin-right: 22%;
     padding: 1% 10%;

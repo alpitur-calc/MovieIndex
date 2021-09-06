@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Log in</title>
+    <title>MovieIndex</title>
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href = "/CSS/navbar.css">
     <link rel="stylesheet" href="/CSS/logInStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> type="text/javascript"</script>
@@ -11,16 +12,19 @@
 </head>
 
 <body>
-<div class = "navbar">
-    <div class = "tableNavbar">
-        <table cellspacing="5" >
-            <tr>
-                <td> <a href = "/"> <img src="/images/mamma.png" class = "homeButton"></a></td>
-                <td><input type = "text" placeholder="Search movie..." class="searchBar"></td>
-            </tr>
-        </table>
+<navbar>
+    <div class="navbar-container">
+        <div class = "logo-container">
+            <a href="/"><h1 class="logo">MovieIndex</h1></a>
+        </div>
+        <div class = "searchBar-container">
+            <input type="text" class="searchBar" placeholder="Cerca il titolo di un film...">
+        </div>
+        <div class="profile-container">
+                <label class="logIn">Log In</label>
+        </div>
     </div>
-</div>
+</navbar>
 
 <form class="logInBox" action="/doLogIn" method="post">
     <div class="container">
