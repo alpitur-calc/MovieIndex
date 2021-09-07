@@ -49,19 +49,22 @@
             <img id="profile-pic" class = "profilePicture" src="${ profileimage }" alt="Immagine profilo non caricata">
         </c:if>
 
-        <a href = "/userImage"><label class = "editPicture">??</label></a>
-        <h2 id = "userNameText">${ username }</h2>
-        <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
-        <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
-    </div>
+        <a href = "/userImage"><img class = "editPicture" src="/images/pencil-png.png"></a>
+        <h2 class = "userNameText">${ username }</h2>
 
-    <div>
-        <label class = "biography">${ biography } </label>
+        <div class = "biography-conteiner">
+            <label class = "biography">${ biography }</label>
+        </div>
+
+        <div class="setting-conteiner">
+            <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
+            <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
+        </div>
     </div>
 
     <div class = "watchlist">
         <div class = "title">
-            <h2 id = "yourWatchlist">Your Watchlist</h2>
+            <h2 class = "yourWatchlist">Your Watchlist</h2>
         </div>
 
         <table>
@@ -86,10 +89,6 @@
     </div>
 
     <div class = "reviews"></div>
-
-    <footer>
-        <h3 class = "copyright">© copiadiritto cazzi e mazzi</h3>
-    </footer>
 
 </body>
 

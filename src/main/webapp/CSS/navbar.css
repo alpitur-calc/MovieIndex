@@ -40,7 +40,7 @@ body{
     color: var(--textColor);
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
     padding: 16px;
-    font-size: 16px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
 }
@@ -109,6 +109,10 @@ navbar {
     cursor: pointer;
 }
 
+.logo:hover{
+    color: gainsboro;
+}
+
 .searchBar-container{
     width: 65%;
     margin: 0 2rem;
@@ -126,16 +130,23 @@ navbar {
 }
 
 .profile-container a{
+
     text-decoration: none;
     cursor: pointer;
 }
 
 .logIn{
     text-decoration: none;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    font-size: 16px;
     color: var(--textColor);
     cursor: pointer;
     font-weight: bold;
     white-space: nowrap;
+}
+
+.logIn:hover{
+    color: gainsboro;
 }
 
 a{

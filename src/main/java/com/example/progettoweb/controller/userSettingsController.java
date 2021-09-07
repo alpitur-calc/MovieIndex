@@ -23,6 +23,7 @@ public class userSettingsController {
             model.addAttribute("setting", "data");
             model.addAttribute("username", user.getUsername());
             model.addAttribute("biography", user.getBiography());
+            model.addAttribute("profileimage", user.getProfileImage());
             return "userSetting";
         }
 
@@ -36,6 +37,8 @@ public class userSettingsController {
 
         if(user != null){
             model.addAttribute("setting", "password");
+            model.addAttribute("profileimage", user.getProfileImage());
+            model.addAttribute("username", user.getUsername());
             return "userSetting";
         }
 
@@ -49,6 +52,8 @@ public class userSettingsController {
 
         if(user != null){
             model.addAttribute("setting", "image");
+            model.addAttribute("profileimage", user.getProfileImage());
+            model.addAttribute("username", user.getUsername());
             return "userSetting";
         }
 

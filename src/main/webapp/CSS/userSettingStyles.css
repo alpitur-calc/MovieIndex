@@ -6,13 +6,12 @@ body{
     background-color: gainsboro ;
 }
 
-#userNameText{
+.userNameText{
     display: block;
     font-size: 2rem;
     margin: 0 auto 0;
-    color: #D1C025;
+    color: var(--textColor);
 }
-
 
 .profilePicture {
     border-radius: 25%;
@@ -30,26 +29,8 @@ body{
     text-align: left;
 }
 
-#yourWatchlist{
-    margin-left: 0;
-}
-
 .topProfile {
     position: relative;
-}
-
-.editPicture{
-    content:"  ✏️";
-    position: absolute;
-    top: 0;
-    font-size: 2rem;
-    border-color: black;
-    border-width: 10px;
-    margin: 0;
-}
-
-.editPicture:hover{
-    font-size: 2.3rem;
 }
 
 .copyright{

@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Setting</title>
@@ -11,47 +12,47 @@
     <link rel="stylesheet" href = "/CSS/navbar.css">
     <link rel="stylesheet" href = "/CSS/userSettingStyles.css">
 </head>
+
 <body>
 
+    <navbar>
+        <div class="navbar-container">
+            <div class = "logo-container">
+                <a href="/"><h1 class="logo">MovieIndex</h1></a>
+            </div>
+            <div class = "searchBar-container">
+                <input type="text" class="searchBar" placeholder="Cerca il titolo di un film...">
+            </div>
+            <div class="profile-container">
+                <c:if test= "${ userlogged == null}">
+                    <a href="/logIn"><label class="logIn">Log In</label></a>
+                </c:if>
 
-<navbar>
-    <div class="navbar-container">
-        <div class = "logo-container">
-            <a href="/"><h1 class="logo">MovieIndex</h1></a>
-        </div>
-        <div class = "searchBar-container">
-            <input type="text" class="searchBar" placeholder="Cerca il titolo di un film...">
-        </div>
-        <div class="profile-container">
-            <c:if test= "${ userlogged == null}">
-                <a href="/logIn"><label class="logIn">Log In</label></a>
-            </c:if>
-
-            <c:if test= "${ userlogged != null}">
-                <div class="dropdown">
-                    <button class="dropbtn">${userlogged}</button>
-                    <div class="dropdown-content">
-                        <a href="/userProfile">Profilo</a>
-                        <a href="/doLogOut">Log out</a>
-                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
+                <c:if test= "${ userlogged != null}">
+                    <div class="dropdown">
+                        <button class="dropbtn">${userlogged}</button>
+                        <div class="dropdown-content">
+                            <a href="/userProfile">Profilo</a>
+                            <a href="/doLogOut">Log out</a>
+                            <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
+                        </div>
                     </div>
-                </div>
-            </c:if>
+                </c:if>
+            </div>
         </div>
+    </navbar>
+
+    <div class = "topProfile">
+        <c:if test= "${ profileimage == 'default' }">
+            <img id="profile-pic" class = "profilePicture" src="/images/defaultUserImage.jpg" alt="Immagine profilo non caricata">
+        </c:if>
+
+        <c:if test= "${ profileimage != 'default' }">
+            <img id="profile-pic" class = "profilePicture" src="${ profileimage }" alt="Immagine profilo non caricata">
+        </c:if>
+
+        <h2 class = "userNameText">${ username }</h2>
     </div>
-</navbar>
-
-<div class = "topProfile">
-    <c:if test= "${ profileimage == 'default' }">
-        <img id="profile-pic" class = "profilePicture" src="/images/defaultUserImage.jpg" alt="Immagine profilo non caricata">
-    </c:if>
-
-    <c:if test= "${ profileimage != 'default' }">
-        <img id="profile-pic" class = "profilePicture" src="${ profileimage }" alt="Immagine profilo non caricata">
-    </c:if>
-
-    <h2 id = "userNameText">${ username }</h2>
-</div>
 
     <div class="container">
         <c:if test= "${ userlogged == null}">
@@ -124,11 +125,8 @@
 
     </div>
 
-<footer>
-    <h3 class = "copyright">© copiadiritto cazzi e mazzi</h3>
-</footer>
-
     <script src="/JS/userSetting.js" charset="utf-8"></script>
 
 </body>
+
 </html>

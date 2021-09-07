@@ -1,24 +1,47 @@
-
 html { height: 100%; }
+
 body{
     margin: 0;
     text-align: center;
     background-color: gainsboro ;
 }
 
-#userNameText{
-    display: block;
-    font-size: 2rem;
-    margin: 0 auto 0;
-    color: #D1C025;
+.topProfile {
+    position: relative;
+    background: white;
+    width: 35rem;
+    bottom: 15px;
+    padding: 10px 10px;
+    margin: 0 auto 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
-
 
 .profilePicture {
     border-radius: 25%;
     object-fit: cover;
     width: 200px;
     height: 200px;
+}
+
+.userNameText{
+    display: block;
+    font-size: 2rem;
+    margin: 0 auto 0;
+    color: var(--textColor);
+}
+
+.biography-conteiner{
+    margin-top: 4px;
+    background-color: var(--backColor);
+    max-width: 100%;
+    overflow-y: auto;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.biography{
+    position: relative;
 }
 
 .watchlist{
@@ -30,39 +53,38 @@ body{
     text-align: left;
 }
 
-#yourWatchlist{
+.yourWatchlist{
     margin-left: 0;
 }
 
-.topProfile {
-    position: relative;
-}
-
-.editPicture::before{
-    content: "✏️";
+.editPicture{
     position: absolute;
-    top: 0;
-    font-size: 2rem;
-    border-color: black;
-    border-width: 10px;
-    margin: 0;
+    margin-left: 10px;
+    width: 50px;
+    height: auto;
+    transform: rotateX(180deg);
 }
 
 .editPicture:hover{
-    font-size: 2.3rem;
+    width: 55px;
+    height: auto;
 }
 
-.copyright{
-    color: white;
-}
-
-footer{
-    background-color: black;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+.setting-conteiner{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 7px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: dimgray;
 }
 
 .userSetting{
-
+    background-color: var(--backColor);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 60px;
+    color: black;
+    cursor: pointer;
 }
