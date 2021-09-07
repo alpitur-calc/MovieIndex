@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     width: 100vw;
     text-align: center;
@@ -33,12 +34,13 @@ body {
 
 
 .topContainer{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     padding: 1rem;
-    background-color: var(--backColor);
     border-radius: 12px;
     box-shadow: 2px 4px 10px black;
-}
+    background-color: var(--backColor);
+    background-image: linear-gradient(to right bottom, #ffffff, #def1ff, #99ebff, #37e5eb, #00daaa, #00daaa, #00daaa, #00daaa, #37e5eb, #99ebff, #def1ff, #ffffff);}
 
 .leftPanel{
     height: 23.563rem;
@@ -60,6 +62,10 @@ body {
     color: var(--textColor);
     align-content: space-between;
     flex-direction: column;
+    box-shadow: 2px 4px 10px black;
+    border-radius: 10px;
+    background-color: white;
+    background-image: linear-gradient(to right bottom, #ffffff, #def1ff, #99ebff, #37e5eb, #00daaa, #00daaa, #00daaa, #00daaa, #37e5eb, #99ebff, #def1ff, #ffffff);
 
 }
 
@@ -135,6 +141,7 @@ body {
     transition: all 0.2s ease-in-out;
     align-self: flex-end;
     justify-self: flex-start;
+    margin-bottom: 1rem;
 }
 
 .overallRating:hover{
@@ -406,7 +413,21 @@ iframe{
     opacity: 0.7;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1160px) {
+
+    .topContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .leftPanel{
+        justify-self: center;
+        margin-bottom: 5rem;
+    }
+
+    .rightPanel{
+        width: 100%;
+        min-width: 0;
+    }
 
     .mainDiv{
         width: 80%;
@@ -414,6 +435,21 @@ iframe{
 
     iframe{
         width:80%;
+        max-height: 250px;
+
+    }
+
+    .rating-css,
+    .rating-css div{
+        max-width: 80%;
+    }
+
+    .movieGenres ul{
+        flex-wrap: wrap;
+    }
+
+    .movieGenres li{
+        min-width: 0;
     }
 
 
