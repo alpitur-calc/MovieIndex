@@ -114,53 +114,50 @@
                 </ul>
             </div>
 
-
-
-            <c:if test= "${userlogged == null}">
-            <form class = "addReview">
-                <h1>Il tuo voto: </h1>
-                <div class="rating-css">
-                    <div class="star-icon">
-                        <input type="radio" name="rating1" id="rating1">
-                        <label for="rating1" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating2">
-                        <label for="rating2" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating3">
-                        <label for="rating3" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating4">
-                        <label for="rating4" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating5">
-                        <label for="rating5" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating6">
-                        <label for="rating6" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating7">
-                        <label for="rating7" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating8">
-                        <label for="rating8" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating9">
-                        <label for="rating9" class="fa fa-star"></label>
-                        <input type="radio" name="rating1" id="rating10">
-                        <label for="rating10" class="fa fa-star"></label>
+            <c:if test= "${userlogged != null}">
+                <form class = "addReview">
+                    <h1>Il tuo voto: </h1>
+                    <div class="rating-css">
+                        <div class="star-icon">
+                            <input type="radio" name="rating1" id="rating1">
+                            <label for="rating1" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating2">
+                            <label for="rating2" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating3">
+                            <label for="rating3" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating4">
+                            <label for="rating4" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating5">
+                            <label for="rating5" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating6">
+                            <label for="rating6" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating7">
+                            <label for="rating7" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating8">
+                            <label for="rating8" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating9">
+                            <label for="rating9" class="fa fa-star"></label>
+                            <input type="radio" name="rating1" id="rating10">
+                            <label for="rating10" class="fa fa-star"></label>
+                        </div>
                     </div>
-                </div>
-                <h1>Il tuo commento: </h1>
+                    <h1>Il tuo commento: </h1>
 
-                <div class="reviewAndButton">
-                    <textarea class = "reviewBox"></textarea>
-                    <button>Invia</button>
-                </div>
+                    <div class="reviewAndButton">
+                        <textarea class = "reviewBox"></textarea>
+                        <button>Invia</button>
+                    </div>
 
-            </form>
+                </form>
             </c:if>
 
-            <c:if test = "${userlogged != null}">
+            <c:if test = "${userlogged == null}">
 
+                <div class = "cantAddReview">
+                    <a href="/logIn"><label class = "logInforReview">Accedi per aggiungere una recensione</label></a>
+                </div>
 
             </c:if>
-
-
-
-
 
             <div class="reviewsList">
                 <ul></ul>

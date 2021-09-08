@@ -48,7 +48,8 @@ body{
 
 .userNameText{
     display: block;
-    font-size: 2rem;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    font-size: 32px;
     margin: 0 auto 0;
     color: var(--textColor);
 }

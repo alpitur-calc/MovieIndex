@@ -119,21 +119,21 @@
                 <form class="formSetting" action="/savePassword" method="POST">
 
                     <div class="setting-div">
-                        <label><b>Vecchia Password:</b></label>
+                        <label class="setting-label"><b>Vecchia Password:</b></label>
                         <input class="field-password" type="password" placeholder="Password" name="oldpassword" required>
                     </div>
 
                     <br>
 
                     <div class="setting-div">
-                        <label><b>Nuova Password:</b></label>
+                        <label class="setting-label"><b>Nuova Password:</b></label>
                         <input class="field-password" type="password" placeholder="Password" name="password" id="password" required>
                     </div>
 
                     <br>
 
                     <div class="setting-div">
-                        <label><b>Conferma Password:</b></label>
+                        <label class="setting-label"><b>Conferma Password:</b></label>
                         <input class="field-password" type="password" placeholder="Password" name="repassword" id="repassword"  required>
                     </div>
 

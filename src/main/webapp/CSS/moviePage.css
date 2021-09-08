@@ -314,6 +314,22 @@ li{
     padding-top: 1rem;
 }
 
+.logInforReview{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--backColor);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+
+.logInforReview:hover{
+    transform: scale(1.03);
+    box-shadow: 3px 5px 10px black;
+}
+
 .reviewBox{
     height: 20rem;
     width: 50rem;

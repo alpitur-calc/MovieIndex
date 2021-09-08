@@ -35,9 +35,10 @@ body{
 
 .userNameText{
     display: block;
-    font-size: 2rem;
+    font-size: 32px;
     margin: 0 auto 0;
     color: var(--textColor);
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
 }
 
 .confirm{
@@ -121,7 +122,7 @@ body{
 
 .field-password{
     position: absolute;
-    right: 18rem;
+    right: 17rem;
 }
 
 /******* Setting Profile Pic *******/
@@ -163,7 +164,7 @@ body{
 
     .field-password{
         position: absolute;
-        right: 1rem;
+        right: 0.5rem;
     }
 
 }
