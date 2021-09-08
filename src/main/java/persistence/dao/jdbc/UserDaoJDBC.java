@@ -21,21 +21,6 @@ public class UserDaoJDBC implements UserDao {
         this.dataSource = dataSource;
     }
 
-    //Convert image to array of bytes
-   /* public byte[] extractBytes (Image image) {
-        try {
-            // open image
-            BufferedImage bufferedImage = (BufferedImage) image;
-            // get DataBufferBytes from Raster
-            WritableRaster raster = bufferedImage.getRaster();
-            DataBufferByte data = (DataBufferByte) raster.getDataBuffer();
-            return (data.getData());
-        }catch (Exception e){
-            byte array[]= null;
-            return array;
-        }
-    }*/
-
     @Override
     public void save(User user) {
         try {
@@ -188,6 +173,7 @@ public class UserDaoJDBC implements UserDao {
             else { array = null;}
             st.setArray(6, array);
 
+            //param per il where
             st.setString(7, currentUser.getUsername());
             st.executeUpdate();
             conn.close();
@@ -210,33 +196,4 @@ public class UserDaoJDBC implements UserDao {
         }
     }
 
-    /*@Override
-    public void addMovieToWatchList(User user, Movie movie) {
-
-    }
-
-    @Override
-    public void removeMovieFromWatchList(User user, Movie movie) {
-
-    }
-
-    @Override
-    public List<Integer> getMoviesInWatchlist(User user) {
-        List<Integer> watchlist = new ArrayList<Integer>();
-        try {
-            Connection conn = dataSource.getConnection();
-            String query = "SELECT FROM user WHERE username = ? ";
-            PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1, user.getUsername());
-            ResultSet rs = st.executeQuery();
-            if(rs.next()){
-                User user = createUserFromResultSet(rs);
-
-            }
-            conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }*/
 }
