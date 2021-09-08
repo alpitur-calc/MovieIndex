@@ -36,8 +36,9 @@ public class MovieDaoJDBC implements MovieDao {
 
     @Override
     public Movie findByPrimaryKey(int movieId) {
-        Movie movie = new Movie();
+        Movie movie = null;
         try {
+            movie = new Movie();
             Connection conn = dataSource.getConnection();
             String query = "SELECT * FROM movie WHERE id = ?";
             PreparedStatement st = conn.prepareStatement(query);

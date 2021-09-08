@@ -20,16 +20,14 @@ public class moviePageController {
     public String moviePage(Model model, @RequestParam int movieId){
 
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
-        if(movie.getId() != 0){
+        if(movie != null){
             List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
             if(reviews != null){
                  model.addAttribute("reviewsList", reviews);
             }
-            System.out.println(movie);
         }
 
         else{
-            System.out.println("else");
             movie = new Movie();
             movie.setId(movieId);
         }
@@ -50,7 +48,14 @@ public class moviePageController {
     public boolean addMovieToWatchlist(HttpSession session, @RequestParam Integer movieId){
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
-        if(user != null) {
+
+        if(movie == null) {
+            movie = new Movie();
+            movie.setId(movieId);
+            DBManager.getInstance().movieDao().save(movie);
+        }
+
+        if(user != null && movie != null) {
             if(movie == null){ movie = new Movie(); movie.setId(movieId); }
             List<Movie> list = user.getWatchList();
             list.add(movie);
