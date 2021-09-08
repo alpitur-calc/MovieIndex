@@ -9,7 +9,7 @@ public class User {
     private String email;
     private String biography;
     private String profileImage;
-    private java.util.List<Movie> watchList;
+    private java.util.List<Integer> watchList;
 
     public String getUsername() {
         return username;
@@ -51,11 +51,11 @@ public class User {
         this.profileImage = profileImage;
     }
 
-    public java.util.List<Movie> getWatchList() {
+    public java.util.List<Integer> getWatchList() {
         return watchList;
     }
 
-    public void setWatchList(List<Movie> watchList) {
+    public void setWatchList(List<Integer> watchList) {
         this.watchList = watchList;
     }
 

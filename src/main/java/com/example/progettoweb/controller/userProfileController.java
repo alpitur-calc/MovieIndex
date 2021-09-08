@@ -27,13 +27,6 @@ public class userProfileController {
                     model.addAttribute("watchList", user.getWatchList());
             }
 
-            //In moviePage :
-            // <c:ForEach var="movie" items=${watchlisti}> SCORRE TUTTI GLI ELEM DELLA LISTA CHE TROVA NEL MODEL
-            //      QUI METTI QUELLO CHE VUOI IN BASE A COME VISUALIZZI LA REVIEW
-            //      per accedere ai dati di una review basta fare ${movie.<attributo>}
-            //      ES: ${movie.content}
-            // </c:ForEach>
-
             return "userProfile";
         }
         return "logIn";

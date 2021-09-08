@@ -1,14 +1,10 @@
 package persistence.dao.jdbc;
 
 import model.Encrypter;
-import model.Movie;
 import model.User;
 import persistence.DBSource;
 import persistence.dao.UserDao;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.io.ByteArrayInputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +37,11 @@ public class UserDaoJDBC implements UserDao {
             }
 
             //Converting Arraylist to SQL Array type
-            Array array= (Array) new ArrayList<Movie>();
-            System.out.println(array);
+            Array array = null;
             if(user.getWatchList() != null) {
-                List<Movie> list = user.getWatchList();
+                List<Integer> list = user.getWatchList();
                 Integer[] data = list.toArray(new Integer[list.size()]);
+                array = conn.createArrayOf("int", data);
             }
 
             st.setArray(6, array);
@@ -60,7 +56,6 @@ public class UserDaoJDBC implements UserDao {
     private User createUserFromResultSet(ResultSet rs){
         User user = new User();
         try {
-            System.out.println("SucaTry");
             user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
@@ -69,17 +64,11 @@ public class UserDaoJDBC implements UserDao {
 
             //Converting SQL Array to Movie List
             Array a = rs.getArray("watchlist");
-            Integer[] array = (Integer[]) a.getArray();
-            List<Movie> list = new ArrayList<Movie>();
+            String[] array = (String[]) a.getArray();
+            List<Integer> list = new ArrayList<Integer>();
             for (int k = 0; k < array.length; k++) {
-                Movie m = new Movie();
-                m.setId(array[k]);
-                list.add(m);
+                list.add(Integer.parseInt(array[k]));
             }
-            if(list == null){
-                System.out.println("Suca");
-            }
-                System.out.println("NON è NULL");
             user.setWatchList(list);
         }catch(Exception e){
             e.printStackTrace();
@@ -98,7 +87,6 @@ public class UserDaoJDBC implements UserDao {
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
             if(rs.next()) {
-                System.out.println("Suca");
                 user = createUserFromResultSet(rs);
             }
             conn.close();
@@ -175,11 +163,11 @@ public class UserDaoJDBC implements UserDao {
 
             //Converting Arraylist to SQL Array type
 
-            List<Movie> list = updatedUser.getWatchList();
+            List<Integer> list = updatedUser.getWatchList();
             Array array;
             if(list != null){
                 Integer[] data = list.toArray(new Integer[list.size()]);
-                array = conn.createArrayOf("Integer",data);
+                array = conn.createArrayOf("int",data);
             }
             else { array = null;}
             st.setArray(6, array);

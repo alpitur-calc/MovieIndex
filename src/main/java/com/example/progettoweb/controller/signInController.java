@@ -39,7 +39,7 @@ public class signInController {
         user.setPassword(password);
         user.setBiography("");
         user.setProfileImage(null);
-        user.setWatchList(new ArrayList<Movie>());
+        user.setWatchList(new ArrayList<Integer>());
 
         DBManager.getInstance().userDao().save(user);
 

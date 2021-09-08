@@ -72,7 +72,7 @@
 
             <c:forEach var="movie" items="${ watchList }">
 
-                <li> ${ movie.id }</li>
+                <li> ${ movie }</li>
 
 
 

@@ -3,6 +3,8 @@ package com.example.progettoweb.controller;
 import model.Movie;
 import model.Review;
 import model.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +47,7 @@ public class moviePageController {
     }
 
     @PostMapping("/addMovieToWatchlist")
-    public boolean addMovieToWatchlist(HttpSession session, @RequestParam Integer movieId){
+    public ResponseEntity<String> addMovieToWatchlist(HttpSession session, @RequestParam Integer movieId){
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
 
@@ -56,22 +58,21 @@ public class moviePageController {
         }
 
         if(user != null && movie.getId() != 0) {
-            //if(movie.getId() == 0){ movie = new Movie(); movie.setId(movieId); }
-            List<Movie> list = user.getWatchList();
-            list.add(movie);
+            List<Integer> list = user.getWatchList();
+            list.add(movie.getId());
 
             User newUser = new User();
             newUser.setUsername(user.getUsername());
-            newUser.setPassword(user.getPassword());
+            newUser.setPassword("");
             newUser.setEmail(user.getEmail());
             newUser.setBiography(user.getBiography());
             newUser.setProfileImage(user.getProfileImage());
             newUser.setWatchList(list);
 
             DBManager.getInstance().userDao().update(newUser, user);
-            return true;
+            return new ResponseEntity<String>(HttpStatus.OK);
         }
-        return false;
+        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
 
     @PostMapping("/addReviewToMovie")
