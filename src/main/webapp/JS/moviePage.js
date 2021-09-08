@@ -111,7 +111,7 @@ addReview(miaRecensione);
 
 
 
-let movieID = "129";
+let movieID = document.querySelector("#domMovieId").innerHTML;
 let movieDetailsURL = apiURL + movieID + apiKEY;
 let movieImagesURL = apiURL + movieID + "/images" + apiKEY;
 let movieReccomendationsURL = apiURL + movieID + "/recomendations" + apiKEY;
@@ -126,7 +126,7 @@ let imagesURL = apiURL + movieID + "/images" + apiKEY;
 async function getInfos(){
     $.ajax({
         type: 'GET',
-        url: movieDetailsURL,
+        url: apiURL + movieID + apiKEY,
         success: function (result) {
             let genres = result.genres;
             let plot = result.overview;
@@ -163,7 +163,7 @@ const numOfGenres = 4;
 async function getCast(){
     $.ajax({
         type:'GET',
-        url: castURL,
+        url: apiURL + movieID + "/credits" + apiKEY,
         success: function (result){
             for(var i = 0; i<result.crew.length; i++){
                 let elem = result.crew[i];
@@ -174,7 +174,7 @@ async function getCast(){
 
             for (var k = 0; k<result.cast.length; k++){
                 let elem = result.cast[k].original_name;
-                    actors.push(elem);
+                actors.push(elem);
             }
 
             document.querySelector(".movieDirector p").innerHTML = director;
@@ -191,7 +191,7 @@ async function getCast(){
 async function getVideos(){
     $.ajax({
         type: 'GET',
-        url: videosURL,
+        url: apiURL + movieID + "/videos" + apiKEYeng,
         success: function (result){
             let videoLink = "https://www.youtube.com/embed/" + result.results[0].key;
             document.querySelector("iframe").setAttribute("src", videoLink);
@@ -201,34 +201,42 @@ async function getVideos(){
 
 async function  getRecommended(){
     $.ajax({
-       type:'GET',
-       url: recommendationsURL,
-       success: function (result){
-           let correlati = result.results;
-           for(var i = 0; i<correlati.length; i++){
-               let raccomandato = document.createElement("a");
-               raccomandato.setAttribute("href", result.results[i].id) //TODO: controller link moviePage
-               let locandina = document.createElement("img");
-               locandina.setAttribute("src", urlImages + result.results[i].poster_path);
-               raccomandato.appendChild(locandina);
-               let li = document.createElement("li");
-               li.appendChild(raccomandato);
-               document.querySelector(".recommendedMovies ul" ).appendChild(li);
-           }
-       }
+        type:'GET',
+        url: apiURL + movieID + "/recommendations" + apiKEY,
+        success: function (result){
+            let correlati = result.results;
+            for(var i = 0; i<correlati.length; i++){
+                let raccomandato = document.createElement("a");
+                raccomandato.setAttribute("href", "/movie?movieId=" + result.results[i].id) //TODO: controller link moviePage
+                let locandina = document.createElement("img");
+                locandina.setAttribute("src", urlImages + result.results[i].poster_path);
+                raccomandato.appendChild(locandina);
+                let li = document.createElement("li");
+                li.appendChild(raccomandato);
+                document.querySelector(".recommendedMovies ul" ).appendChild(li);
+            }
+        }
     });
 }
+
+async function  addToWatchList(){
+    $.ajax({
+        type: 'POST',
+        url: '/addMovieToWatchlist',
+        data: {
+            movieId: movieID
+        },
+        success: function (result){
+            alert("Film aggiunto alla watchlist suca coglione crepa");
+        }
+    });
+}
+
+document.querySelector("#listButton").addEventListener("click", addToWatchList);
+
 
 
 getInfos();
 getCast();
 getVideos();
 getRecommended();
-
-
-
-
-
-
-
-

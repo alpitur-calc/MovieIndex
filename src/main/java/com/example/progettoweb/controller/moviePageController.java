@@ -20,14 +20,22 @@ public class moviePageController {
     public String moviePage(Model model, @RequestParam int movieId){
 
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
-        if(movie != null){
+        if(movie.getId() != 0){
             List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
             if(reviews != null){
                  model.addAttribute("reviewsList", reviews);
             }
+            System.out.println(movie);
+        }
+
+        else{
+            System.out.println("else");
+            movie = new Movie();
+            movie.setId(movieId);
         }
 
         model.addAttribute("movieId", movie.getId());
+        System.out.println(movie.getId());
 
         //In moviePage :
         // <c:ForEach var="review" items=${reviews}> SCORRE TUTTI GLI ELEM DELLA LISTA CHE TROVA NEL MODEL

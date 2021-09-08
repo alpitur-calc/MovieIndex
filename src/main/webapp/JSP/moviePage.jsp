@@ -57,6 +57,7 @@
             <div class="leftPanel">
                 <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=790b7611031c28a0d7248ce384de39e652baf2678c658b08&rid=giphy.gif&ct=g">
                 <button id = "listButton">Aggiungi alla lista</button>
+
             </div>
             <div class = "rightPanel">
                 <div class="title">
@@ -168,6 +169,9 @@
         </div>
     </div>
 
+    <div id = "domMovieId">
+        ${movieId}
+    </div>
     <script src="/JS/moviePage.js" charset="utf-8"></script>
 </div>
 

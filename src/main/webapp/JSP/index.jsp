@@ -44,7 +44,7 @@
 
 
 
-                    <a href = "/movie"><img class = "trailerImage" src="../images/trailerImages/0.jpg" ></a>
+                    <a href = "/movie?movieId=129"><img class = "trailerImage" src="../images/trailerImages/0.jpg" ></a>
 
 
         <div class = "belowPart">
