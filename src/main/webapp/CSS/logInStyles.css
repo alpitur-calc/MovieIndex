@@ -1,47 +1,62 @@
 body {
-    text-align: center;
     margin: 0;
+    text-align: center;
     background-color: black;
 }
 
-.container {
-    position: relative;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px 0 30px 0;
+.logIn-container{
     font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
+    position: relative;
+    bottom: 16px;
+    width: 45rem;
+    background: gainsboro;
+    margin: 0 auto 40px;
+    padding-top: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .logInBox{
-    background: gainsboro;
-    margin-top: 2rem;
-    margin-left: 22%;
-    margin-right: 22%;
-    padding: 1% 10%;
-    bottom: 32px;
     position: relative;
-    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.field{
+.col {
+    position: relative;
+    padding: 0 30px;
+}
+
+.form{
+    flex-grow: 1;
+    text-align: left;
+}
+
+.ext{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar{
+    margin: 10px 0px;
+    border-style: solid;
+    width: 0px;
+}
+
+.logInObj{
     width: 100%;
+    position: relative;
     padding: 12px;
     border: none;
-    border-radius: 4px;
     margin: 5px 0;
-    opacity: 0.85;
-    display: inline-block;
     font-size: 17px;
-    line-height: 20px;
     text-decoration: none;
 }
 
-.field:hover{
-    opacity: 0.7;
-}
-
 .fb {
+    margin-top: 30px;
     background-color: #3B5998;
     color: white;
 
@@ -59,56 +74,51 @@ body {
     cursor: pointer;
 }
 
-.col {
-    float: left;
-    width: 50%;
-    padding: 0 50px;
-    margin: 6px auto auto;
-    box-sizing: border-box;
+
+.log:hover, .fb:hover, .google:hover, .bottom:hover{
+    opacity: 0.7;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-
-}
-
-.vl {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    border: 2px solid #ddd;
-    height: 175px;
-
-}
-
-.vl-innertext {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    padding: 8px 10px;
-
-}
-
-.hide-md-lg {
-    display: none;
-
+.remember{
+    cursor: pointer;
 }
 
 .bottom-container {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: dimgray;
-    border-radius: 0px 0px 4px 4px;
-    margin-left: 22%;
-    margin-right: 22%;
-    padding: 0% 10%;
-    bottom: 32px;
     position: relative;
-    height: auto;
+    background-color: dimgray;
+    height: 40px;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 
+.bottom{
+    margin: 0px 100px;
+    font-size: 17px;
+    color: white;
+}
+
+@media (max-width: 830px) {
+
+    .logIn-container{
+        width: 30rem;
+    }
+
+    .fb{
+        margin-top: 15px;
+    }
+
+    .bottom-container{
+        text-align: left;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bottom{
+        margin-bottom: 5px;
+        font-size: 17px;
+        color: white;
+    }
 }

@@ -33,6 +33,19 @@ body{
     height: 200px;
 }
 
+.editPicture{
+    position: absolute;
+    margin-left: 10px;
+    width: 50px;
+    height: auto;
+    transform: rotateX(180deg);
+}
+
+.editPicture:hover{
+    width: 55px;
+    height: auto;
+}
+
 .userNameText{
     display: block;
     font-size: 2rem;
@@ -60,6 +73,36 @@ body{
     cursor: default;
 }
 
+.setting-container{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 7px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: dimgray;
+}
+
+.setting-container a{
+    position: relative;
+    margin: 60px;
+}
+
+.userSetting{
+    position: relative;
+    background-color: var(--backColor);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 3px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.userSetting:hover{
+    transform: scale(2);
+    box-shadow: 3px 5px 10px black;
+}
+
 .watchlist{
     margin-top: 10rem;
     display: inline-block;
@@ -73,48 +116,18 @@ body{
     margin-left: 0;
 }
 
-.editPicture{
-    position: absolute;
-    margin-left: 10px;
-    width: 50px;
-    height: auto;
-    transform: rotateX(180deg);
-}
+@media (max-width: 830px) {
 
-.editPicture:hover{
-    width: 55px;
-    height: auto;
-}
+    .main-container{
+        width: 28rem;
+    }
 
-.setting-container{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 7px;
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: dimgray;
-}
+    .setting-container{
+        display: flex;
+        flex-direction: column;
+    }
 
-.setting-container a{
-    margin: 60px;
-}
-
-.setting-container a:hover{
-    margin: 60px;
-}
-
-
-.userSetting{
-    background-color: var(--backColor);
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 3px;
-    color: black;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.userSetting:hover{
-    transform: scale(2);
-    box-shadow: 3px 5px 10px black;
+    .setting-container a{
+        margin: 10px;
+    }
 }

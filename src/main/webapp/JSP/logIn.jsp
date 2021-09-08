@@ -26,44 +26,45 @@
     </div>
 </navbar>
 
-<form class="logInBox" action="/doLogIn" method="post">
-    <div class="container">
-        <div class="row">
-            <div class="vl"></div>
+<div class="logIn-container">
 
-            <div class="col">
-                <a href="#" class="field fb btn">
-                    <i class="fa fa-facebook fa-fw"></i> Login con Facebook
-                </a>
+    <div class="logInBox">
 
-                <a href="#" class="field google btn">
-                    <i class="fa fa-google fa-fw"></i> Login con Google+
-                </a>
-            </div>
+        <div class="col ext">
 
-            <div class="col">
-
-                <input class="field" type="text" name="username" placeholder="Username" required>
-                <input class="field" type="password" name="password" placeholder="Password" required>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Resta connesso
-                </label>
-                <input class="field log" type="submit" value="Accedi">
-
-            </div>
+            <a href="#" class="logInObj fb btn">
+                <i class="fa fa-facebook fa-fw"></i> Login con Facebook
+            </a>
+            <br>
+            <a href="#" class="logInObj google btn">
+                <i class="fa fa-google fa-fw"></i> Login con Google+
+            </a>
 
         </div>
+
+        <div class="bar">
+
+        </div>
+
+        <form class="col form" action="/doLogIn" method="post">
+
+            <input class="logInObj field" type="text" name="username" placeholder="Username" required>
+            <br>
+            <input class="logInObj field" type="password" name="password" placeholder="Password" required>
+            <br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" class="remember"> Resta connesso
+            </label>
+            <br>
+            <input class="logInObj log" type="submit" value="Accedi">
+
+        </form>
+
     </div>
-</form>
 
-<div class="bottom-container">
-    <div class="row">
-        <div class="col">
-            <a href="/register" style="color:white" class="field">Registrati</a>
-        </div>
-        <div class="col">
-            <a href="#" style="color:white" class="field">Password Dimenticata?</a>
-        </div>
+    <div class="bottom-container">
+            <a href="/register" class="bottom">Registrati</a>
+            <a href="#" class="bottom">Password Dimenticata?</a>
     </div>
 </div>
 

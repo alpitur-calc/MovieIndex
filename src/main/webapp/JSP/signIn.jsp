@@ -41,9 +41,10 @@
     </div>
 </navbar>
 
-<form class="signInBox" action="/doRegister" method="POST">
+<div class="container">
 
-    <div class="container">
+    <form class="signInBox" action="/doRegister" method="POST">
+
         <label><b>Username</b></label>
         <input class="field" type="text" placeholder="Username" name="username" required>
 
@@ -57,9 +58,10 @@
         <input class="field" type="password" placeholder="Password" name="repassword" id="repassword"  required>
 
         <button class="register" type="submit">Registrati</button>
-    </div>
 
-</form>
+    </form>
+
+</div>
 
 <script src="/JS/signIn.js" charset="utf-8"></script>
 </body>

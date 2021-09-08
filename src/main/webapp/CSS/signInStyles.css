@@ -4,6 +4,31 @@ body {
     background-color: black;
 }
 
+.container{
+    position: relative;
+    bottom: 16px;
+    width: 45rem;
+    background: gainsboro;
+    margin: 0 auto 40px;
+    padding: 20px 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.signInBox{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.field{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
 .register {
     background-color: var(--textColor);
     color: black;
@@ -19,27 +44,8 @@ body {
     opacity: 0.7;
 }
 
-.field{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.container{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-}
-
-.signInBox{
-    background: gainsboro;
-    margin-top: 2rem;
-    margin-left: 22%;
-    margin-right: 22%;
-    padding: 1% 10%;
-    bottom: 32px;
-    position: relative;
-    height: auto;
+@media (max-width: 830px) {
+    .container{
+        width: 30rem;
+    }
 }
