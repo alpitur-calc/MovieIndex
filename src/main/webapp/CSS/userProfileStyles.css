@@ -3,18 +3,27 @@ html { height: 100%; }
 body{
     margin: 0;
     text-align: center;
-    background-color: gainsboro ;
+    background-color: gainsboro;
+}
+
+.main-container{
+    font-size: 18px;
+    position: relative;
+    background-color: var(--mainDivBackground);
+    bottom: 16px;
+    width: 45rem;
+    padding: 10px 10px;
+    margin: 0 auto 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .topProfile {
     position: relative;
     background: white;
-    width: 35rem;
-    bottom: 15px;
     padding: 10px 10px;
     margin: 0 auto 40px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
 }
 
 .profilePicture {
@@ -31,17 +40,24 @@ body{
     color: var(--textColor);
 }
 
-.biography-conteiner{
+.biography-container{
     margin-top: 4px;
+    padding: 10px 10px 3px;
     background-color: var(--backColor);
-    max-width: 100%;
-    overflow-y: auto;
-    text-align: center;
-    padding: 10px 0px;
 }
 
 .biography{
+    text-align: center;
     position: relative;
+    font-size: 18px;
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    height: 85px;
+    font-family: "Times New Roman", Times, serif;
+    border: none;
+    outline: none;
+    cursor: default;
 }
 
 .watchlist{
@@ -70,7 +86,7 @@ body{
     height: auto;
 }
 
-.setting-conteiner{
+.setting-container{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 7px;
@@ -79,12 +95,26 @@ body{
     background-color: dimgray;
 }
 
+.setting-container a{
+    margin: 60px;
+}
+
+.setting-container a:hover{
+    margin: 60px;
+}
+
+
 .userSetting{
     background-color: var(--backColor);
     font-weight: bold;
     border-radius: 10px;
     padding: 3px;
-    margin: 60px;
     color: black;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.userSetting:hover{
+    transform: scale(2);
+    box-shadow: 3px 5px 10px black;
 }

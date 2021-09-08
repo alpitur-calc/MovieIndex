@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Profilo utente</title>
 
-    <link rel="stylesheet" href = "/CSS/navbar.css">
+    <link rel="stylesheet" href = "/CSS/commonStyle.css">
     <link rel="stylesheet" href = "/CSS/userProfileStyles.css">
 </head>
 <body>
@@ -40,6 +40,7 @@
     </div>
 </navbar>
 
+<div class="main-container">
     <div class = "topProfile">
         <c:if test= "${ profileimage == 'default' }">
             <img id="profile-pic" class = "profilePicture" src="/images/defaultUserImage.jpg" alt="Immagine profilo non caricata">
@@ -52,11 +53,11 @@
         <a href = "/userImage"><img class = "editPicture" src="/images/pencil-png.png"></a>
         <h2 class = "userNameText">${ username }</h2>
 
-        <div class = "biography-conteiner">
-            <label class = "biography">${ biography }</label>
+        <div class = "biography-container">
+            <textarea class = "biography" readonly>${ biography }</textarea>
         </div>
 
-        <div class="setting-conteiner">
+        <div class="setting-container">
             <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
             <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
         </div>
@@ -89,6 +90,7 @@
     </div>
 
     <div class = "reviews"></div>
+</div>
 
 </body>
 

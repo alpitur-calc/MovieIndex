@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <title>Setting</title>
 
-    <link rel="stylesheet" href = "/CSS/navbar.css">
+    <link rel="stylesheet" href = "/CSS/commonStyle.css">
     <link rel="stylesheet" href = "/CSS/userSettingStyles.css">
 </head>
 
@@ -42,6 +42,8 @@
         </div>
     </navbar>
 
+<div class="main-container">
+
     <div class = "topProfile">
         <c:if test= "${ profileimage == 'default' }">
             <img id="profile-pic" class = "profilePicture" src="/images/defaultUserImage.jpg" alt="Immagine profilo non caricata">
@@ -63,8 +65,8 @@
 
             <c:if test= "${ setting == 'image' }">
 
-                <form class="formSetting" action="/saveImage" method="POST">
-                    <label>Seleziona immagine di Profilo</label>
+                <form class="formSetting-profile" action="/saveImage" method="POST">
+                    <label class="profile-label"><b>Seleziona immagine di Profilo</b></label>
 
                     <div class="imageSelection">
                         <img class="profileSelection" src="/images/pp1.png" onclick="changeImage(src)">
@@ -74,8 +76,9 @@
                         <img class="profileSelection" src="/images/pp5.png" onclick="changeImage(src)">
                         <input class="profileimage" name="profileimage" type="hidden">
                     </div>
+                    <br>
                     <button class="confirm" type="submit">Accetta</button>
-                    <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                    <a href="/userProfile"><button class="confirm" type="button">Annulla</button></a>
                 </form>
 
             </c:if>
@@ -83,14 +86,23 @@
             <c:if test= "${ setting == 'data' }">
                 <form class="formSetting" action="/saveData" method="POST">
 
-                    <label><b>Username</b></label>
-                    <input class="field" type="text" name="username" value="${ username }" required>
+                    <div class="setting-div">
+                        <label class="setting-label"><b>Username:</b></label>
+                        <input class="field" type="text" name="username" value="${ username }" required>
+                    </div>
 
-                    <label><b>Biografia</b></label>
-                    <textarea class = "biography" name="biography" rows="8" cols="80">${ biography }</textarea>
+                    <br>
+
+                    <div class="setting-div">
+                        <label class="setting-label"><b>Biografia:</b></label>
+                        <br>
+                        <textarea class = "biography" name="biography" rows="8" cols="80">${ biography }</textarea>
+                    </div>
+
+                    <br>
 
                     <button class="confirm" type="submit">Conferma</button>
-                    <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                    <a href="/userProfile"><button class="confirm" type="button">Annulla</button></a>
                 </form>
 
             </c:if>
@@ -106,17 +118,29 @@
 
                 <form class="formSetting" action="/savePassword" method="POST">
 
-                    <label><b>Vecchia Password</b></label>
-                    <input class="field" type="password" placeholder="Password" name="oldpassword" required>
+                    <div class="setting-div">
+                        <label><b>Vecchia Password:</b></label>
+                        <input class="field-password" type="password" placeholder="Password" name="oldpassword" required>
+                    </div>
 
-                    <label><b>Nuova Password</b></label>
-                    <input class="field" type="password" placeholder="Password" name="password" id="password" required>
+                    <br>
 
-                    <label><b>Conferma Password</b></label>
-                    <input class="field" type="password" placeholder="Password" name="repassword" id="repassword"  required>
+                    <div class="setting-div">
+                        <label><b>Nuova Password:</b></label>
+                        <input class="field-password" type="password" placeholder="Password" name="password" id="password" required>
+                    </div>
+
+                    <br>
+
+                    <div class="setting-div">
+                        <label><b>Conferma Password:</b></label>
+                        <input class="field-password" type="password" placeholder="Password" name="repassword" id="repassword"  required>
+                    </div>
+
+                    <br>
 
                     <button class="confirm" type="submit">Conferma</button>
-                    <button class="confirm" type="button"><a href="/userProfile">Annulla</a></button>
+                    <a href="/userProfile"><button class="confirm" type="button">Annulla</button></a>
                 </form>
 
             </c:if>
@@ -124,6 +148,8 @@
         </c:if>
 
     </div>
+
+</div>
 
     <script src="/JS/userSetting.js" charset="utf-8"></script>
 

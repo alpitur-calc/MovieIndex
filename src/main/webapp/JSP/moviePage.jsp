@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>MovieIndex</title>
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href = "/CSS/navbar.css">
+    <link rel="stylesheet" href = "/CSS/commonStyle.css">
     <link rel="stylesheet" href = "/CSS/moviePage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
