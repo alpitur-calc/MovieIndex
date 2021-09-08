@@ -41,9 +41,11 @@ public class UserDaoJDBC implements UserDao {
             }
 
             //Converting Arraylist to SQL Array type
-            List<Movie> list = user.getWatchList();
-            Integer[] data = list.toArray(new Integer[list.size()]);
-            Array array = conn.createArrayOf("Integer",data);
+            Array array= (Array) new ArrayList<Movie>();
+            if(user.getWatchList() != null) {
+                List<Movie> list = user.getWatchList();
+                Integer[] data = list.toArray(new Integer[list.size()]);
+            }
 
             st.setArray(6, array);
             st.executeUpdate();
