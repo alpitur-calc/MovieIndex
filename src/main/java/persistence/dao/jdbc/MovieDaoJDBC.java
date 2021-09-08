@@ -23,10 +23,10 @@ public class MovieDaoJDBC implements MovieDao {
     public void save(Movie Movie) {
         try {
             Connection conn = dataSource.getConnection();
-            String query = "INSERT INTO movie VALUE(?)";
+            String query = "INSERT INTO public.movie(id) VALUES(?)";
             PreparedStatement st = conn.prepareStatement(query);
             st.setInt(1, Movie.getId());
-            st.executeQuery();
+            st.executeUpdate();
             conn.close();
 
         }catch(Exception e){

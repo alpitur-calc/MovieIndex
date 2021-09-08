@@ -42,6 +42,7 @@ public class UserDaoJDBC implements UserDao {
 
             //Converting Arraylist to SQL Array type
             Array array= (Array) new ArrayList<Movie>();
+            System.out.println(array);
             if(user.getWatchList() != null) {
                 List<Movie> list = user.getWatchList();
                 Integer[] data = list.toArray(new Integer[list.size()]);
@@ -59,6 +60,7 @@ public class UserDaoJDBC implements UserDao {
     private User createUserFromResultSet(ResultSet rs){
         User user = new User();
         try {
+            System.out.println("SucaTry");
             user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
@@ -74,8 +76,14 @@ public class UserDaoJDBC implements UserDao {
                 m.setId(array[k]);
                 list.add(m);
             }
+            if(list == null){
+                System.out.println("Suca");
+            }
+                System.out.println("NON è NULL");
             user.setWatchList(list);
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         return user;
     }
@@ -90,6 +98,7 @@ public class UserDaoJDBC implements UserDao {
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
             if(rs.next()) {
+                System.out.println("Suca");
                 user = createUserFromResultSet(rs);
             }
             conn.close();

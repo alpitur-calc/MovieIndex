@@ -68,25 +68,18 @@
             <h2 class = "yourWatchlist">Your Watchlist</h2>
         </div>
 
-        <table>
-            <tr>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-            </tr>
-            <tr>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-            </tr>
-            <tr>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-                <td><label>PlaceHolder</label></td>
-            </tr>
+        <ul>
 
-        </table>
+            <c:forEach var="movie" items="${ watchList }">
+
+                <li> ${ movie.id }</li>
+
+
+
+            </c:forEach>
+
+        </ul>
+
     </div>
 
     <div class = "reviews"></div>
@@ -95,3 +88,4 @@
 </body>
 
 </html>
+
