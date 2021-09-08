@@ -17,15 +17,18 @@ import java.util.List;
 public class moviePageController {
 
     @GetMapping("/movie")
-    public String moviePage(Model model){
+    public String moviePage(Model model, @RequestParam int movieId){
 
-        Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey((Integer) model.getAttribute("selectedmovie"));
+        Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
         if(movie != null){
             List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
             if(reviews != null){
                  model.addAttribute("reviewsList", reviews);
             }
         }
+
+        model.addAttribute("movieId", movie.getId());
+
         //In moviePage :
         // <c:ForEach var="review" items=${reviews}> SCORRE TUTTI GLI ELEM DELLA LISTA CHE TROVA NEL MODEL
         //      QUI METTI QUELLO CHE VUOI IN BASE A COME VISUALIZZI LA REVIEW
@@ -55,6 +58,11 @@ public class moviePageController {
             DBManager.getInstance().userDao().update(newUser, user);
             return true;
         }
+        return false;
+    }
+
+    @PostMapping("/addReviewToMovie")
+    public boolean addReviewToMovie(){
         return false;
     }
 }
