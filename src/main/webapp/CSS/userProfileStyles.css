@@ -104,17 +104,51 @@ body{
     box-shadow: 3px 5px 10px black;
 }
 
-.watchlist{
-    margin-top: 10rem;
-    display: inline-block;
-}
-
 .title{
-    text-align: left;
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    color: var(--textColor);
+    margin-bottom: 10px;
 }
 
-.yourWatchlist{
-    margin-left: 0;
+.watchlist-container{
+    position: relative;
+    margin-top: 10rem;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.watchlist-container ul{
+    list-style-type: none;
+}
+
+.watchlist-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--backColor);
+    border-radius: 10px;
+}
+
+.watchlist-list li{
+    width: auto;
+    margin: 10px;
+}
+
+.watchlist-list li img{
+    width: 150px;
+    height: 220px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.watchlist-list li img:hover{
+    box-shadow: 5px 7px 11px black;
+    transform: scale(1.05);
+}
+
+#domMovieId{
+    display: none;
+    visibility: hidden;
 }
 
 @media (max-width: 830px) {
@@ -130,5 +164,18 @@ body{
 
     .setting-container a{
         margin: 10px;
+    }
+
+    .watchlist-list{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .watchlist-list li{
+        margin: 5px;
+    }
+
+    .watchlist-list li img{
+        width: 120px;
+        height: 180px;
     }
 }
