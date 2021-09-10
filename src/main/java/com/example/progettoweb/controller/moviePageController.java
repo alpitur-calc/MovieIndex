@@ -99,7 +99,7 @@ public class moviePageController {
 
         if(user != null && movie.getId() != 0) {
             List<Integer> list = user.getWatchList();
-            list.remove(movie.getId());
+            list.remove((Integer)movie.getId());
 
             User newUser = new User();
             newUser.setUsername(user.getUsername());
