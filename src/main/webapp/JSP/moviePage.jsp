@@ -57,12 +57,19 @@
             <div class="leftPanel">
                 <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=790b7611031c28a0d7248ce384de39e652baf2678c658b08&rid=giphy.gif&ct=g">
 
+                <button class = "listButton">Aggiungi alla lista</button>
 
-                <button id = "listButton">Aggiungi alla lista</button>
+                <c:if test = "${added} == 'true' ">
+                    <script type = "text/javascript">
+                        document.querySelector(".listButton").style.backgroundColor = 'red';
+                        document.querySelector(".listButton").innerHTML = "Rimuovi dall lista";
+                    </script>
+                </c:if>
+
 
                 <c:if test = "${userlogged == null}">
                     <script type = "text/javascript">
-                        document.querySelector("#listButton").style.visibility = 'hidden';
+                        document.querySelector(".listButton").style.visibility = 'hidden';
                     </script>
                 </c:if>
 

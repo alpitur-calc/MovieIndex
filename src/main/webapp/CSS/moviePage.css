@@ -412,7 +412,7 @@ iframe{
     text-align: left;
 }
 
-#listButton{
+.listButton{
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
     padding: 0.5rem 2rem;
@@ -425,9 +425,10 @@ iframe{
     cursor: pointer;
 }
 
-#listButton:hover{
+.listButton:hover{
     opacity: 0.7;
 }
+
 
 @media (max-width: 1160px) {
 
@@ -469,8 +470,4 @@ iframe{
     }
 
 
-}
-
-#domMovieId{
-    display: hidden;
 }

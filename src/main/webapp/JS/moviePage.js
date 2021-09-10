@@ -246,19 +246,20 @@ async function  removeFromWatchList(){
 }
 
 async function checkWatchList(){
-
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: '/isMovieAdded',
         data: {
             movieId: movieID
         },
-        success: function (){
+        success: function (result){
             removeFromWatchList()
+            document.querySelector(".listButton").innerHTML = "Aggiungi dalla lista";
+            document.querySelector(".listButton").style.backgroundColor = "green";
         },
-        error: function (){
-            document.querySelector("#listButton").innerHTML = "Rimuovi dalla lista";
-            document.querySelector("#listButton").style.backgroundColor = "red";
+        error: function (result){
+            document.querySelector(".listButton").innerHTML = "Rimuovi dalla lista";
+            document.querySelector(".listButton").style.backgroundColor = "red";
             addToWatchList();
         }
 
@@ -266,7 +267,7 @@ async function checkWatchList(){
 }
 
 
-document.querySelector("#listButton").addEventListener("click", checkWatchList);
+document.querySelector(".listButton").addEventListener("click", checkWatchList);
 
 
 getInfos();
