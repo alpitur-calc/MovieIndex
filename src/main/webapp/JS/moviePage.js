@@ -12,6 +12,7 @@ const apiKEYeng = "?api_key=dc2d670278d03763e2694d2c963a117f&language=en";
 
 
 
+
 function addReview(review){
 
     let listIndex = document.createElement("li");
@@ -227,7 +228,7 @@ async function  addToWatchList(){
             movieId: movieID
         },
         success: function (result){
-            alert("Film aggiunto alla watchlist suca coglione crepa");
+
         }
     });
 }
@@ -240,7 +241,7 @@ async function  removeFromWatchList(){
             movieId: movieID
         },
         success: function (result){
-            alert("Film rimosso dalla watchlist suca coglione crepa");
+
         }
     });
 }
@@ -253,24 +254,48 @@ async function checkWatchList(){
             movieId: movieID
         },
         success: function (result){
-            removeFromWatchList();
-            document.querySelector(".listButton").innerHTML = "Aggiungi dalla lista";
-            document.querySelector(".listButton").style.backgroundColor = "green";
-        },
-        error: function (result){
+
+
             document.querySelector(".listButton").innerHTML = "Rimuovi dalla lista";
             document.querySelector(".listButton").style.backgroundColor = "red";
-            addToWatchList();
+        },
+        error: function (result){
+            document.querySelector(".listButton").innerHTML = "Aggiungi alla lista";
+            document.querySelector(".listButton").style.backgroundColor = "#4dbf00";
         }
 
     })
 }
 
 
-document.querySelector(".listButton").addEventListener("click", checkWatchList);
-//cazzp
+async function swapList(){
+    $.ajax({
+        type: 'POST',
+        url: '/isMovieAdded',
+        data: {
+            movieId: movieID
+        },
+        success: function (result){
+            removeFromWatchList();
+            document.querySelector(".listButton").innerHTML = "Aggiungi alla lista";
+            document.querySelector(".listButton").style.backgroundColor = "#4dbf00";
+            console.log("rimosso");
+        },
+        error: function (result){
+            document.querySelector(".listButton").innerHTML = "Rimuovi dalla lista";
+            document.querySelector(".listButton").style.backgroundColor = "red";
+            addToWatchList();
+            console.log("aggiunto");
+        }
+
+    })
+}
+
+document.querySelector(".listButton").addEventListener("click", swapList);
+
 
 getInfos();
 getCast();
 getVideos();
 getRecommended();
+checkWatchList();

@@ -59,19 +59,15 @@
 
                 <button class = "listButton">Aggiungi alla lista</button>
 
-                <c:if test = "${added} == 'true' ">
-                    <script type = "text/javascript">
-                        document.querySelector(".listButton").style.backgroundColor = 'red';
-                        document.querySelector(".listButton").innerHTML = "Rimuovi dall lista";
-                    </script>
-                </c:if>
 
-
-                <c:if test = "${userlogged == null}">
+                <c:if test= "${ userlogged == null }">
                     <script type = "text/javascript">
                         document.querySelector(".listButton").style.visibility = 'hidden';
                     </script>
                 </c:if>
+
+
+
 
             </div>
             <div class = "rightPanel">
