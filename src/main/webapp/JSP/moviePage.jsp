@@ -56,7 +56,15 @@
         <div class = "topContainer" >
             <div class="leftPanel">
                 <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=790b7611031c28a0d7248ce384de39e652baf2678c658b08&rid=giphy.gif&ct=g">
+
+
                 <button id = "listButton">Aggiungi alla lista</button>
+
+                <c:if test = "${userlogged == null}">
+                    <script type = "text/javascript">
+                        document.querySelector("#listButton").style.visibility = 'hidden';
+                    </script>
+                </c:if>
 
             </div>
             <div class = "rightPanel">

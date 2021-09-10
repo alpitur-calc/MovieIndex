@@ -232,8 +232,41 @@ async function  addToWatchList(){
     });
 }
 
-document.querySelector("#listButton").addEventListener("click", addToWatchList);
+async function  removeFromWatchList(){
+    $.ajax({
+        type: 'POST',
+        url: '/removeMovieFromWatchlist',
+        data: {
+            movieId: movieID
+        },
+        success: function (result){
+            alert("Film rimosso dalla watchlist suca coglione crepa");
+        }
+    });
+}
 
+async function checkWatchList(){
+
+    $.ajax({
+        type: 'GET',
+        url: '/isMovieAdded',
+        data: {
+            movieId: movieID
+        },
+        success: function (){
+            removeFromWatchList()
+        },
+        error: function (){
+            document.querySelector("#listButton").innerHTML = "Rimuovi dalla lista";
+            document.querySelector("#listButton").style.backgroundColor = "red";
+            addToWatchList();
+        }
+
+    })
+}
+
+
+document.querySelector("#listButton").addEventListener("click", checkWatchList);
 
 
 getInfos();
