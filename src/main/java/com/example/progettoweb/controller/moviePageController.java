@@ -44,6 +44,19 @@ public class moviePageController {
         return "moviePage";
     }
 
+    @PostMapping("/isMovieAdded")
+    public ResponseEntity<String> isMovieAdded(HttpSession session, @RequestParam Integer movieId) {
+        try{
+            User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
+            List<Integer> watchlist = user.getWatchList();
+            if(watchlist.contains(movieId)){ return new ResponseEntity<String>(HttpStatus.OK); }
+
+            }catch(Exception e){}
+
+        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+    }
+
+
     @PostMapping("/addMovieToWatchlist")
     public ResponseEntity<String> addMovieToWatchlist(HttpSession session, @RequestParam Integer movieId){
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
