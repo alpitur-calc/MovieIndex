@@ -31,17 +31,15 @@ public class moviePageController {
             movie = new Movie();
             movie.setId(movieId);
         }
-        String added = "false";
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         if(user!= null) {
             List<Integer> watchlist = user.getWatchList();
             if (watchlist.contains(movieId)) {
-                added = "true";
-                System.out.println("cisaicn an");
+                model.addAttribute("added", "true");
             }
         }
-        model.addAttribute("added", added);
+
         model.addAttribute("movieId", movie.getId());
 
         return "moviePage";
