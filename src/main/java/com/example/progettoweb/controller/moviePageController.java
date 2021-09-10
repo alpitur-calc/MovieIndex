@@ -32,12 +32,15 @@ public class moviePageController {
             movie.setId(movieId);
         }
         String added = "false";
-        try{
-            User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
-            List<Integer> watchlist = user.getWatchList();
-            if(watchlist.contains(movieId)){ added = "true";}
-        }catch(Exception e){}
 
+        User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
+        if(user!= null) {
+            List<Integer> watchlist = user.getWatchList();
+            if (watchlist.contains(movieId)) {
+                added = "true";
+                System.out.println("cisaicn an");
+            }
+        }
         model.addAttribute("added", added);
         model.addAttribute("movieId", movie.getId());
 

@@ -253,7 +253,7 @@ async function checkWatchList(){
             movieId: movieID
         },
         success: function (result){
-            removeFromWatchList()
+            removeFromWatchList();
             document.querySelector(".listButton").innerHTML = "Aggiungi dalla lista";
             document.querySelector(".listButton").style.backgroundColor = "green";
         },
