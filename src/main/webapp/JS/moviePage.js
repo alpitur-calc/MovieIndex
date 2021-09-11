@@ -306,7 +306,7 @@ async function getReviews(){
     })
 }
 
-let sendReviewButton = document.querySelector(".reviewAndButton button");
+let sendReviewButton = document.querySelector("#sendReviewButton");
 sendReviewButton.addEventListener("click", makeReview);
 
 let form = document.querySelector(".addReview");
@@ -330,9 +330,9 @@ async function sendReview(rating, content){
 }
 
 function makeReview(){
-    let content = form.document.querySelector("textarea").value;
+    let content = form.querySelector("textarea").value;
     let rating = 5;
-    sendReview(rating, content);
+    sendReview(content, rating);
 }
 
 document.querySelector(".listButton").addEventListener("click", swapList);

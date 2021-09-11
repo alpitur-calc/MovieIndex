@@ -125,7 +125,9 @@
                 </ul>
             </div>
 
+
             <c:if test= "${userlogged != null}">
+
                 <form class = "addReview">
                     <h1>Il tuo voto: </h1>
                     <div class="rating-css">
@@ -156,7 +158,8 @@
 
                     <div class="reviewAndButton">
                         <textarea class = "reviewBox"></textarea>
-                        <button>Invia</button>
+                        <button type = "button" id = "sendReviewButton">Invia</button>
+
                     </div>
 
                 </form>
