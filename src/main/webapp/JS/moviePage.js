@@ -306,37 +306,49 @@ async function getReviews(){
     })
 }
 
-let sendReviewButton = document.querySelector("#sendReviewButton");
-sendReviewButton.addEventListener("click", makeReview);
 
-let form = document.querySelector(".addReview");
-
-async function sendReview(rating, content){
-    $.ajax({
-        type: 'POST',
-        url: '/addReviewToMovie',
-        data: {
-            movieId: movieID,
-            rating: rating,
-            content: content
-        },
-        success: function (result){
-            alert("Recensione aggiunta");
-        },
-        error: function (result){
-            alert("coglione");
-        }
-    })
-}
-
-function makeReview(){
-    let content = form.querySelector("textarea").value;
-    let rating = 5;
-    sendReview(content, rating);
-}
 
 document.querySelector(".listButton").addEventListener("click", swapList);
 
+let searchbar = document.querySelector(".searchBar");
+searchbar.addEventListener("input", searchMovies);
+
+
+const searchURL = "https://api.themoviedb.org/3/search/movie/?query=";
+
+async function searchMovies(val){
+    let content = searchbar.value;
+    let nRisultati = 5;
+    $.ajax({
+        type: 'GET',
+        url: searchURL + content + "&api_key=dc2d670278d03763e2694d2c963a117f&language=it",
+        success: function (result){
+            let list = document.querySelector(".searchBar-container ul");
+            for (let i = 0; i<5; i++)
+            {
+                let li = document.createElement("li");
+                let movie = document.createElement("div");
+                movie.setAttribute("class", "searchResult");
+                let anchor = document.createElement("a");
+                anchor.setAttribute("href", "/movie?movieId=" + result.results[i].id)
+                let poster = document.createElement("img");
+                poster.setAttribute("src",urlImages + result.results[i].poster_path );
+                let title = document.createElement("h2");
+                title.innerHTML = result.results[i].title;
+                anchor.appendChild(poster);
+                anchor.appendChild(title)
+                movie.appendChild(anchor);
+                li.appendChild(movie);
+                list.appendChild(li);
+
+                movie.style.display = "flex";
+                movie.style.flexDirection = "column";
+                anchor.style.display = "flex";
+                poster.style.height = "50px";
+            }
+        }
+    })
+}
 
 getInfos();
 getCast();

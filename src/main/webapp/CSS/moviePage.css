@@ -475,3 +475,7 @@ iframe{
 #domMovieId{
     visibility: hidden;
 }
+
+.searchBar-container ul li div a img{
+    height: 50px;
+}
