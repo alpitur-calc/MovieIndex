@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -23,6 +22,7 @@ public class moviePageController {
     @GetMapping("/movie")
     public String moviePage(HttpSession session, Model model, @RequestParam int movieId){
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
+
         if(movie.getId() == 0){
             movie = new Movie();
             movie.setId(movieId);
@@ -123,8 +123,9 @@ public class moviePageController {
         }
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
+
     @PostMapping("/addReviewToMovie")
-    public ResponseEntity<String> addReviewToMovie(HttpSession session, @RequestParam Integer movieId, @RequestParam int rating,
+    public ResponseEntity<String> addReviewToMovie(HttpSession session, @RequestParam Integer movieId, @RequestParam String rating,
                                     @RequestParam String content){
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
@@ -134,17 +135,19 @@ public class moviePageController {
             DBManager.getInstance().movieDao().save(movie);
         }
 
-        if(user != null && movie.getId() != 0){
-            Review review = new Review();
-            review.setIdUser(user.getUsername());
-            review.setIdMovie(movie.getId());
-            review.setRating(rating);
-            review.setContent(content);
-            review.setDate(new java.util.Date());
+        try{
+            if(user != null && movie.getId() != 0){
+                Review review = new Review();
+                review.setIdUser(user.getUsername());
+                review.setIdMovie(movie.getId());
+                review.setRating(Integer.parseInt(rating));
+                review.setContent(content);
+                review.setDate(new java.util.Date());
 
-            DBManager.getInstance().reviewDao().save(review);
-            return new ResponseEntity<String>(HttpStatus.OK);
-        }
+                DBManager.getInstance().reviewDao().save(review);
+                return new ResponseEntity<String>(HttpStatus.OK);
+            }
+        }catch (Exception e){}
 
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
