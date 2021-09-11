@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -125,8 +126,8 @@ public class moviePageController {
     }
 
     @PostMapping("/addReviewToMovie")
-    public ResponseEntity<String> addReviewToMovie(HttpSession session, @RequestParam Integer movieId, @RequestParam String rating,
-                                    @RequestParam String content){
+    public ResponseEntity<String> addReviewToMovie(HttpSession session, @RequestParam Integer movieId,
+                                                   @RequestParam String rating, @RequestParam String content){
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
@@ -142,12 +143,12 @@ public class moviePageController {
                 review.setIdMovie(movie.getId());
                 review.setRating(Integer.parseInt(rating));
                 review.setContent(content);
-                review.setDate(new java.util.Date());
+                review.setDate(LocalDate.now());
 
                 DBManager.getInstance().reviewDao().save(review);
                 return new ResponseEntity<String>(HttpStatus.OK);
             }
-        }catch (Exception e){}
+        }catch (Exception e){e.printStackTrace();}
 
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }

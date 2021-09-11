@@ -9,6 +9,7 @@ import persistence.dao.ReviewDao;
 
 import java.awt.*;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,14 +25,15 @@ public class ReviewDaoJDBC implements ReviewDao {
     public void save(Review review) {
         try {
             Connection conn = dataSource.getConnection();
-            String query = "INSERT INTO public.review VALUE(?,?,?,?,?)";
+            String query = "INSERT INTO public.review VALUES(?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, review.getIdUser());
             st.setInt(2, review.getIdMovie());
-            st.setInt(3, review.getRating());
-            st.setString(4, review.getContent());
-            st.setDate(5, (Date) review.getDate());
-            st.executeQuery();
+            st.setString(3, review.getContent());
+            st.setInt(4, review.getRating());
+            Date sqldate = Date.valueOf(review.getDate());
+            st.setDate(5, sqldate);
+            st.executeUpdate();
             conn.close();
         }catch(Exception e){
             e.printStackTrace();
@@ -44,7 +46,7 @@ public class ReviewDaoJDBC implements ReviewDao {
 
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM public.review WHERE iduser= ?, idmovie = ?";
+            String query = "SELECT * FROM public.review WHERE iduser= ?, idmovie= ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, user.getUsername());
             st.setInt(2, movie.getId());
@@ -53,9 +55,9 @@ public class ReviewDaoJDBC implements ReviewDao {
             if(rs.next()){
                 r.setIdUser(rs.getString(1));
                 r.setIdMovie(rs.getInt(2));
-                r.setRating(rs.getInt(3));
-                r.setContent(rs.getString(4));
-                r.setDate((java.util.Date) rs.getDate(5));
+                r.setContent(rs.getString(3));
+                r.setRating(rs.getInt(4));
+                r.setDate(rs.getDate(5).toLocalDate());
             }
 
             conn.close();
@@ -81,9 +83,9 @@ public class ReviewDaoJDBC implements ReviewDao {
                 Review r = new Review();
                 r.setIdUser(rs.getString(1));
                 r.setIdMovie(rs.getInt(2));
-                r.setRating(rs.getInt(3));
-                r.setContent(rs.getString(4));
-                r.setDate((java.util.Date) rs.getDate(5));
+                r.setContent(rs.getString(3));
+                r.setRating(rs.getInt(4));
+                r.setDate(rs.getDate(5).toLocalDate());
 
                 list.add(r);
             }
@@ -109,9 +111,9 @@ public class ReviewDaoJDBC implements ReviewDao {
                 Review r = new Review();
                 r.setIdUser(rs.getString(1));
                 r.setIdMovie(rs.getInt(2));
-                r.setRating(rs.getInt(3));
-                r.setContent(rs.getString(4));
-                r.setDate((java.util.Date) rs.getDate(5));
+                r.setContent(rs.getString(3));
+                r.setRating(rs.getInt(4));
+                r.setDate(rs.getDate(5).toLocalDate());
 
                 list.add(r);
             }
@@ -131,9 +133,10 @@ public class ReviewDaoJDBC implements ReviewDao {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, updatedReview.getIdUser());
             st.setInt(2, updatedReview.getIdMovie());
-            st.setInt(3, updatedReview.getRating());
-            st.setString(4, updatedReview.getContent());
-            st.setDate(5, (Date) updatedReview.getDate());
+            st.setString(3, updatedReview.getContent());
+            st.setInt(4, updatedReview.getRating());
+            Date sqldate = Date.valueOf(updatedReview.getDate());
+            st.setDate(5, sqldate);
             st.executeUpdate();
 
             conn.close();
