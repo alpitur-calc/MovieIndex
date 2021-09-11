@@ -291,6 +291,50 @@ async function swapList(){
     })
 }
 
+async function getReviews(){
+    $.ajax({
+        type: 'POST',
+        url: '/getReviews',
+        data: {
+            movieId: movieID
+        },
+        success : function (result){
+            for( let i = 0; i< result.length; i++){
+                addReview(new Review(result.author, result.rating, result.date, result.content));
+            }
+        }
+    })
+}
+
+let sendReviewButton = document.querySelector(".reviewAndButton button");
+sendReviewButton.addEventListener("click", makeReview);
+
+let form = document.querySelector(".addReview");
+
+async function sendReview(rating, content){
+    $.ajax({
+        type: 'POST',
+        url: '/addReviewToMovie',
+        data: {
+            movieId: movieID,
+            rating: rating,
+            content: content
+        },
+        success: function (result){
+            alert("Recensione aggiunta");
+        },
+        error: function (result){
+            alert("coglione");
+        }
+    })
+}
+
+function makeReview(){
+    let content = form.document.querySelector("textarea").value;
+    let rating = 5;
+    sendReview(rating, content);
+}
+
 document.querySelector(".listButton").addEventListener("click", swapList);
 
 
