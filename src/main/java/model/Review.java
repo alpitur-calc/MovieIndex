@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Review {
 
@@ -8,7 +8,7 @@ public class Review {
     private int idMovie;
     private int rating;
     private String content;
-    private Date date;
+    private LocalDate date;
 
     public String getIdUser() {
         return idUser;
@@ -42,11 +42,11 @@ public class Review {
         this.content = content;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

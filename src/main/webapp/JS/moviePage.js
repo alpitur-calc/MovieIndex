@@ -332,7 +332,7 @@ async function sendReview(rating, content){
 function makeReview(){
     let content = form.querySelector("textarea").value;
     let rating = 5;
-    sendReview(content, rating);
+    sendReview(rating, content);
 }
 
 document.querySelector(".listButton").addEventListener("click", swapList);
