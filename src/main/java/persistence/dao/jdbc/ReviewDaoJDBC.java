@@ -24,7 +24,7 @@ public class ReviewDaoJDBC implements ReviewDao {
     public void save(Review review) {
         try {
             Connection conn = dataSource.getConnection();
-            String query = "INSERT INTO review VALUE(?,?,?,?,?)";
+            String query = "INSERT INTO public.review VALUE(?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, review.getIdUser());
             st.setInt(2, review.getIdMovie());
@@ -44,7 +44,7 @@ public class ReviewDaoJDBC implements ReviewDao {
 
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM review WHERE iduser= ?, idmovie = ?";
+            String query = "SELECT * FROM public.review WHERE iduser= ?, idmovie = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, user.getUsername());
             st.setInt(2, movie.getId());
@@ -72,7 +72,7 @@ public class ReviewDaoJDBC implements ReviewDao {
         List<Review> list = new ArrayList<Review>();
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM review WHERE iduser = ?";
+            String query = "SELECT * FROM public.review WHERE iduser = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, user.getUsername());
             ResultSet rs = st.executeQuery();
@@ -100,7 +100,7 @@ public class ReviewDaoJDBC implements ReviewDao {
         List<Review> list = new ArrayList<Review>();
         try {
             Connection conn = dataSource.getConnection();
-            String query = "SELECT * FROM review WHERE idmovie = ?";
+            String query = "SELECT * FROM public.review WHERE idmovie = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setInt(1, movie.getId());
             ResultSet rs = st.executeQuery();
@@ -127,7 +127,7 @@ public class ReviewDaoJDBC implements ReviewDao {
     public void update(Review updatedReview, Review currentReview) {
         try {
             Connection conn = dataSource.getConnection();
-            String query = "UPDATE review SET iduser = ?, idmovie = ?, rating = ?, content = ?, date = ?";
+            String query = "UPDATE public.review SET iduser = ?, idmovie = ?, rating = ?, content = ?, date = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, updatedReview.getIdUser());
             st.setInt(2, updatedReview.getIdMovie());
@@ -147,7 +147,7 @@ public class ReviewDaoJDBC implements ReviewDao {
     public void delete(Review review) {
         try {
             Connection conn = dataSource.getConnection();
-            String delete = "DELETE FROM review WHERE iduser = ?, idmovie = ?";
+            String delete = "DELETE FROM public.review WHERE iduser = ?, idmovie = ?";
             PreparedStatement st = conn.prepareStatement(delete);
             st.setString(1, review.getIdUser());
             st.setInt(2, review.getIdMovie());

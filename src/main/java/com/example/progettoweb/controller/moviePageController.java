@@ -3,6 +3,7 @@ package com.example.progettoweb.controller;
 import model.Movie;
 import model.Review;
 import model.User;
+import org.apache.coyote.Request;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -21,27 +23,20 @@ public class moviePageController {
     @GetMapping("/movie")
     public String moviePage(HttpSession session, Model model, @RequestParam int movieId){
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
-        if(movie.getId() != 0){
-            /*List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
-            if(reviews != null){
-                 model.addAttribute("reviewsList", reviews);
-            }*/
-        }
-        else{
+        if(movie.getId() == 0){
             movie = new Movie();
             movie.setId(movieId);
         }
 
-        User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
+       /* User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         if(user!= null) {
             List<Integer> watchlist = user.getWatchList();
             if (watchlist.contains(movieId)) {
                 model.addAttribute("added", "true");
             }
-        }
+        }*/
 
         model.addAttribute("movieId", movie.getId());
-
         return "moviePage";
     }
 
@@ -57,6 +52,19 @@ public class moviePageController {
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
 
+    @GetMapping("/getReviews")
+    public ResponseEntity<List<Review>> getReviews(HttpSession session, @RequestParam Integer movieId) {
+        Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
+
+        if(movie.getId() == 0){
+            List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
+            if(reviews != null){
+                return ResponseEntity.ok(reviews);
+            }
+        }
+        return new ResponseEntity<List<Review>>(HttpStatus.BAD_REQUEST);
+
+    }
 
     @PostMapping("/addMovieToWatchlist")
     public ResponseEntity<String> addMovieToWatchlist(HttpSession session, @RequestParam Integer movieId){
@@ -116,8 +124,29 @@ public class moviePageController {
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
     @PostMapping("/addReviewToMovie")
-    public boolean addReviewToMovie(){
-        return false;
+    public ResponseEntity<String> addReviewToMovie(HttpSession session, @RequestParam Integer movieId, @RequestParam int rating,
+                                    @RequestParam String content){
+
+        User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
+        Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
+        if(movie.getId() == 0){
+            movie.setId(movieId);
+            DBManager.getInstance().movieDao().save(movie);
+        }
+
+        if(user != null && movie.getId() != 0){
+            Review review = new Review();
+            review.setIdUser(user.getUsername());
+            review.setIdMovie(movie.getId());
+            review.setRating(rating);
+            review.setContent(content);
+            review.setDate(new java.util.Date());
+
+            DBManager.getInstance().reviewDao().save(review);
+            return new ResponseEntity<String>(HttpStatus.OK);
+        }
+
+        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
 }
 
