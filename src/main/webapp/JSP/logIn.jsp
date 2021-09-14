@@ -19,9 +19,25 @@
         </div>
         <div class = "searchBar-container">
             <input type="text" class="searchBar" placeholder="Cerca il titolo di un film...">
+            <ul>
+
+            </ul>
         </div>
         <div class="profile-container">
-                <label class="logIn">Log In</label>
+            <c:if test= "${ userlogged == null}">
+                <a href="/logIn"><label class="logIn">Log In</label></a>
+            </c:if>
+
+            <c:if test= "${ userlogged != null}">
+                <div class="dropdown">
+                    <button class="dropbtn">${userlogged}</button>
+                    <div class="dropdown-content">
+                        <a href="/userProfile">Profilo</a>
+                        <a href="/doLogOut">Log out</a>
+                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
+                    </div>
+                </div>
+            </c:if>
         </div>
     </div>
 </navbar>
@@ -67,6 +83,8 @@
             <a href="#" class="bottom">Password Dimenticata?</a>
     </div>
 </div>
+
+<script src="/JS/searchBar.js" charset="utf-8"></script>
 
 </body>
 

@@ -82,7 +82,7 @@ body{
 navbar {
     width: 100%;
     height: 50px;
-    position: sticky;
+    position: relative;
     top: 0;
     margin-bottom: 1rem;
     z-index: 2;
@@ -115,6 +115,8 @@ navbar {
 }
 
 .searchBar-container{
+    position: relative;
+    outline: none;
     width: 65%;
     margin: 0 2rem;
 }
@@ -128,6 +130,51 @@ navbar {
     border-width: 0;
     padding-left: 1rem;
 
+}
+
+.searchBar-container ul{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    padding-left: 5px;
+}
+
+.searchBar-container ul li{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.searchBar-container ul li:hover{
+    background-color: gainsboro;
+}
+
+.searchBar-container ul li div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.searchBar-container ul li div a{
+    display: flex;
+}
+
+.searchBar-container ul li div h2{
+    margin-left: 6px;
+}
+
+.searchBar-container ul li div img{
+    height: 50px;
+}
+
+.searchBar-container ul a{
+    text-decoration: none;
+    color: black;
 }
 
 .profile-container a{

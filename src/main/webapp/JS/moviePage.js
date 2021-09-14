@@ -311,20 +311,21 @@ async function getReviews(){
 document.querySelector(".listButton").addEventListener("click", swapList);
 
 let searchbar = document.querySelector(".searchBar");
-searchbar.addEventListener("input", searchMovies);
+searchbar.addEventListener("keydown", searchMovies);
 
 
 const searchURL = "https://api.themoviedb.org/3/search/movie/?query=";
 
 async function searchMovies(val){
+    let list = document.querySelector(".searchBar-container ul");
     let content = searchbar.value;
     let nRisultati = 5;
     $.ajax({
         type: 'GET',
         url: searchURL + content + "&api_key=dc2d670278d03763e2694d2c963a117f&language=it",
         success: function (result){
-            let list = document.querySelector(".searchBar-container ul");
-            for (let i = 0; i<5; i++)
+            list.innerHTML = "";
+            for (let i = 0; i<nRisultati; i++)
             {
                 let li = document.createElement("li");
                 let movie = document.createElement("div");
@@ -340,11 +341,6 @@ async function searchMovies(val){
                 movie.appendChild(anchor);
                 li.appendChild(movie);
                 list.appendChild(li);
-
-                movie.style.display = "flex";
-                movie.style.flexDirection = "column";
-                anchor.style.display = "flex";
-                poster.style.height = "50px";
             }
         }
     })

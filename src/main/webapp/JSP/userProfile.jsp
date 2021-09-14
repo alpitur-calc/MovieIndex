@@ -23,6 +23,9 @@
         </div>
         <div class = "searchBar-container">
             <input type="text" class="searchBar" placeholder="Cerca il titolo di un film...">
+            <ul>
+
+            </ul>
         </div>
         <div class="profile-container">
             <c:if test= "${ userlogged == null}">
@@ -95,6 +98,7 @@
 </div>
 
 <script src="/JS/userProfile.js" charset="utf-8"></script>
+<script src="/JS/searchBar.js" charset="utf-8"></script>
 
 </body>
 

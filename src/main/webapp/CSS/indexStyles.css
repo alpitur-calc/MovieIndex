@@ -10,14 +10,13 @@ body {
     background-color: black;
 }
 
+/*
 .trailersRoll{
 
     display: inline-block;
     text-align: center;
     margin-top: 5rem;
 }
-
-
 
 .trailerArrow.next:hover{
     animation: nextArrowAnimation 0.5s linear forwards;
@@ -33,7 +32,7 @@ body {
 }
 
 .trailerImage:hover{
-    animation: inAnimation 0.3s linear forwards; /*forward serve a farla stare in place alla fine */
+    animation: inAnimation 0.3s linear forwards;
 }
 
 @keyframes nextArrowAnimation {
@@ -65,4 +64,4 @@ body {
         box-shadow: 0 5px 10px 5px #f3ce13;}
     100% { transform: scale(1);}
 }
-
+*/
