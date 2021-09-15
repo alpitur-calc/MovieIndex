@@ -58,16 +58,17 @@ public class moviePageController {
     public JSONObject getReviews(HttpSession session, @RequestParam Integer movieId) {
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
         JSONObject result = new JSONObject();
-        if(movie.getId() == 0){
+        if(movie.getId() != 0){
             List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
-
             JSONObject[] results = new JSONObject[reviews.size()];
+
             int k = 0;
             for(Review r : reviews) {
+                results[k] = new JSONObject();
                 results[k].appendField("iduser", r.getIdUser());
                 results[k].appendField("rating", r.getRating());
                 results[k].appendField("content", r.getContent());
-                results[k].appendField("date", r.getDate());
+                results[k].appendField("date", r.getDate().toString());
                 k++;
             }
             result.appendField("results", results);
