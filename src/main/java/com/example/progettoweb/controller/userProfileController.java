@@ -5,6 +5,7 @@ import model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
@@ -31,6 +32,18 @@ public class userProfileController {
         }
         return "logIn";
     }
+
+    @PostMapping("/deleteUser")
+    public String deleteUser(HttpSession session){
+        User user = DBManager.getInstance().userDao().findByPrimaryKey((String)session.getAttribute("userlogged"));
+        if(user != null){
+            DBManager.getInstance().userDao().delete(user);
+            session.invalidate();
+            return "index";
+        }
+        return "userProfile";
+    }
+
 /*
     @GetMapping("/getUserData")
     public Boolean getUserData(HttpSession session, Model model){

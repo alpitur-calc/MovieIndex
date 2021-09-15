@@ -2,6 +2,7 @@ package com.example.progettoweb.controller;
 
 import model.Encrypter;
 import model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class userSettingsController {
+
+    @Autowired
+    private userProfileController profileController;
 
     @GetMapping("/userData")
     public String userData(HttpSession session, Model model){
@@ -80,7 +84,8 @@ public class userSettingsController {
         if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
         else{ model.addAttribute("profileimage", "default"); }
 
-        return "userProfile";
+        //return "userProfile";
+        return profileController.userProfile(session,model);
     }
 
     @PostMapping("/savePassword")
@@ -104,7 +109,8 @@ public class userSettingsController {
             if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
             else{ model.addAttribute("profileimage", "default"); }
 
-            return "userProfile";
+            //return "userProfile";
+            return profileController.userProfile(session,model);
         }
 
         model.addAttribute("setting", "password");
@@ -131,7 +137,8 @@ public class userSettingsController {
             model.addAttribute("username", newUser.getUsername());
             model.addAttribute("biography", newUser.getBiography());
             model.addAttribute("profileimage", newUser.getProfileImage());
-            return "userProfile";
+            //return "/userProfile";
+            return profileController.userProfile(session,model);
         }catch (Exception e){}
 
         model.addAttribute("failedToSave", "true");
