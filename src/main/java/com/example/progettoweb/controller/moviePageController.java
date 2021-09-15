@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
-import javax.sound.midi.SysexMessage;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -81,7 +80,6 @@ public class moviePageController {
             }
         }
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
-
     }
 
     @PostMapping("/addMovieToWatchlist")
