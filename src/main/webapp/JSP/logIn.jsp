@@ -1,14 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>MovieIndex</title>
+    <title>Log In</title>
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href = "/CSS/commonStyle.css">
     <link rel="stylesheet" href="/CSS/logInStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> type="text/javascript"</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="589054609085-1refjr6uf58re3nvl7ok6tgrpbebld4a.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </head>
 
 <body>
@@ -30,10 +37,10 @@
 
             <c:if test= "${ userlogged != null}">
                 <div class="dropdown">
-                    <button class="dropbtn">${userlogged}</button>
+                    <button id="dropbtn" class="dropbtn">${userlogged}</button>
                     <div class="dropdown-content">
                         <a href="/userProfile">Profilo</a>
-                        <a href="/doLogOut">Log out</a>
+                        <a href="/doLogOut" onclick="signOut()">Log out</a>
                     </div>
                 </div>
             </c:if>
@@ -41,20 +48,13 @@
     </div>
 </navbar>
 
-
 <div class="logIn-container">
 
     <div class="logInBox">
 
         <div class="col ext">
 
-            <a href="#" class="logInObj fb btn">
-                <i class="fa fa-facebook fa-fw"></i> Login con Facebook
-            </a>
-            <br>
-            <a href="#" class="logInObj google btn">
-                <i class="fa fa-google fa-fw"></i> Login con Google+
-            </a>
+            <div id="my-signin2" class="google"></div>
 
         </div>
 
@@ -79,12 +79,46 @@
     </div>
 
     <div class="bottom-container">
-            <a href="/register" class="bottom">Registrati</a>
-            <a href="#" class="bottom">Password Dimenticata?</a>
+        <a href="/register" class="bottom">Registrati</a>
+        <a href="#" class="bottom">Password Dimenticata?</a>
     </div>
 </div>
 
 <script src="/JS/searchBar.js" charset="utf-8"></script>
+<script src="/JS/googleSignOut.js" charset="utf-8"></script>
+
+<script>
+
+    function onSuccess(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        $.ajax({
+            type: 'GET',
+            url: '/doGoogleLogIn',
+            data: {
+                username: profile.getName(),
+                email: profile.getEmail(),
+                password: "googleUserPassword",
+            },
+            success : function (result){},
+        });
+    }
+    function onFailure(error) {
+        console.log(error);
+        signOut();
+    }
+    function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 200,
+            'height': 40,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+    }
+
+</script>
 
 </body>
 

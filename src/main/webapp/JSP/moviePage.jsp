@@ -43,7 +43,7 @@
                     <button class="dropbtn">${userlogged}</button>
                     <div class="dropdown-content">
                         <a href="/userProfile">Profilo</a>
-                        <a href="/doLogOut">Log out</a>
+                        <a href="/doLogOut" onclick="signOut()">Log out</a>
                     </div>
                 </div>
             </c:if>
@@ -231,6 +231,7 @@
     </div>
     <script src="/JS/moviePage.js" charset="utf-8"></script>
     <script src="/JS/searchBar.js" charset="utf-8"></script>
+    <script src="/JS/googleSignOut.js" charset="utf-8"></script>
 
 </div>
 
