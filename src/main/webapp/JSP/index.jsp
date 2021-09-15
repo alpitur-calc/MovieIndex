@@ -11,6 +11,7 @@
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href = "/CSS/commonStyle.css">
     <link rel="stylesheet" href = "/CSS/indexStyles.css">
+    <link rel="stylesheet" href = "/CSS/moviePage.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> type="text/javascript"</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -46,6 +47,58 @@
         </div>
     </div>
 </navbar>
+
+
+
+<div class = "mainDiv">
+
+    <h1>Guarda oggi al cinema: </h1>
+    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="sliders">
+
+
+        <div class = "slider">
+            <div class = "sliderTitle">
+                <h2>Ultime Uscite:</h2>
+            </div>
+            <div class="moviesSlide" id = "new-movies">
+                <ul>
+                    <li><img src=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class = "slider">
+            <div class = "sliderTitle">
+                <h2>Film Popolari:</h2>
+            </div>
+            <div class="moviesSlide" id = "popular-movies">
+                <ul>
+                    <li><img src=""></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class = "slider">
+            <div class = "sliderTitle">
+                <h2>I film Migliori:</h2>
+            </div>
+            <div class="moviesSlide" id = "best-movies">
+                <ul>
+                    <li><img src=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id = "domMovieId">
+        ${movieId}
+    </div>
+    <script src="/JS/moviePage.js" charset="utf-8"></script>
+</div>
 
 
 
