@@ -3,6 +3,7 @@ package com.example.progettoweb.controller;
 import model.Movie;
 import model.Review;
 import model.User;
+import net.minidev.json.JSONObject;
 import org.apache.coyote.Request;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,16 +55,28 @@ public class moviePageController {
     }
 
     @GetMapping("/getReviews")
-    public ResponseEntity<List<Review>> getReviews(HttpSession session, @RequestParam Integer movieId) {
+    public JSONObject getReviews(HttpSession session, @RequestParam Integer movieId) {
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
-
+        JSONObject result = new JSONObject();
         if(movie.getId() == 0){
             List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAFilm(movie);
+
+            JSONObject[] results = new JSONObject[reviews.size()];
+            int k = 0;
+            for(Review r : reviews) {
+                results[k].appendField("iduser", r.getIdUser());
+                results[k].appendField("rating", r.getRating());
+                results[k].appendField("content", r.getContent());
+                results[k].appendField("date", r.getDate());
+                k++;
+            }
+            result.appendField("results", results);
+
             if(reviews != null){
-                return ResponseEntity.ok(reviews);
+                return result;
             }
         }
-        return new ResponseEntity<List<Review>>(HttpStatus.BAD_REQUEST);
+        return result;
 
     }
 
