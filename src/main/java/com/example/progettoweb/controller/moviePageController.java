@@ -56,7 +56,7 @@ public class moviePageController {
     }
 
     @GetMapping("/getReviews")
-    public JSONObject getReviews(HttpSession session, @RequestParam Integer movieId) {
+    public ResponseEntity<?> getReviews(HttpSession session, @RequestParam Integer movieId) {
         Movie movie = DBManager.getInstance().movieDao().findByPrimaryKey(movieId);
         JSONObject result = new JSONObject();
         if(movie.getId() != 0){
@@ -77,10 +77,10 @@ public class moviePageController {
 
             if(reviews != null){
                 System.out.println(result.toString());
-                return result;
+                return new ResponseEntity<JSONObject>(result, HttpStatus.OK);
             }
         }
-        return result;
+        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 
     }
 
