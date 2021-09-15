@@ -17,7 +17,7 @@ public class userProfileController {
 
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String) session.getAttribute("userlogged"));
         if(user != null) {
-            /*model.addAttribute("username", user.getUsername());
+            model.addAttribute("username", user.getUsername());
             model.addAttribute("biography", user.getBiography());
             if(user.getProfileImage() != null){ model.addAttribute("profileimage", user.getProfileImage()); }
             else{ model.addAttribute("profileimage", "default"); }
@@ -26,12 +26,12 @@ public class userProfileController {
                 if(user.getWatchList().size()>0)
                     model.addAttribute("watchList", user.getWatchList());
             }
-            System.out.println("carico");*/
+            System.out.println("carico");
             return "userProfile";
         }
         return "logIn";
     }
-
+/*
     @GetMapping("/getUserData")
     public Boolean getUserData(HttpSession session, Model model){
 
@@ -53,6 +53,6 @@ public class userProfileController {
             return true;
         }
         return false;
-    }
+    }*/
 
 }
