@@ -95,7 +95,7 @@ function addReview(review){
 
 
 
-    reviewsList.appendChild(listIndex);
+    reviewsList.insertBefore(listIndex, listIndex.firstChild);
 
 }
 

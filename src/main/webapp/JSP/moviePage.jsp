@@ -190,10 +190,19 @@
                     document.querySelector("#sendReviewButton").addEventListener("click", makeReview);
                     function makeReview(){
                         let content = form.querySelector("textarea").value;
-                        let rating = 5;
+                        let stelline = document.querySelectorAll(".star-icon input");
+                        let rating = 10;
+                        for (let i = 0; i<stelline.length; i++)
+                        {
+                            if (stelline[i].checked){
+                                rating= i +1;
+                                break;
+                            }
+                        }
                         sendReview(rating, content);
+                        form.querySelector("textarea").value = "";
+                        stelline[stelline.length-1].check;
                         getReviews();
-                        form.querySelector("textarea").innerHTML = "";
                     }
 
                     document.querySelector(".listButton").addEventListener("click", swapList);
