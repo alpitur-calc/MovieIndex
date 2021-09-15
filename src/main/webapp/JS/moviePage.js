@@ -336,7 +336,7 @@ async function getReviews(){
         type: 'GET',
         url: '/getReviews',
         data: {
-            movieId: 129
+            movieId: parseInt(movieID)
         },
         success : function (result){
             for( let i = 0; i< result.length; i++){
