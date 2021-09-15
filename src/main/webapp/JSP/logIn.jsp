@@ -34,13 +34,13 @@
                     <div class="dropdown-content">
                         <a href="/userProfile">Profilo</a>
                         <a href="/doLogOut">Log out</a>
-                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
                     </div>
                 </div>
             </c:if>
         </div>
     </div>
 </navbar>
+
 
 <div class="logIn-container">
 

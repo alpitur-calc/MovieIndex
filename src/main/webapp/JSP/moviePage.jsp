@@ -44,7 +44,6 @@
                     <div class="dropdown-content">
                         <a href="/userProfile">Profilo</a>
                         <a href="/doLogOut">Log out</a>
-                        <a href="https://www.youtube.com/watch?v=blICnLXD65E">Sla</a>
                     </div>
                 </div>
             </c:if>
@@ -231,6 +230,8 @@
         ${movieId}
     </div>
     <script src="/JS/moviePage.js" charset="utf-8"></script>
+    <script src="/JS/searchBar.js" charset="utf-8"></script>
+
 </div>
 
 
