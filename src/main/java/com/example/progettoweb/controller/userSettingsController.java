@@ -80,7 +80,7 @@ public class userSettingsController {
         if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
         else{ model.addAttribute("profileimage", "default"); }
 
-        return "userProfile";
+        return "/userProfile";
     }
 
     @PostMapping("/savePassword")
@@ -104,7 +104,7 @@ public class userSettingsController {
             if(newUser.getProfileImage() != null){ model.addAttribute("profileimage", newUser.getProfileImage()); }
             else{ model.addAttribute("profileimage", "default"); }
 
-            return "userProfile";
+            return "/userProfile";
         }
 
         model.addAttribute("setting", "password");
@@ -131,11 +131,11 @@ public class userSettingsController {
             model.addAttribute("username", newUser.getUsername());
             model.addAttribute("biography", newUser.getBiography());
             model.addAttribute("profileimage", newUser.getProfileImage());
-            return "userProfile";
+            return "/userProfile";
         }catch (Exception e){}
 
         model.addAttribute("failedToSave", "true");
-        return "userSetting";
+        return "/userSetting";
     }
 
 }
