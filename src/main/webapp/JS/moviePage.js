@@ -102,12 +102,7 @@ function addReview(review){
 
 
 let miaRecensione = new Review("Lorenzo", "10", "oggi", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non sagittis turpis, ut aliquam augue. Fusce euismod dolor sed ex mollis mollis ac a orci. Aliquam vel lacus at tortor condimentum volutpat et in ligula. Etiam elementum metus ac ligula tincidunt, sed venenatis quam eleifend. Aliquam dapibus neque vel risus rutrum mollis. Etiam scelerisque imperdiet justo, et condimentum eros tristique vel. Integer eu nisi ac sem bibendum dictum at sit amet lacus. In nisl nisi, scelerisque non consectetur non, finibus ut ligula. Nam vel nisl congue, tristique nibh sed, consequat massa.Aliquam porttitor vel augue id maximus. Mauris gravida diam eu turpis sollicitudin, sit amet ullamcorper arcu tristique. Nulla non sagittis nunc, in scelerisque eros. Maecenas magna orci, ultricies nec imperdiet id, pellentesque eget ipsum. Donec facilisis varius congue. Nulla consectetur dignissim eros eu aliquam. Proin id pulvinar neque, quis suscipit enim. Vestibulum eget volutpat orci. Duis diam quam, pharetra tempus nisl non, porta porttitor sem. Nulla posuere et justo sit amet luctus. Aliquam erat volutpat. Fusce tempor tincidunt elit vel aliquam. Nunc nec dictum velit.");
-addReview(miaRecensione);
-addReview(miaRecensione);
-addReview(miaRecensione);
-addReview(miaRecensione);
-addReview(miaRecensione);
-addReview(miaRecensione);
+
 
 
 
@@ -332,6 +327,7 @@ async function searchMovies(val){
 }
 
 async function getReviews(){
+    await sleep(1000)
     $.ajax({
         type: 'GET',
         url: '/getReviews',
@@ -339,13 +335,16 @@ async function getReviews(){
             movieId: parseInt(movieID)
         },
         success : function (result){
-            for( let i = 0; i< result.length; i++){
+            reviewsList.innerHTML = "";
+            for( let i = 0; i< result.results.length; i++){
                 addReview(new Review(result.results[i].iduser, result.results[i].rating, result.results[i].date, result.results[i].content));
             }
-        }
-    })
+        },
+    });
 }
-
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 getInfos();
 getCast();
 getVideos();

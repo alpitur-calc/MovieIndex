@@ -183,7 +183,6 @@
                                 content: con
                             },
                             success: function (result){
-                                alert("recensione inviata con successo");
                             }
                         })
                     }
@@ -193,9 +192,14 @@
                         let content = form.querySelector("textarea").value;
                         let rating = 5;
                         sendReview(rating, content);
+                        getReviews();
+                        form.querySelector("textarea").innerHTML = "";
                     }
 
                     document.querySelector(".listButton").addEventListener("click", swapList);
+                    function sleep(ms) {
+                        return new Promise(resolve => setTimeout(resolve, ms));
+                    }
                 </script>
             </c:if>
 
