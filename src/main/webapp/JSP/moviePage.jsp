@@ -230,7 +230,6 @@
         ${movieId}
     </div>
     <script src="/JS/moviePage.js" charset="utf-8"></script>
-    <script src="/JS/searchBar.js" charset="utf-8"></script>
     <script src="/JS/googleSignOut.js" charset="utf-8"></script>
 
 </div>

@@ -1,3 +1,6 @@
+const apiURL = "https://api.themoviedb.org/3/movie/";
+const apiKEY = "?api_key=dc2d670278d03763e2694d2c963a117f&language=it";
+const apiKEYeng = "?api_key=dc2d670278d03763e2694d2c963a117f&language=en";
 const discoverURL = "https://api.themoviedb.org/3/discover/movie/";
 
 async function  getMovies(url, type){

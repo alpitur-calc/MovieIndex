@@ -31,6 +31,6 @@ async function searchMovies(val) {
                 list.appendChild(li);
             }
         }
-    })
+    });
 }
 
