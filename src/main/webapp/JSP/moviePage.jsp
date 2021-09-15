@@ -168,34 +168,34 @@
                 </form>
                 <script type = "text/javascript">
                     <!--Ho dovuto mettere qui lo script altimenti quando l'utente non è loggato prova ad aggiungere un listener su un pulsante che non esiste-->
-                    let sendReviewButton = document.querySelector("#sendReviewButton");
-                    sendReviewButton.addEventListener("click", makeReview);
-
                     let form = document.querySelector(".addReview");
 
-                    async function sendReview(rating, content){
+
+
+
+                    async function sendReview(rat, con){
                         $.ajax({
                             type: 'POST',
                             url: '/addReviewToMovie',
                             data: {
                                 movieId: movieID,
-                                rating: rating,
-                                content: content
+                                rating: rat,
+                                content: con
                             },
                             success: function (result){
-                                alert("Recensione aggiunta");
-                            },
-                            error: function (result){
-                                alert("coglione");
+                                alert("recensione inviata con successo");
                             }
                         })
                     }
 
+                    document.querySelector("#sendReviewButton").addEventListener("click", makeReview);
                     function makeReview(){
                         let content = form.querySelector("textarea").value;
                         let rating = 5;
                         sendReview(rating, content);
                     }
+
+                    document.querySelector(".listButton").addEventListener("click", swapList);
                 </script>
             </c:if>
 

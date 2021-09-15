@@ -291,21 +291,6 @@ async function swapList(){
     })
 }
 
-async function getReviews(){
-    $.ajax({
-        type: 'POST',
-        url: '/getReviews',
-        data: {
-            movieId: movieID
-        },
-        success : function (result){
-            for( let i = 0; i< result.length; i++){
-                addReview(new Review(result.author, result.rating, result.date, result.content));
-            }
-        }
-    })
-}
-
 
 
 document.querySelector(".listButton").addEventListener("click", swapList);
@@ -346,8 +331,24 @@ async function searchMovies(val){
     })
 }
 
+async function getReviews(){
+    $.ajax({
+        type: 'GET',
+        url: '/getReviews',
+        data: {
+            movieId: 129
+        },
+        success : function (result){
+            for( let i = 0; i< result.length; i++){
+                addReview(new Review(result.results[i].iduser, result.results[i].rating, result.results[i].date, result.results[i].content));
+            }
+        }
+    })
+}
+
 getInfos();
 getCast();
 getVideos();
 getRecommended();
 checkWatchList();
+getReviews();
