@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
+import javax.sound.midi.SysexMessage;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -69,11 +70,13 @@ public class moviePageController {
                 results[k].appendField("rating", r.getRating());
                 results[k].appendField("content", r.getContent());
                 results[k].appendField("date", r.getDate().toString());
+                System.out.println(results[k].toString());
                 k++;
             }
             result.appendField("results", results);
 
             if(reviews != null){
+                System.out.println(result.toString());
                 return result;
             }
         }
