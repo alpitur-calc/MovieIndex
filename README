@@ -1,0 +1,6 @@
+Nel repository è presente un backup fatto da pgAdmin del database.
+
+Per accedere al database i dati sono:
+name: pg-docker
+password: postgres
+port: 5432
