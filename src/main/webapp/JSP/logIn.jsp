@@ -85,7 +85,19 @@
             <br>
 
             <label>
-                <input type="checkbox" name="rememberMe" class="remember" value="yes"> Resta connesso
+
+                <c:if test="${ username != null}">
+                    <c:if test="${ password != null}">
+                        <input type="checkbox" name="rememberMe" class="remember" id="checkbox1" value="yes" checked> Resta connesso
+                    </c:if>
+                </c:if>
+
+                <c:if test="${ username == null}">
+                    <c:if test="${ password == null}">
+                        <input type="checkbox" name="rememberMe" class="remember" id="checkbox1" value="no"> Resta connesso
+                    </c:if>
+                </c:if>
+
             </label>
 
             <br>
@@ -107,6 +119,21 @@
 
 <script>
 
+    $("#checkbox1").on('change', function() {
+        if ($(this).is(':checked')) {
+            $(this).attr('value', 'yes');
+            console.log($('#checkbox1').val());
+        } else {
+            $(this).attr('value', 'no');
+            console.log($('#checkbox1').val());
+        }
+
+    });
+
+    window.onbeforeunload = function(e){
+        gapi.auth2.getAuthInstance().signOut();
+    };
+
     function onSuccess(googleUser) {
         var profile = googleUser.getBasicProfile();
         $.ajax({
@@ -117,13 +144,16 @@
                 email: profile.getEmail(),
                 password: "googleUserPassword",
             },
-            success : function (result){},
+            success : function (){
+                location.href="/";
+            },
         });
     }
+
     function onFailure(error) {
         console.log(error);
-        signOut();
     }
+
     function renderButton() {
         gapi.signin2.render('my-signin2', {
             'scope': 'profile email',

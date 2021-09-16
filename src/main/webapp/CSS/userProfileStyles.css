@@ -94,7 +94,7 @@ body{
 
 .setting-container a{
     position: relative;
-    margin: 60px;
+    margin: 25px;
 }
 
 .userSetting{
@@ -106,6 +106,10 @@ body{
     color: black;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+}
+
+.delete{
+    margin-top: 10px;
 }
 
 .userSetting:hover{

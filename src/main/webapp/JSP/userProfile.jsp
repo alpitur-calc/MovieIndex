@@ -64,10 +64,9 @@
         </div>
 
         <div class="setting-container">
-            <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
+            <a href = "/userData"><label class = "userSetting"> Cambia Informazioni </label> </a>
             <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
-            <br>
-            <a onclick="deleteAccount()"><label class = "userSetting" id = "delete-account"> Elimina Account </label> </a>
+            <a onclick="deleteAccount()"><label class = "userSetting delete" id = "delete-account"> Elimina Account </label> </a>
         </div>
     </div>
 
