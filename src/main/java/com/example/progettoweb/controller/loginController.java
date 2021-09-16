@@ -48,11 +48,16 @@ public class loginController {
                 cookiePsw.setMaxAge(7 * 24 * 60 * 60); // Scade in 7 giorni
                 response.addCookie(cookieUsr);
                 response.addCookie(cookiePsw);
-                //System.out.println("Create" + cookieUsr.getValue());
-                //System.out.println("Create" + cookiePsw.getValue());
                 System.out.println("creato cookie");
             } else {
-                System.out.println("cookie non creato");
+                Cookie cookieUsr = new Cookie("username",username);
+                Cookie cookiePsw = new Cookie( "password", password);
+                cookieUsr.setMaxAge(0); // Scade subito
+                cookiePsw.setMaxAge(0); // Scade subito
+                response.addCookie(cookieUsr);
+                response.addCookie(cookiePsw);
+
+                System.out.println("Cookie cancellati");
             }
         }
         else{
