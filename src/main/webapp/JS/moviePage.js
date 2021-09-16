@@ -373,5 +373,3 @@ function mi(x) {
 var x = window.matchMedia("(max-width: 1160px)")
 mi(x) // Call listener function at run time
 x.addListener(mi) // Attach listener function on state changes
-
-mi();

@@ -43,6 +43,11 @@ window.addEventListener("click", function (){
     document.querySelector(".searchBar-container ul").innerHTML = "";
 })
 
+
+var x = window.matchMedia("(max-width: 1160px)")
+mi(x) // Call listener function at run time
+x.addListener(mi) // Attach listener function on state change
+
 function mi(x) {
     if (x.matches) {
         document.querySelector(".logo").innerHTML = "MI";
@@ -51,9 +56,3 @@ function mi(x) {
         document.querySelector(".logo").innerHTML = "MovieIndex";
     }
 }
-
-var x = window.matchMedia("(max-width: 1160px)")
-mi(x) // Call listener function at run time
-x.addListener(mi) // Attach listener function on state changes
-
-mi();
