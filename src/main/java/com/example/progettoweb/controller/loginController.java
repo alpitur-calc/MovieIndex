@@ -37,11 +37,11 @@ public class loginController {
 
     @PostMapping("/doLogIn")
     public String doLogIn(HttpSession session, HttpServletResponse response, Model model, @RequestParam String username,
-                          @RequestParam String password, @RequestParam String rememberMe){
+                          @RequestParam String password, @RequestParam Integer rememberMe){
         User user = DBManager.getInstance().userDao().findByPrimaryKey(username);
         if(user != null && Encrypter.check(password, user.getPassword())){
             session.setAttribute("userlogged", user.getUsername());
-            if(rememberMe.equals("yes")){
+            if(rememberMe == 1){
                 Cookie cookieUsr = new Cookie("username",username);
                 Cookie cookiePsw = new Cookie( "password", password);
                 cookieUsr.setMaxAge(7 * 24 * 60 * 60); // Scade in 7 giorni
@@ -50,6 +50,9 @@ public class loginController {
                 response.addCookie(cookiePsw);
                 //System.out.println("Create" + cookieUsr.getValue());
                 //System.out.println("Create" + cookiePsw.getValue());
+                System.out.println("creato cookie");
+            } else {
+                System.out.println("cookie non creato");
             }
         }
         else{

@@ -88,15 +88,17 @@
 
                 <c:if test="${ username != null}">
                     <c:if test="${ password != null}">
-                        <input type="checkbox" name="rememberMe" class="remember" id="checkbox1" value="yes" checked> Resta connesso
+                        <input type="checkbox" class="remember" id="checkbox" checked> Resta connesso
                     </c:if>
                 </c:if>
 
                 <c:if test="${ username == null}">
                     <c:if test="${ password == null}">
-                        <input type="checkbox" name="rememberMe" class="remember" id="checkbox1" value="no"> Resta connesso
+                        <input type="checkbox" class="remember" id="checkbox"> Resta connesso
                     </c:if>
                 </c:if>
+
+                <input type="hidden" name="rememberMe" id="checkboxresult">
 
             </label>
 
@@ -110,7 +112,6 @@
 
     <div class="bottom-container">
         <a href="/register" class="bottom">Registrati</a>
-        <a href="#" class="bottom">Password Dimenticata?</a>
     </div>
 </div>
 
@@ -119,16 +120,15 @@
 
 <script>
 
-    $("#checkbox1").on('change', function() {
+    $("#checkbox").on('change', function() {
         if ($(this).is(':checked')) {
-            $(this).attr('value', 'yes');
-            console.log($('#checkbox1').val());
+            $("#checkboxresult").attr('value', parseInt(1));
+            console.log($("#checkboxresult").val());
         } else {
-            $(this).attr('value', 'no');
-            console.log($('#checkbox1').val());
+            $("#checkboxresult").attr('value', parseInt(0));
+            console.log($("#checkboxresult").val());
         }
-
-    });
+    }).change();
 
     window.onbeforeunload = function(e){
         gapi.auth2.getAuthInstance().signOut();
