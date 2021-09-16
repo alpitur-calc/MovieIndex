@@ -3,7 +3,7 @@ html { height: 100%; }
 body{
     margin: 0;
     text-align: center;
-    background-color: gainsboro;
+    background-image: linear-gradient(to right bottom, #ffffff, #def1ff, #99ebff, #37e5eb, #00daaa, #00daaa, #00daaa, #00daaa, #37e5eb, #99ebff, #def1ff, #ffffff);
 }
 
 .main-container{
@@ -155,6 +155,10 @@ body{
 #domMovieId{
     display: none;
     visibility: hidden;
+}
+
+#delete-account{
+    background-color: #f44336;
 }
 
 @media (max-width: 830px) {
