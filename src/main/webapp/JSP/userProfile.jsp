@@ -63,11 +63,13 @@
             <textarea class = "biography" readonly>${ biography }</textarea>
         </div>
 
+        <c:if test="${ loggedwithgoogle != null }">
         <div class="setting-container">
-            <a href = "/userData"><label class = "userSetting"> Cambia Informazioni </label> </a>
-            <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
-            <a onclick="deleteAccount()"><label class = "userSetting delete" id = "delete-account"> Elimina Account </label> </a>
+                <a href = "/userData"><label class = "userSetting"> Cambia Informazioni </label> </a>
+                <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
+                <a onclick="deleteAccount()"><label class = "userSetting delete" id = "delete-account"> Elimina Account </label> </a>
         </div>
+        </c:if>
     </div>
 
     <div class = "watchlist-container">

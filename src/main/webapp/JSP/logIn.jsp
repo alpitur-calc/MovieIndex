@@ -123,10 +123,8 @@
     $("#checkbox").on('change', function() {
         if ($(this).is(':checked')) {
             $("#checkboxresult").attr('value', parseInt(1));
-            console.log($("#checkboxresult").val());
         } else {
             $("#checkboxresult").attr('value', parseInt(0));
-            console.log($("#checkboxresult").val());
         }
     }).change();
 
