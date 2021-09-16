@@ -40,7 +40,7 @@ body {
     border-radius: 12px;
     box-shadow: 2px 4px 10px black;
     background-color: var(--backColor);
-    background-image: linear-gradient(to right bottom, #ffffff, #def1ff, #99ebff, #37e5eb, #00daaa, #00daaa, #00daaa, #00daaa, #37e5eb, #99ebff, #def1ff, #ffffff);
+    background-image: linear-gradient(to left top, #797e6d, #6f7c5b, #637a4a, #547839, #417629, #417629, #417629, #417629, #547839, #637a4a, #6f7c5b, #797e6d);
 }
 .leftPanel{
     height: 23.563rem;
@@ -64,8 +64,7 @@ body {
     flex-direction: column;
     box-shadow: 2px 4px 10px black;
     border-radius: 10px;
-    background-color: white;
-    background-image: linear-gradient(to right bottom, #ffffff, #def1ff, #99ebff, #37e5eb, #00daaa, #00daaa, #00daaa, #00daaa, #37e5eb, #99ebff, #def1ff, #ffffff);
+    background-image: linear-gradient(to right, #b9b9b9, #c2c2c2, #cbcbcb, #d4d4d4, #dddddd, #dddddd, #dddddd, #dddddd, #d4d4d4, #cbcbcb, #c2c2c2, #b9b9b9);
 
 }
 

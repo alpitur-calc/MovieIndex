@@ -3,7 +3,7 @@ html { height: 100%; }
 body{
     margin: 0;
     text-align: center;
-    background-color: gainsboro;
+    background-image: linear-gradient(to left top, #bebebe, #b3b3b4, #a7a9aa, #9b9fa0, #909594, #8f9493, #8d9291, #8c9190, #949899, #9d9fa0, #a6a6a7, #aeaeae);
 }
 
 .main-container{
