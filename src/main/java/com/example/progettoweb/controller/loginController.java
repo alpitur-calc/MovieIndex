@@ -17,19 +17,12 @@ import javax.servlet.http.*;
 public class loginController {
 
     @GetMapping("/logIn")
-    public String logIn(HttpServletRequest request, Model model){/*@CookieValue(value = "username") String username,
-                        @CookieValue(value = "password") String password, Model model){*)
-
-       /* if(username != null && password != null){
-            model.addAttribute("username", username);
-            model.addAttribute("password", password);
-        }*/
+    public String logIn(HttpServletRequest request, Model model){
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for(Cookie c : cookies){
                 if(c.getName().equals("username")){ model.addAttribute("username", c.getValue()); }
                 if(c.getName().equals("password")){ model.addAttribute("password", c.getValue()); }
-                //System.out.println("Read"+ c.getValue());
             }
         }
         return "logIn";
@@ -48,7 +41,6 @@ public class loginController {
                 cookiePsw.setMaxAge(7 * 24 * 60 * 60); // Scade in 7 giorni
                 response.addCookie(cookieUsr);
                 response.addCookie(cookiePsw);
-                System.out.println("creato cookie");
             } else {
                 Cookie cookieUsr = new Cookie("username",username);
                 Cookie cookiePsw = new Cookie( "password", password);
@@ -56,8 +48,6 @@ public class loginController {
                 cookiePsw.setMaxAge(0); // Scade subito
                 response.addCookie(cookieUsr);
                 response.addCookie(cookiePsw);
-
-                System.out.println("Cookie cancellati");
             }
         }
         else{
