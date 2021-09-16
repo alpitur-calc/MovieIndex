@@ -64,14 +64,32 @@
 
         <form class="col form" action="/doLogIn" method="post">
 
-            <input class="logInObj field" type="text" name="username" placeholder="Username" required>
+            <c:if test="${ username != null}">
+                <input class="logInObj field" type="text" name="username" placeholder="Username" value="${username}" required>
+            </c:if>
+
+            <c:if test="${ username == null}">
+                <input class="logInObj field" type="text" name="username" placeholder="Username" required>
+            </c:if>
+
             <br>
-            <input class="logInObj field" type="password" name="password" placeholder="Password" required>
+
+            <c:if test="${ password != null}">
+                <input class="logInObj field" type="password" name="password" placeholder="Password" value="${password}" required>
+            </c:if>
+
+            <c:if test="${ password == null}">
+                <input class="logInObj field" type="password" name="password" placeholder="Password" required>
+            </c:if>
+
             <br>
+
             <label>
-                <input type="checkbox" checked="checked" name="remember" class="remember"> Resta connesso
+                <input type="checkbox" name="rememberMe" class="remember" value="yes"> Resta connesso
             </label>
+
             <br>
+
             <input class="logInObj log" type="submit" value="Accedi">
 
         </form>

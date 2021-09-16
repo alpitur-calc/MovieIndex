@@ -16,7 +16,7 @@ import javax.servlet.http.*;
 public class loginController {
 
     @GetMapping("/logIn")
-    public String logIn(@CookieValue(value = "userlogged") String username,
+    public String logIn(@CookieValue(value = "username") String username,
                         @CookieValue(value = "password") String password, Model model){
 
         if(username != null && password != null){
