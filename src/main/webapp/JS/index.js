@@ -19,7 +19,7 @@ async function  getMovies(url, type){
                 let li = document.createElement("li");
                 li.appendChild(raccomandato);
                 document.querySelector(query ).appendChild(li);
-                if(type === "new-movies" && i==0){
+                if(type === "popular-movies" && i==0){
                     getVideos(result.results[0].id)
                     document.querySelector("body").style.backgroundImage = "url('" + "https://image.tmdb.org/t/p/original" + result.results[0].backdrop_path + "')";
                 }
@@ -43,7 +43,6 @@ getMovies(apiURL + "top_rated" + apiKEY, "best-movies");
 getMovies(apiURL + "upcoming" + apiKEY, "new-movies");
 getMovies(apiURL + "popular" + apiKEY, "popular-movies");
 
-getMovies(discoverURL + apiKEY + "&genre", "popular-movies");
 
 
 
