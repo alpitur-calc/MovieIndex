@@ -1,5 +1,6 @@
 package com.example.progettoweb.controller;
 
+import model.Review;
 import model.User;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import persistence.DBManager;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class userProfileController {
@@ -37,6 +39,12 @@ public class userProfileController {
     public String deleteUser(HttpSession session){
         User user = DBManager.getInstance().userDao().findByPrimaryKey((String)session.getAttribute("userlogged"));
         if(user != null){
+
+            List<Review> reviews = DBManager.getInstance().reviewDao().findAllReviewOfAUser(user);
+            for(Review r : reviews){
+                DBManager.getInstance().reviewDao().delete(r);
+            }
+
             DBManager.getInstance().userDao().delete(user);
             session.invalidate();
             return "index";
