@@ -61,7 +61,6 @@ public class loginGoogleController {
             session.setAttribute("userlogged", user.getUsername());
             session.setAttribute("loggedWithGoogle", "true");
         }
-        System.out.println("maledetto");
         return "index";
     }
 

@@ -29,7 +29,6 @@ public class userProfileController {
                 if(user.getWatchList().size()>0)
                     model.addAttribute("watchList", user.getWatchList());
             }
-            System.out.println("carico");
             return "userProfile";
         }
         return "logIn";

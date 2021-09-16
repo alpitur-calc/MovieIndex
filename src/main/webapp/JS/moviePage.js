@@ -274,13 +274,13 @@ async function swapList(){
             removeFromWatchList();
             document.querySelector(".listButton").innerHTML = "Aggiungi alla lista";
             document.querySelector(".listButton").style.backgroundColor = "#4dbf00";
-            console.log("rimosso");
+            //console.log("rimosso");
         },
         error: function (result){
             document.querySelector(".listButton").innerHTML = "Rimuovi dalla lista";
             document.querySelector(".listButton").style.backgroundColor = "red";
             addToWatchList();
-            console.log("aggiunto");
+            //console.log("aggiunto");
         }
 
     })
