@@ -66,6 +66,8 @@
         <div class="setting-container">
             <a href = "/userData"><label class = "userSetting"> Cambia Dati </label> </a>
             <a href = "/userPassword"><label class = "userSetting"> Cambia Password </label> </a>
+            <br>
+            <a onclick="deleteAccount()"><label class = "userSetting"> Elimina Account </label> </a>
         </div>
     </div>
 
@@ -100,6 +102,25 @@
 <script src="/JS/userProfile.js" charset="utf-8"></script>
 <script src="/JS/searchBar.js" charset="utf-8"></script>
 <script src="/JS/googleSignOut.js" charset="utf-8"></script>
+
+<script>
+
+    function deleteAccount(){
+        if (confirm("ATTENZIONE! Sei sicuro di eliminare l'account?")) {
+            $.ajax({
+                type: 'POST',
+                url: '/deleteUser',
+                success : function (result){
+                    alert("Account cancellato");
+                    location.reload();
+                },
+            });
+        } else {
+
+        }
+    }
+
+</script>
 
 </body>
 

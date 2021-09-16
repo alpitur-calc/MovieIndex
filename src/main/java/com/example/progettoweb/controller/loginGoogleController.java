@@ -61,7 +61,8 @@ public class loginGoogleController {
             session.setAttribute("userlogged", user.getUsername());
             session.setAttribute("loggedWithGoogle", "true");
         }
-        return "/index";
+        System.out.println("maledetto");
+        return "index";
     }
 
     @GetMapping("/googleLogIn")

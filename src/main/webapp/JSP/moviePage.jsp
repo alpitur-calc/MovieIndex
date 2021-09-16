@@ -204,7 +204,7 @@
                         getReviews();
                     }
 
-                    document.querySelector(".listButton").addEventListener("click", swapList);
+
                     function sleep(ms) {
                         return new Promise(resolve => setTimeout(resolve, ms));
                     }
@@ -234,9 +234,6 @@
     <script src="/JS/googleSignOut.js" charset="utf-8"></script>
 
 </div>
-
-
-<!--cazzo-->
 
 </body>
 </html>
