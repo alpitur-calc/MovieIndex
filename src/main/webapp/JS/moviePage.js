@@ -350,6 +350,10 @@ async function searchMovies(val) {
     }
 }
 
+window.addEventListener("click", function (){
+    document.querySelector(".searchBar-container ul").innerHTML = "";
+})
+
 getInfos();
 getCast();
 getVideos();
