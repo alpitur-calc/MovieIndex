@@ -44,3 +44,15 @@ window.addEventListener("click", function (){
 })
 
 
+function mi(x) {
+    if (x.matches) {
+        document.querySelector(".logo").innerHTML = "MI";
+    }
+    else{
+        document.querySelector(".logo").innerHTML = "MovieIndex";
+    }
+}
+
+var x = window.matchMedia("(max-width: 1160px)")
+mi(x) // Call listener function at run time
+x.addListener(mi) // Attach listener function on state changes
