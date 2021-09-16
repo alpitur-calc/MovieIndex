@@ -19,9 +19,9 @@ async function  getMovies(url, type){
                 let li = document.createElement("li");
                 li.appendChild(raccomandato);
                 document.querySelector(query ).appendChild(li);
-                if(type === "popular-movies" && i==0){
-                    getVideos(result.results[0].id)
-                    document.querySelector("body").style.backgroundImage = "url('" + "https://image.tmdb.org/t/p/original" + result.results[0].backdrop_path + "')";
+                if(type === "new-movies" && i==0){
+                    getVideos(result.results[i].id)
+                    document.querySelector("body").style.backgroundImage = "url('" + "https://image.tmdb.org/t/p/original" + result.results[i].backdrop_path + "')";
                 }
             }
         }

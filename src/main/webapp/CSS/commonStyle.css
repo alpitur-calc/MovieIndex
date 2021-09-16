@@ -105,10 +105,11 @@ navbar {
 }
 
 
-.logo {
+.logo{
     font-size: 30px;
     color: var(--textColor);
     cursor: pointer;
+    content: 'MovieIndex';
 }
 
 .logo:hover{
@@ -203,3 +204,6 @@ navbar {
 a{
     text-decoration: none;
 }
+
+
+

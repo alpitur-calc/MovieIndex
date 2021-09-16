@@ -76,6 +76,12 @@ h1{
     color: var(--textColor);
 }
 
+
+
+.slider{
+    margin: 0 1rem;
+}
+
 @media (max-width: 1160px) {
 
     iframe{
