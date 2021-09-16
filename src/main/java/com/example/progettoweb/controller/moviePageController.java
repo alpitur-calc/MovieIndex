@@ -69,13 +69,13 @@ public class moviePageController {
                 results[k].appendField("rating", r.getRating());
                 results[k].appendField("content", r.getContent());
                 results[k].appendField("date", r.getDate().toString());
-                System.out.println(results[k].toString());
+               // System.out.println(results[k].toString());
                 k++;
             }
             result.appendField("results", results);
 
             if(reviews != null){
-                System.out.println(result.toString());
+                //System.out.println(result.toString());
                 return new ResponseEntity<JSONObject>(result, HttpStatus.OK);
             }
         }
